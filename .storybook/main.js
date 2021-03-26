@@ -23,6 +23,12 @@ module.exports = {
             }
         });
         config.resolve.extensions.push(".ts", ".tsx");
+        /*config.resolve.push({
+            extensions: ['.ts', '.tsx'],
+            /!*alias: {
+                '@tresdoce-ui/brand': path.resolve(__dirname,'../','packages/brand/src')
+            },*!/
+        })*/
 
         return config;
     }

@@ -12,7 +12,7 @@ if (!componentName) {
 
 signale.note(`Creating Component Templates with name: ${componentName}`);
 
-const componentDirectory = `./src/${componentName}`;
+const componentDirectory = `./src/components/${componentName}`;
 
 if (fs.existsSync(componentDirectory)) {
     signale.error(`Component ${componentName} already exists.`);
@@ -27,6 +27,6 @@ generatedTemplates.forEach((template) => {
     fs.writeFileSync(`${componentDirectory}/${template.filename}${template.extension}`, template.content);
 });
 
-fs.appendFileSync('./src/index.ts', `export * from './${componentName}';`);
+fs.appendFileSync('./src/index.ts', `export { default as ${componentName} } from './components/${componentName}';`);
 
 signale.success(`Successfully created component under: ${componentDirectory}`);
