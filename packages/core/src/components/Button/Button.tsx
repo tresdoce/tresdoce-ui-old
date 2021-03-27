@@ -1,4 +1,3 @@
-// Generated with util/create-component.js
 import * as React from "react";
 import { ButtonProps } from "./Button.types";
 const Button: React.FC<ButtonProps> = ({ foo }) => (

@@ -1,4 +1,3 @@
-// Generated with util/create-component.js
 import * as React from 'react'
 import { render } from "@testing-library/react";
 import Button from "./Button";
