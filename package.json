@@ -24,7 +24,10 @@
     "build": "lerna exec npm run build",
     "publish": "lerna exec npm run publish",
     "bootstrap": "lerna bootstrap",
-    "hoist-deps": "lerna clean -y && lerna bootstrap --hoist"
+    "hoist-deps": "lerna clean -y && lerna bootstrap --hoist",
+    "create:storybook": "npm-run-all -l -c -s clear:storybook build:storybook",
+    "clear:storybook": "rimraf ./dist",
+    "build:storybook": "build-storybook -o ./dist/storybook-tresdoce-ui"
   },
   "husky": {
     "hooks": {
@@ -57,9 +60,30 @@
     "tabWidth": 2,
     "printWidth": 100
   },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-transform-modules-commonjs": "^7.13.8",
+    "@babel/preset-env": "^7.13.12",
+    "@storybook/addon-a11y": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addons": "^6.1.21",
+    "@storybook/react": "^6.1.21",
+    "@storybook/theming": "^6.1.21",
     "@tresdoce-toolkit/eslint-config": "^1.0.0",
-    "lerna": "^4.0.0",
-    "prettier": "^2.1.0"
+    "@types/react": "^17.0.3",
+    "@types/styled-components": "^5.1.9",
+    "babel-loader": "^8.2.2",
+    "babel-preset-react-app": "^10.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.3"
   }
 }
