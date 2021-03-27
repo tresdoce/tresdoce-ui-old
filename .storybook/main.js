@@ -1,17 +1,19 @@
 const path = require('path');
+const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = {
   stories: [
-    '../packages/core/src/**/*.stories.mdx',
-    '../packages/core/src/**/*.stories.@(tsx|ts|jsx|js)',
+    '../packages/core/src/**/*.mdx',
+    '../packages/core/src/**/*.stories.@(tsx|ts|jsx|js|mdx)',
   ],
 
   addons: [
+    '@storybook/addon-docs',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     '@storybook/addons',
-    '@storybook/addon-viewport'
+    '@storybook/addon-viewport',
   ],
   webpackFinal: async (config) => {
     config = {
@@ -61,6 +63,25 @@ module.exports = {
             },
             include: path.resolve(__dirname, '../', 'packages/**/*'),
           },
+          {
+            //test: /\.(stories|story)\.mdx$/,
+            test: /\.mdx$/,
+            use: [
+              {
+                loader: 'babel-loader',
+                // may or may not need this line depending on your app's setup
+                options: {
+                  plugins: ['@babel/plugin-transform-react-jsx'],
+                },
+              },
+              {
+                loader: '@mdx-js/loader',
+                options: {
+                  compilers: [createCompiler({})],
+                },
+              },
+            ],
+          }
         ],
       },
       resolve: {
@@ -69,12 +90,12 @@ module.exports = {
           ...config.resolve.extensions,
           '.ts', '.tsx',
         ],
+        alias: {
+          '@tresdoce-ui/brand': path.resolve(__dirname, '../', 'packages/brand/src'),
+          '@tresdoce-ui/core': path.resolve(__dirname, '../', 'packages/core/src'),
+        },
       },
     };
-    /*config.resolve.alias = {
-      ...config.resolve.alias,
-      '@tresdoce-ui/core': path.resolve(__dirname,'../','packages/core/src')
-    }*/
 
     return config;
   },

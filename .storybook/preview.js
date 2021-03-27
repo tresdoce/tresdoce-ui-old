@@ -1,3 +1,8 @@
+import React from 'react';
+
+import { addParameters } from '@storybook/react';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+
 //import { ThemeProvider } from 'styled-components';
 //import { StoryContext, StoryGetter, StoryWrapper } from '@storybook/addons';
 
@@ -21,6 +26,13 @@ export const globalTypes = {
     },
   },
 };
+
+addParameters({
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
+});
 
 /*const withThemeProvider=(Story,context)=>{
   const theme = getTheme(context.globals.theme);

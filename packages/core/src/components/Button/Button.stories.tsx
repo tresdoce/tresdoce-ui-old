@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
-import Button from './Button';
+import Button from '.';
 
 import { action } from '@storybook/addon-actions';
 
@@ -22,7 +22,7 @@ export default {
 //export const WithBar = () => <Button onClick={action('clicked bar')} foo='bar' />;
 //export const WithBaz = () => <Button onClick={action('clicked baz')} foo='baz' />;
 
-const Template = args => <Button {...args}/>
+const Template = args => (<Button {...args}/>)
 
 export const WithBar = Template.bind({});
 WithBar.args = {
