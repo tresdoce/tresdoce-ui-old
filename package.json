@@ -6,6 +6,14 @@
     "email": "mdelgado@tresdoce.com.ar",
     "url": "https://rudemex.github.io/"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tresdoce/tresdoce-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tresdoce/tresdoce-ui/issues"
+  },
+  "homepage": "https://github.com/tresdoce/tresdoce-ui#readme",
   "license": "MIT",
   "scripts": {
     "start": "npm run storybook",
@@ -15,6 +23,7 @@
     "clear": "lerna exec --no-bail npm run clear",
     "build": "lerna exec npm run build",
     "publish": "lerna exec npm run publish",
+    "bootstrap": "lerna bootstrap",
     "hoist-deps": "lerna clean -y && lerna bootstrap --hoist"
   },
   "husky": {

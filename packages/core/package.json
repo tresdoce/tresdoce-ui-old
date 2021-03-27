@@ -28,6 +28,14 @@
     "email": "mdelgado@tresdoce.com.ar",
     "url": "https://rudemex.github.io/"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tresdoce/tresdoce-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tresdoce/tresdoce-ui/issues"
+  },
+  "homepage": "https://github.com/tresdoce/tresdoce-ui#readme",
   "license": "MIT",
   "husky": {
     "hooks": {
