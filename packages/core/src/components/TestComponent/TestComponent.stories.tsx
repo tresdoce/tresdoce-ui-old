@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import TestComponent from './TestComponent';
 
 export default {
-  title: 'TestComponent',
+  title: 'Components/TestComponent',
   component: TestComponent,
   parameters: {}
 } as Meta;
