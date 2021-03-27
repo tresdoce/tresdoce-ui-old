@@ -35,11 +35,13 @@ Luego instalar las siguientes librerías:
 npm i --save @tresdoce-ui/brand @tresdoce-ui/core
 ```
 
-## ¿Cómo desarrollo nuevos componentes?
+### ¿Cómo desarrollo nuevos componentes?
 
-### ¿Dónde desarrollo mi componente?
+Ingresá a `./packages/core` y corres el script 
 
-
+```bash
+npm run generate ComponentName
+```
 
 ### Setup de Proyecto
 
