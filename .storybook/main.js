@@ -1,35 +1,69 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-    stories: ["../packages/core/src/**/*.stories.@(tsx|ts|jsx|js|mdx)"],
-    // Add any Storybook addons you want here: https://storybook.js.org/addons/
-    addons: [
-        '@storybook/addon-essentials',
-        '@storybook/addon-a11y',
-        '@storybook/addons'
-    ],
-    webpackFinal: async (config) => {
-        config.module.rules.push({
-            test: /\.scss$/,
-            use: ["style-loader", "css-loader", "sass-loader"],
-            include: path.resolve(__dirname, "../")
-        });
+  stories: [
+    '../packages/core/src/**/*.stories.mdx',
+    '../packages/core/src/**/*.stories.@(tsx|ts|jsx|js)',
+  ],
 
-        config.module.rules.push({
-            test: /\.(ts|tsx)$/,
-            loader: require.resolve("babel-loader"),
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
+    '@storybook/addons',
+  ],
+  webpackFinal: async (config) => {
+    config.module.rules.push(
+      {
+        test: /\.(ts|tsx)$/,
+        loader: require.resolve('babel-loader'),
+        options: {
+          presets: [['react-app', { flow: false, typescript: true }]],
+        },
+      }, {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+        include: path.resolve(__dirname, '../', 'packages/**/*'),
+      }
+      , {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader',
+        ],
+        include: path.resolve(__dirname, '../', 'packages/**/*'),
+      }, {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
             options: {
-                presets: [["react-app", { flow: false, typescript: true }]]
-            }
-        });
-        config.resolve.extensions.push(".ts", ".tsx");
-        /*config.resolve.push({
-            extensions: ['.ts', '.tsx'],
-            /!*alias: {
-                '@tresdoce-ui/brand': path.resolve(__dirname,'../','packages/brand/src')
-            },*!/
-        })*/
+              importLoaders: 1,
+            },
+          },
+          'postcss-loader',
+        ],
+        include: path.resolve(__dirname, '../', 'packages/**/*'),
+      },
+      {
+        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 900000,
+          },
+        },
+        include: path.resolve(__dirname, '../', 'packages/**/*'),
+      });
 
-        return config;
-    }
+    config.resolve.extensions.push('.ts', '.tsx');
+    /*config.resolve.alias = {
+      ...config.resolve.alias,
+      '@tresdoce-ui/core': path.resolve(__dirname,'../','packages/core/src')
+    }*/
+
+    return config;
+  },
 };

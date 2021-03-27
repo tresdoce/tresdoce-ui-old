@@ -13,3 +13,4 @@ export default {
 
 export const WithBar = () => <Button onClick={action('clicked')} foo='bar' />;
 export const WithBaz = () => <Button onClick={action('clicked')} foo='baz' />;
+
