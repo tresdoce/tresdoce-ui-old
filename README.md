@@ -85,5 +85,5 @@ npm run install
 npm run publish
 
 // Permite hacer un build de storybook para exportarlo como un HTML hosteable
-npm run build-storybook
+npm run create:storybook
 ```

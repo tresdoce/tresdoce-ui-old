@@ -9,7 +9,7 @@ import typescript from "rollup-plugin-typescript2";
 const packageJson = require("./package.json");
 
 export default {
-    input: "src/index.ts",
+    input: "src/index.js",
     output: [
         {
             file: packageJson.main,
