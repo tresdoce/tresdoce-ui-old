@@ -4,7 +4,8 @@ import TestComponent from './TestComponent';
 
 export default {
   title: 'TestComponent',
-  component: TestComponent
+  component: TestComponent,
+  parameters: {}
 } as Meta;
 
 export const Primary = () => <TestComponent theme='primary' />;

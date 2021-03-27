@@ -5,7 +5,8 @@ import { Meta } from '@storybook/react';
 import ${componentName} from "./${componentName}";
 export default {
     title: "${componentName}",
-    component: ${componentName}
+    component: ${componentName},
+    parameters: {}
 } as Meta;
 
 export const WithBar = () => <${componentName} foo="bar" />;
