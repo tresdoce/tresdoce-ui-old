@@ -1,31 +1,14 @@
-import * as React from "react";
-import styled from "styled-components";
+import * as React from 'react';
+import styled from 'styled-components';
 
-import { TestComponentProps } from "./TestComponent.types";
-
-const StyledDiv = styled.div`
-  background-color: white;
-  border: 1px solid black;
-  padding: 16px;
-  width: 360px;
-  text-align: center;
-  ${(props) => 
-          props.theme === "secondary" &&
-          `background-color: black;
-     color: white;`}
-`;
-
-const StyledHeading = styled.h1`
-  font-size: 32px;
-`;
-
-const StyledDescription = styled.h2``;
+import { TestComponentProps } from './TestComponent.types';
+import './style.css'
 
 const TestComponent: React.FC<TestComponentProps> = ({ theme }) => (
-    <StyledDiv data-testid="test-component" theme={theme}>
-        <StyledHeading className="heading">I'm the test component</StyledHeading>
-        <StyledDescription>Made with love by mex ❤</StyledDescription>
-    </StyledDiv>
+  <div data-testid='test-component' className={theme}>
+    <h1 className='heading'>I'm the test component</h1>
+    <h2>Made with love by mex ❤</h2>
+  </div>
 );
 
 export default TestComponent;

@@ -23,9 +23,9 @@ module.exports = {
     {
       name: '@storybook/addon-essentials',
       options: {
-        actions: true,
-        backgrounds: true,
-        controls: true,
+        actions: false,
+        backgrounds: false,
+        controls: false,
         docs: true,
         viewport:true,
         toolbars:true

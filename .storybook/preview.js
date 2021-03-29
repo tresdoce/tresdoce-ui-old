@@ -6,6 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { version } from '../packages/core/package.json';
 import { create } from '@storybook/theming';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const theme = create({
   base: 'light',
@@ -17,6 +18,9 @@ export const parameters = {
   layout: 'centered',
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: { expanded: true },
+  viewport:{
+    viewports: INITIAL_VIEWPORTS
+  },
   options: {
     theme,
     showPanel: true,

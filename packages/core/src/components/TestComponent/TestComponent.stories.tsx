@@ -1,13 +1,24 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
 import TestComponent from './TestComponent';
+import { select, withKnobs } from '@storybook/addon-knobs';
+
+//import mdx from './TestComponent.mdx';
 
 export default {
   title: 'Components/TestComponent',
   component: TestComponent,
-  parameters: {}
+  decorators: [withKnobs],
+  /*docs: {
+    page: mdx,
+  },*/
 } as Meta;
 
-export const Primary = () => <TestComponent theme='primary' />;
-export const Secondary = () => <TestComponent theme='secondary' />;
+export const Default = () => {
+  const theme = select('theme',{
+    'primary': 'primary',
+    'secondary': 'secondary'
+  }, 'primary', 'GROUP-THEME');
 
+  return <TestComponent theme={theme} />
+}
