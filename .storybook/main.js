@@ -3,15 +3,34 @@ const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = {
   stories: [
-    '../packages/core/src/**/*.mdx',
+    //'../packages/core/src/**/*.mdx',
     '../packages/core/src/**/*.stories.@(tsx|ts|jsx|js)',
   ],
 
   addons: [
-    '@storybook/addon-docs',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        configureJSX: true,
+        babelOptions: {},
+        sourceLoaderOptions: null,
+      },
+    },
+    '@storybook/addon-knobs',
+    '@storybook/addon-docs/register',
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
     '@storybook/addon-a11y',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: true,
+        backgrounds: true,
+        controls: true,
+        docs: true,
+        viewport:true,
+        toolbars:true
+      }
+    },
     '@storybook/addons',
     '@storybook/addon-viewport',
   ],
@@ -64,8 +83,7 @@ module.exports = {
             include: path.resolve(__dirname, '../', 'packages/**/*'),
           },
           {
-            //test: /\.(stories|story)\.mdx$/,
-            test: /\.mdx$/,
+            test: /\.(stories|story)\.mdx$/,
             use: [
               {
                 loader: 'babel-loader',
@@ -81,6 +99,12 @@ module.exports = {
                 },
               },
             ],
+          },
+          {
+            test: /\.(stories|story)\.(tsx|ts|jsx|js)$/,
+            loader: require.resolve('@storybook/source-loader'),
+            exclude: [/node_modules/],
+            enforce: 'pre',
           }
         ],
       },
@@ -98,5 +122,15 @@ module.exports = {
     };
 
     return config;
+  },
+  typescript: {
+    check: false,
+    checkOptions: {},
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      esModuleInterop: true,
+      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+    },
   },
 };
