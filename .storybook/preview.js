@@ -1,10 +1,18 @@
-import React from 'react';
+import * as React from 'react';
 
-import { addParameters } from '@storybook/react';
+import { addParameters, addDecorator } from '@storybook/react';
+import { withA11y } from '@storybook/addon-a11y';
+
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { version } from '../packages/core/package.json';
+import { create } from '@storybook/theming';
 
-//import { ThemeProvider } from 'styled-components';
-//import { StoryContext, StoryGetter, StoryWrapper } from '@storybook/addons';
+
+const theme = create({
+  base: 'light',
+  brandTitle: `TresDoce-UI ${version}`,
+  brandUrl: 'https://github.com/tresdoce/tresdoce-ui',
+});
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -28,18 +36,13 @@ export const globalTypes = {
 };
 
 addParameters({
-  docs: {
-    container: DocsContainer,
-    page: DocsPage,
+  options: {
+    theme,
+    showPanel: true,
+    isFullscreen: false,
+    storySort: undefined,
   },
+  docs: DocsPage,
 });
 
-/*const withThemeProvider=(Story,context)=>{
-  const theme = getTheme(context.globals.theme);
-  return (
-    <ThemeProvider theme={theme}>
-      <Story {...context} />
-    </ThemeProvider>
-  )
-}
-export const decorators = [withThemeProvider];*/
+addDecorator(withA11y);

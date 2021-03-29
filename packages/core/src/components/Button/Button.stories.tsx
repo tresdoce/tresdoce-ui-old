@@ -1,23 +1,26 @@
 import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta } from '@storybook/react/types-6-0';
 import Button from '.';
 
 import { action } from '@storybook/addon-actions';
 
+import mdx from './Button.mdx';
 
 export default {
   title: 'Components/Button',
   component: Button,
-  parameters: {
-  },
+  parameters: {},
   //Default args = props
   args:{},
   argTypes:{
     control: {
       foo : 'text'
     }
-  }
-} as Meta;
+  },
+  docs: {
+    page: mdx,
+  },
+} ;
 
 //export const WithBar = () => <Button onClick={action('clicked bar')} foo='bar' />;
 //export const WithBaz = () => <Button onClick={action('clicked baz')} foo='baz' />;
