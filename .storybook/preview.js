@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { addParameters, addDecorator } from '@storybook/react';
+import { addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
