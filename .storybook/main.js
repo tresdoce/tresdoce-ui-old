@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require("webpack");
+
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = {
@@ -16,6 +18,7 @@ module.exports = {
       },
     },
     '@storybook/addon-knobs',
+    '@storybook/addon-controls',
     '@storybook/addon-docs/register',
     '@storybook/addon-links',
     '@storybook/addon-a11y',
@@ -119,6 +122,14 @@ module.exports = {
         },
       },
     };
+
+    config.plugins.push(
+      // Removing Speedy so the static storybook styling doesn't break
+      new webpack.DefinePlugin({
+        SC_DISABLE_SPEEDY: true
+      })
+    );
+
 
     return config;
   },
