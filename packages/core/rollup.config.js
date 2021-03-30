@@ -4,12 +4,13 @@ import commonjs from "@rollup/plugin-commonjs";
 import image from '@rollup/plugin-image'
 import json from '@rollup/plugin-json';
 import { terser } from "rollup-plugin-terser";
+import css from "rollup-plugin-import-css";
 import typescript from "rollup-plugin-typescript2";
 
 const packageJson = require("./package.json");
 
 export default {
-    input: "src/index.js",
+    input: "src/index.ts",
     output: [
         {
             file: packageJson.main,
@@ -29,6 +30,7 @@ export default {
         image(),
         json(),
         terser(),
+        css(),
         typescript({useTsconfigDeclarationDir: true})
     ]
 };

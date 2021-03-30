@@ -4,15 +4,20 @@ import Button from './Button';
 
 import { withKnobs, text} from '@storybook/addon-knobs';
 
-//import mdx from './Button.mdx';
-
 export default {
   title: 'Components/Button',
   component: Button,
   decorators: [withKnobs],
-  /*docs: {
-    page: mdx,
-  },*/
+  parameters:{
+  },
+  argTypes: {
+    foo: {
+      name: "foo",
+      description: "Text of button description",
+      defaultValue: 'foo',
+      control: 'text',
+    },
+  },
 } as Meta;
 
 export const Default = () => {

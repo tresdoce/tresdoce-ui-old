@@ -1,8 +1,7 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
 import { TestComponentProps } from './TestComponent.types';
-import './style.css'
+import './styles.css'
 
 const TestComponent: React.FC<TestComponentProps> = ({ theme }) => (
   <div data-testid='test-component' className={theme}>
