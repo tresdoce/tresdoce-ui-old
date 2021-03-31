@@ -10,10 +10,11 @@ export default {
 } as Meta;
 
 export const Default = () => {
-  const theme = select('theme',{
+  const themeOptions = {
     'primary': 'primary',
-    'secondary': 'secondary'
-  }, 'primary', 'GROUP-THEME');
-
-  return <TestComponent theme={theme} />
-}
+    'secondary': 'secondary',
+  };
+  const theme = select('Theme', themeOptions, 'primary', 'GROUP-THEME');
+  console.log(theme)
+  return <TestComponent theme={theme} />;
+};

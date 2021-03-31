@@ -74,13 +74,14 @@
     "printWidth": 100
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "styled-components": "^5.1.1"
   },
   "resolutions": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
