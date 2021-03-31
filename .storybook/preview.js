@@ -1,21 +1,18 @@
-/*
-import * as React from 'react';
-
+import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
-import { withKnobs } from '@storybook/addon-knobs';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { version } from '../packages/core/package.json';
 import { create } from '@storybook/theming';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
-const theme = create({
+/*const theme = create({
   base: 'light',
   brandTitle: `TresDoce-UI ${version}`,
   brandUrl: 'https://github.com/tresdoce/tresdoce-ui',
-});
+});*/
 
-export const parameters = {
+/*export const parameters = {
   layout: 'centered',
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: { expanded: true },
@@ -33,9 +30,9 @@ export const parameters = {
     container: DocsContainer,
     page: DocsPage,
   },
-};
+};*/
 
-export const globalTypes = {
+/*export const globalTypes = {
   theme: {
     name: 'TresDoce',
     description: 'Global theme for components',
@@ -46,8 +43,7 @@ export const globalTypes = {
       items: ['light', 'dark'],
     },
   },
-};
+};*/
 
-addDecorator(withKnobs);
-addDecorator(withA11y);
-*/
+
+//addDecorator(withA11y);

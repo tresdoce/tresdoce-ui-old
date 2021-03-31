@@ -14,7 +14,7 @@ export const Default = () => {
     'primary': 'primary',
     'secondary': 'secondary',
   };
-  const theme: string = select('Theme', themeOptions, 'primary', 'GROUP-THEME');
+  const theme = select('Theme', themeOptions, 'primary', 'GROUP-THEME');
 
   return <TestComponent theme={theme} />;
 };

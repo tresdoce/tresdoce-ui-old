@@ -25,8 +25,8 @@ module.exports = {
     {
       name: '@storybook/addon-essentials',
       options: {
-        actions: false,
-        backgrounds: false,
+        actions: true,
+        backgrounds: true,
         controls: true,
         docs: true,
         viewport:true,
@@ -121,15 +121,13 @@ module.exports = {
           '@tresdoce-ui/core': path.resolve(__dirname, '../', 'packages/core/src'),
         },
       },
+      plugins: [
+        ...config.plugins,
+        new webpack.DefinePlugin({
+          SC_DISABLE_SPEEDY: true
+        })
+      ]
     };
-
-    config.plugins.push(
-      // Removing Speedy so the static storybook styling doesn't break
-      new webpack.DefinePlugin({
-        SC_DISABLE_SPEEDY: true
-      })
-    );
-
 
     return config;
   },
