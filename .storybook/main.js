@@ -5,9 +5,8 @@ const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = {
   stories: [
-    '../packages/core/src/**/*.stories.@(tsx|ts|jsx|js)',
+    '../packages/core/src/**/*.stories.@(tsx|ts|jsx|js|mdx)',
   ],
-
   addons: [
     {
       name: '@storybook/addon-docs',
@@ -140,5 +139,9 @@ module.exports = {
       esModuleInterop: true,
       propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
     },
+  },
+  reactOptions: {
+    fastRefresh: true,
+    strictMode: true,
   },
 };
