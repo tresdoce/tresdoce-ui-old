@@ -8,8 +8,8 @@ export default {
   title: 'Components/Button',
   component: Button,
   decorators: [withKnobs],
-  parameters:{
-  },
+  /*parameters:{
+  },*/
   argTypes: {
     foo: {
       name: "foo",

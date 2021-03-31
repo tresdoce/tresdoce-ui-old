@@ -1,3 +1,4 @@
+/*
 import * as React from 'react';
 
 import { addDecorator } from '@storybook/react';
@@ -49,3 +50,4 @@ export const globalTypes = {
 
 addDecorator(withKnobs);
 addDecorator(withA11y);
+*/
