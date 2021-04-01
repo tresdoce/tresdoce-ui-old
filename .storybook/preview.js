@@ -8,13 +8,13 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 
 
-/*const theme = create({
+const theme = create({
   base: 'light',
   brandTitle: `TresDoce-UI ${version}`,
   brandUrl: 'https://github.com/tresdoce/tresdoce-ui',
-});*/
+});
 
-/*export const parameters = {
+export const parameters = {
   layout: 'centered',
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: { expanded: true },
@@ -32,9 +32,9 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
     container: DocsContainer,
     page: DocsPage,
   },
-};*/
+};
 
-/*export const globalTypes = {
+export const globalTypes = {
   theme: {
     name: 'TresDoce',
     description: 'Global theme for components',
@@ -45,7 +45,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
       items: ['light', 'dark'],
     },
   },
-};*/
+};
 
 
 //addDecorator(withA11y);
