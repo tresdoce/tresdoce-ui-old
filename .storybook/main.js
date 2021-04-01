@@ -1,7 +1,6 @@
-const path = require('path');
-const webpack = require("webpack");
-
-const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
+// const path = require('path');
+// const webpack = require("webpack");
+// const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = {
   stories: [
@@ -35,7 +34,7 @@ module.exports = {
     '@storybook/addons',
     '@storybook/addon-viewport',
   ],
-  webpackFinal: async (config) => {
+  /*webpackFinal: async (config) => {
     config = {
       ...config,
       module: {
@@ -50,14 +49,17 @@ module.exports = {
             },
           },
           {
+            loader: require.resolve("react-docgen-typescript-loader")
+          },
+          {
             test: /\.scss$/,
             use: ['style-loader', 'css-loader', 'sass-loader'],
-            include: path.resolve(__dirname, '../', 'packages/**/*'),
+            include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
           },
           {
             test: /\.less$/,
             use: ['style-loader', 'css-loader', 'less-loader'],
-            include: path.resolve(__dirname, '../', 'packages/**/*'),
+            include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
           },
           {
             test: /\.css$/,
@@ -71,7 +73,7 @@ module.exports = {
               },
               'postcss-loader',
             ],
-            include: path.resolve(__dirname, '../', 'packages/**/*'),
+            include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
           },
           {
             test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
@@ -81,7 +83,7 @@ module.exports = {
                 limit: 900000,
               },
             },
-            include: path.resolve(__dirname, '../', 'packages/**/*'),
+            include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
           },
           {
             test: /\.(stories|story)\.mdx$/,
@@ -129,7 +131,7 @@ module.exports = {
     };
 
     return config;
-  },
+  },*/
   typescript: {
     check: false,
     checkOptions: {},
