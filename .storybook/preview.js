@@ -1,10 +1,12 @@
 import React from 'react';
-import { addDecorator } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
-import { version } from '../packages/core/package.json';
-import { create } from '@storybook/theming';
+import { create, themes } from '@storybook/theming';
+import { addDecorator, addParameters } from "@storybook/react";
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
+import { version } from '../packages/core/package.json';
+
 
 const theme = create({
   base: 'light',
@@ -15,9 +17,12 @@ const theme = create({
 export const parameters = {
   layout: 'centered',
   actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: { expanded: true },
   viewport:{
     viewports: INITIAL_VIEWPORTS
+  },
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
   },
   options: {
     theme,
@@ -26,10 +31,7 @@ export const parameters = {
     storySort: (a, b) =>
       a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
-  docs: {
-    container: DocsContainer,
-    page: DocsPage,
-  },
+  controls: { expanded: true },
 };
 
 export const globalTypes = {
@@ -39,11 +41,13 @@ export const globalTypes = {
     defaultValue: 'light',
     toolbar: {
       icon: 'circlehollow',
-      // array of plain string values or MenuItem shape (see below)
-      items: ['light', 'dark'],
+      items: [
+        { icon: 'circlehollow', title: 'light', value: 'light' },
+        { icon: 'circle', title: 'dark', value: 'dark' },
+      ],
     },
-  },
+  }
 };
 
-
+addDecorator(withKnobs);
 //addDecorator(withA11y);

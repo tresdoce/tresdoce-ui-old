@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
 import TestComponent from './TestComponent';
-import { select, withKnobs } from '@storybook/addon-knobs';
+
+import { select } from '@storybook/addon-knobs';
 
 export default {
   title: 'Components/TestComponent',
   component: TestComponent,
-  decorators: [withKnobs],
 } as Meta;
 
 export const Default = () => {

@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   stories: [
     //'../packages/brand/src/**/*.stories.@(tsx|ts|jsx|js|mdx)',
@@ -14,15 +12,16 @@ module.exports = {
         sourceLoaderOptions: null,
       },
     },
+    '@storybook/addon-docs/register',
+    '@storybook/addon-backgrounds',
     '@storybook/addon-knobs',
     '@storybook/addon-controls',
-    '@storybook/addon-docs/register',
     '@storybook/addon-links',
     '@storybook/addon-a11y',
     {
       name: '@storybook/addon-essentials',
       options: {
-        actions: true,
+        actions: false,
         backgrounds: true,
         controls: true,
         docs: true,
@@ -31,6 +30,7 @@ module.exports = {
       }
     },
     '@storybook/addons',
+    '@storybook/addon-toolbars',
     '@storybook/addon-viewport',
   ],
   typescript: {
