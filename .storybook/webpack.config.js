@@ -52,7 +52,7 @@ module.exports = async ({ config }) => {
           include: path.resolve(__dirname, '../', 'packages/**/*'),
         },
         {
-          test: /\.(stories|story)\.mdx$/,
+          test: /\.(stories|story)\.(md|mdx)$/,
           use: [
             {
               loader: 'babel-loader',
@@ -68,9 +68,10 @@ module.exports = async ({ config }) => {
               },
             },
           ],
+          include: path.resolve(__dirname, '../', 'packages/**/*'),
         },
         {
-          test: /\.(stories|story)\.(tsx|ts|jsx|js)$/,
+          test: /\.(stories|story)\.(tsx|ts|jsx|js|mdx)$/,
           loader: require.resolve('@storybook/source-loader'),
           exclude: [/node_modules/],
           enforce: 'pre',

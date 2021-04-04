@@ -22,7 +22,8 @@ export const parameters = {
   },
   docs: {
     container: DocsContainer,
-    page: DocsPage,
+    theme: themes.light,
+    page: () => <DocsPage subtitleSlot={({ kind }) => `Subtitle: ${kind}`} />,
   },
   options: {
     theme,
@@ -32,6 +33,14 @@ export const parameters = {
       a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
   controls: { expanded: true },
+  exportedParameter: 'exportedParameter',
+  a11y: {
+    config: {},
+    options: {
+      checks: { 'color-contrast': { options: { noScroll: true } } },
+      restoreScroll: true,
+    },
+  },
 };
 
 export const globalTypes = {
@@ -50,4 +59,4 @@ export const globalTypes = {
 };
 
 addDecorator(withKnobs);
-//addDecorator(withA11y);
+addDecorator(withA11y);
