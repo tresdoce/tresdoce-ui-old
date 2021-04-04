@@ -4,7 +4,7 @@ const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = async ({ config }) => {
   //console.log(config)
-  /*config = {
+  config = {
     ...config,
     module: {
       ...config.module,
@@ -18,17 +18,14 @@ module.exports = async ({ config }) => {
           },
         },
         {
-          loader: require.resolve("react-docgen-typescript-loader")
-        },
-        {
           test: /\.scss$/,
           use: ['style-loader', 'css-loader', 'sass-loader'],
-          include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
+          include: path.resolve(__dirname, '../', 'packages/**/*'),
         },
         {
           test: /\.less$/,
           use: ['style-loader', 'css-loader', 'less-loader'],
-          include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
+          include: path.resolve(__dirname, '../', 'packages/**/*'),
         },
         {
           test: /\.css$/,
@@ -42,7 +39,7 @@ module.exports = async ({ config }) => {
             },
             'postcss-loader',
           ],
-          include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
+          include: path.resolve(__dirname, '../', 'packages/**/*'),
         },
         {
           test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
@@ -52,7 +49,7 @@ module.exports = async ({ config }) => {
               limit: 900000,
             },
           },
-          include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
+          include: path.resolve(__dirname, '../', 'packages/**/*'),
         },
         {
           test: /\.(stories|story)\.mdx$/,
@@ -97,8 +94,7 @@ module.exports = async ({ config }) => {
         SC_DISABLE_SPEEDY: true
       })
     ]
-  }*/
-
+  }
 
   return config;
 };

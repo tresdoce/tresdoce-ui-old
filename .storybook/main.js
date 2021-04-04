@@ -1,5 +1,8 @@
+const path = require('path');
+
 module.exports = {
   stories: [
+    //'../packages/brand/src/**/*.stories.@(tsx|ts|jsx|js|mdx)',
     '../packages/core/src/**/*.stories.@(tsx|ts|jsx|js|mdx)',
   ],
   addons: [
