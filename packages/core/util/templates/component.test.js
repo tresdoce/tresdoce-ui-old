@@ -1,5 +1,6 @@
 module.exports = (componentName) => ({
   filename: componentName,
+  extension: `.test.tsx`,
   content: `import * as React from "react";
 import { render } from "@testing-library/react";
 import ${componentName} from "./${componentName}";
@@ -18,6 +19,5 @@ describe("Test Component", () => {
     const component = getByTestId("${componentName}");
     expect(component).toHaveTextContent("harvey was here");
   });
-});`,
-  extension: `.test.tsx`
+});`
 });

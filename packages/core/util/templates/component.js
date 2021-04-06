@@ -1,13 +1,14 @@
 module.exports = (componentName) => ({
   filename: componentName,
-  content: `import * as React from "react";
+  extension: `.tsx`,
+  content: `import React from "react";
 import { ${componentName}Props } from "./${componentName}.types";
-//import "./${componentName}.scss";
+import { ${componentName}Styles } from "./styles.jsx";
 
 const ${componentName}: React.FC<${componentName}Props> = ({ foo }) => (
-    <div data-testid="${componentName}" className="foo-bar">{foo}</div>
+    <${componentName}Styles data-testid="${componentName}">{foo}</${componentName}Styles>
 );
 
 export default ${componentName};`,
-  extension: `.tsx`
+
 });

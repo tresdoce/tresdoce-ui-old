@@ -1,0 +1,27 @@
+import { Meta, Preview } from '@storybook/addon-docs/blocks';
+import TestComponent from './TestComponent';
+
+<Meta title="Component/TestComponent" component={TestComponent} />
+
+# TestComponent
+
+I can embed a story (but not define one, since this file should not contain a `Meta`):
+
+<Preview >
+  <div>
+    <TestComponent theme={'primary'}/>
+  </div>
+</Preview>
+
+
+And I can also embed arbitrary markdown & JSX in this file.
+
+<Preview >
+  <div>
+    <TestComponent theme={'secondary'}/>
+  </div>
+</Preview>
+
+```javascript
+theme: 'primary' | 'secondary'
+```
