@@ -1,17 +1,21 @@
-import {  Story, Canvas } from '@storybook/addon-docs/blocks';
-import * as stories from './Button.stories.tsx';
-import Button  from './Button';
+import { Meta, Preview } from '@storybook/addon-docs/blocks';
+import Button from './Button';
 
+<Meta title="Component/Button" component={Button} />
 
 # Button
 
 I can embed a story (but not define one, since this file should not contain a `Meta`):
-<Canvas>
-  <Story id="component-button-primary" name={"Primary"} story={stories.Primary} >
-    <Button foo={'foo test'} onClick={() => alert("click mdx")} />
-  </Story>
-</Canvas>
+
+<Preview >
+  <div>
+    <Button foo={'dsad'} onClick={()=>alert('dsad')}/>
+  </div>
+</Preview>
+
 
 And I can also embed arbitrary markdown & JSX in this file.
 
-<Button foo={'foo test'} onClick={() => alert("click mdx")} />
+```javascript
+foo: text
+```

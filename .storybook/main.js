@@ -3,7 +3,17 @@ module.exports = {
     '../packages/core/src/**/*.stories.@(tsx|ts|jsx|js)',
   ],
   addons: [
-    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false,
+        backgrounds: true,
+        controls: true,
+        docs: true,
+        viewport:true,
+        toolbars:true
+      }
+    },
     '@storybook/addon-knobs',
     '@storybook/addon-controls',
     '@storybook/addon-a11y',
@@ -21,37 +31,6 @@ module.exports = {
     '@storybook/addon-storysource',
     '@storybook/react'
   ],
-  /*addons: [
-  '@storybook/addon-docs/register',
-    {
-      name: '@storybook/addon-docs',
-      options: {
-        configureJSX: true,
-        babelOptions: {},
-        sourceLoaderOptions: null,
-      },
-    },
-
-    '@storybook/addon-backgrounds',
-    '@storybook/addon-knobs',
-    '@storybook/addon-controls',
-    '@storybook/addon-links',
-    '@storybook/addon-a11y',
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: false,
-        backgrounds: true,
-        controls: true,
-        docs: true,
-        viewport:true,
-        toolbars:true
-      }
-    },
-    '@storybook/addons',
-    '@storybook/addon-toolbars',
-    '@storybook/addon-viewport',
-  ],*/
   typescript: {
     check: false,
     checkOptions: {},
