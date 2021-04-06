@@ -1,9 +1,13 @@
 module.exports = {
   stories: [
-    //'../packages/brand/src/**/*.stories.@(tsx|ts|jsx|js|mdx)',
-    '../packages/core/src/**/*.stories.@(tsx|ts|jsx|js|mdx)',
+    '../packages/core/src/**/*.stories.@(tsx|ts|jsx|js)',
   ],
   addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-knobs',
+    '@storybook/addon-controls',
+    '@storybook/addon-a11y',
+    '@storybook/addon-docs/register',
     {
       name: '@storybook/addon-docs',
       options: {
@@ -12,7 +16,22 @@ module.exports = {
         sourceLoaderOptions: null,
       },
     },
-    '@storybook/addon-docs/register',
+    '@storybook/addon-links',
+    '@storybook/addon-viewport',
+    '@storybook/addon-storysource',
+    '@storybook/react'
+  ],
+  /*addons: [
+  '@storybook/addon-docs/register',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        configureJSX: true,
+        babelOptions: {},
+        sourceLoaderOptions: null,
+      },
+    },
+
     '@storybook/addon-backgrounds',
     '@storybook/addon-knobs',
     '@storybook/addon-controls',
@@ -32,7 +51,7 @@ module.exports = {
     '@storybook/addons',
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport',
-  ],
+  ],*/
   typescript: {
     check: false,
     checkOptions: {},
