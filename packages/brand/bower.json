@@ -1,0 +1,26 @@
+{
+  "name": "brand",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Maximiliano \"Mex\" Delgado",
+    "email": "mdelgado@tresdoce.com.ar",
+    "url": "https://rudemex.github.io/"
+  },
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower_components",
+    "build"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "fontawesome": "^5.15.3"
+  }
+}

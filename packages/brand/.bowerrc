@@ -1,0 +1,11 @@
+{
+    "directory": "assets/bower_components/",
+    "registry": {
+        "search":["http://143.198.236.101:8081/repository/bower-group"]
+    },
+    "resolvers" : [ "bower-nexus3-resolver" ],
+    "nexus" : {
+        "username" : "admin",
+        "password" : "2Wsdfgt543@"
+    }
+}
