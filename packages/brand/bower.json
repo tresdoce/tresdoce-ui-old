@@ -2,11 +2,7 @@
   "name": "brand",
   "version": "1.0.0",
   "private": true,
-  "author": {
-    "name": "Maximiliano \"Mex\" Delgado",
-    "email": "mdelgado@tresdoce.com.ar",
-    "url": "https://rudemex.github.io/"
-  },
+  "authors": ["Maximiliano \"Mex\" Delgado <mdelgado@tresdoce.com.ar>"],
   "moduleType": [
     "amd",
     "globals"
@@ -16,8 +12,8 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "assets/bower_components",
-    "build"
+    "test",
+    "tests"
   ],
   "dependencies": {
     "bootstrap": "^4.6.0",

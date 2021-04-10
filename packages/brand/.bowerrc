@@ -1,7 +1,7 @@
 {
     "directory": "assets/bower_components/",
     "registry": {
-        "search":["http://143.198.236.101:8081/repository/bower-group"]
+        "search":["http://admin:2Wsdfgt543@@143.198.236.101:8081/repository/bower-group"]
     },
     "resolvers" : [ "bower-nexus3-resolver" ],
     "nexus" : {
