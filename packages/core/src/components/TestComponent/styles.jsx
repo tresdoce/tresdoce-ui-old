@@ -7,13 +7,19 @@ export const StyledDiv = styled.div`
   width: 360px;
   text-align: center;
   ${(props) =>
-  props.theme === "secondary" &&
+  props.type === "secondary" &&
   `background-color: black;
      color: white;`}
 `;
 
 export const StyledHeading = styled.h1`
-  font-size: 32px;
+  ${(props) => `
+    font-size: ${props.theme.typography.fontSizeH1}
+  `}
 `;
 
-export const StyledDescription = styled.h2``;
+export const StyledDescription = styled.h2`
+  ${(props) => `
+    font-size: ${props.theme.typography.fontSizeH2}
+  `}
+`;

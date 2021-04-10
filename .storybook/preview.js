@@ -1,13 +1,12 @@
 import React from 'react';
 import { addDecorator } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
-import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
 import tdTheme from './theme';
 
-import { createTheme }  from '../packages/brand/src/index';
+import { createTheme } from '../packages/brand/src/';
+import { Layout } from '../packages/core/src/index';
 
 export const parameters = {
   layout: 'centered',
@@ -44,17 +43,21 @@ export const globalTypes = {
   },
 };
 
-addDecorator(renderStory => (
-  <ThemeProvider theme={createTheme()}>
-    {renderStory()}
-  </ThemeProvider>
-));
+const theme = createTheme({
+  palette: {
+    primary: 'blue',
+    secondary: 'red',
+  },
+  typography: {
+    htmlFontSize: 50,
+  },
+});
 
-addDecorator(
-  withInfo({
-    header: true,
-    inline: true,
-    propTablesExclude: [ThemeProvider] // do not display propTable for HOC
-  })
+const GlobalWrapper = story => (
+  <>
+    <Layout theme={theme} cdnBasepath={''}>{story()}</Layout>
+  </>
 );
+
+addDecorator(GlobalWrapper);
 addDecorator(withKnobs);

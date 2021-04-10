@@ -1,6 +1,5 @@
-type ThemeTypes = "primary" | "secondary";
-
 export interface TestComponentProps {
-    theme: ThemeTypes;
+    type: "primary" | "secondary";
+    theme?: any;
 }
 

@@ -29,7 +29,6 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-viewport',
     '@storybook/addon-storysource',
-    '@storybook/addon-info',
     '@storybook/react'
   ],
   typescript: {
