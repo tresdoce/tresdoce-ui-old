@@ -1,7 +1,13 @@
 import React from 'react';
+import { addDecorator } from '@storybook/react';
+import { ThemeProvider } from 'styled-components';
+import { withInfo } from '@storybook/addon-info';
+import { withKnobs } from '@storybook/addon-knobs';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
 import tdTheme from './theme';
+
+import { createTheme }  from '../packages/brand/src/index';
 
 export const parameters = {
   layout: 'centered',
@@ -37,3 +43,18 @@ export const globalTypes = {
     defaultValue: 'light',
   },
 };
+
+addDecorator(renderStory => (
+  <ThemeProvider theme={createTheme()}>
+    {renderStory()}
+  </ThemeProvider>
+));
+
+addDecorator(
+  withInfo({
+    header: true,
+    inline: true,
+    propTablesExclude: [ThemeProvider] // do not display propTable for HOC
+  })
+);
+addDecorator(withKnobs);
