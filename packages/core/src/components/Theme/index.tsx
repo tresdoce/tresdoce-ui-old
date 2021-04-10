@@ -1,7 +1,8 @@
 import React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
+import { createTheme } from '@tresdoce-ui/brand';
 
-import { createTheme } from '../../../../brand/build';
+//import { createTheme } from '../../../../brand/build';
 
 export interface ThemeProps {
   theme?: any;
