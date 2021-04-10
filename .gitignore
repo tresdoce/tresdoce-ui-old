@@ -23,6 +23,8 @@ build/**
 yarn.lock
 package-lock.json
 
+packages/brand/assets/bower_components
+packages/brand/assets/bower_components/*
 
 
 # Ignores
