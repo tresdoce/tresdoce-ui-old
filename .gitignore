@@ -28,6 +28,7 @@ package-lock.json
 # Ignores
 /node_modules
 ./dist/**
+./dist
 coverage
 /coverage
 coverage/*
