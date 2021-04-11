@@ -10,14 +10,14 @@ export interface Typography {
   fontWeightNormal: number;
   fontWeightLight: number;
   fontWeightBold: number;
-};
+}
 
 export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[K] } & {
   fontSize?: number;
   htmlFontSize?: number;
 };
 
-const defaultFontFamily = "'PX Grotesk', sansSerif";
+const defaultFontFamily = '\'DINNextLTPro-Condensed\', sansSerif';
 
 const createTypography = (typography: TypographyInput): Typography => {
   const {
@@ -30,7 +30,7 @@ const createTypography = (typography: TypographyInput): Typography => {
     /* weights */
     fontWeightNormal = 400,
     fontWeightLight = 300,
-    fontWeightBold = 700
+    fontWeightBold = 700,
   } = typography;
 
   const coef = fontSize / 14;
@@ -47,7 +47,7 @@ const createTypography = (typography: TypographyInput): Typography => {
     fontSizeButton: pxToRem(14),
     fontWeightNormal,
     fontWeightLight,
-    fontWeightBold
+    fontWeightBold,
   };
 };
 
