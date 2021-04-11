@@ -1,115 +1,27 @@
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	footer {
-        margin-top: -@footerH-desktop;
+  footer {
+    margin-top: -@footerH-desktop;
+  }
 
-        .pre-footer{
-            & > .container {
-
-                .suscribe-newsletter-content{
-                    form{
-                        margin-bottom: 0px;
-                    }
-                }
-
-                .data-fiscal-content{
-                    a{
-                        img{
-                            margin-top: 0px;
-                            margin: auto;
-                        }
-                    }
-                }
-
-            }
-        }
-
-        .legals{
-            padding-bottom: 0px;
-        }
+  .custom {
+    .wrapper {
+      .main-content {
+        padding-top: @navH-tablet;
+        padding-bottom: @footerH-tablet;
+      }
     }
+  }
 
-    .navbar{
-        height: @navH-desktop;
-        .navbar-header{
-            .navbar-brand{
-            	/*margin: 14px 0px;
-                width: 110px;
-                height: 52px;*/
-            }
-        }
 
-        .navbar-collapse{
-            .nav{
-            	li{
-					&.dropdown{
-	                    .dropdown-menu{
+  // HOME
+  #home {
+    .wrapper {
+      .main-content {
 
-	                    }
-	                }
-	            }
-            }
-        }
+
+      }
     }
+  }
 
-    .custom{
-        .wrapper {
-            .main-content {
-            	padding-top: @navH-tablet;
-                padding-bottom: @footerH-tablet;
-            }
-        }
-    }
-
-
-    // HOME
-    #home{
-        .wrapper{
-            .main-content{
-
-                header{
-                }
-            }
-        }
-    }
-
-    // ABOUT
-    #about{
-        .wrapper{
-            .main-content{
-            }
-        }
-    }
-
-    // PRODUCTS
-    #products{
-        .wrapper{
-            .main-content{
-            }
-        }
-    }
-
-    // PRODUCT
-    #product{
-        .wrapper{
-            .main-content{
-            }
-        }
-    }
-
-    // LOOKBOOK
-    #lookbook{
-        .wrapper{
-            .main-content{
-            }
-        }
-    }
-
-    // CONTACTO
-    #contacto{
-        .wrapper{
-            .main-content{
-            }
-        }
-    }
 }

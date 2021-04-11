@@ -3,15 +3,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
-  context: path.resolve(__dirname, 'assets/styles/'),
+  context: path.resolve(__dirname, 'assets/less/'),
   entry: {
-    'theme-classic': './classic.scss',
-    'theme-eminent': './eminent.scss',
-    'theme-move': './move.scss',
+    'theme': './app.less',
   },
 
   module: {
     rules: [
+      {
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader', 'less-loader'],
+      },
       {
         test: /.(scss|css)$/,
         exclude: /node_modules/,
@@ -31,7 +33,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(path.join(__dirname, './assets-brick/css')),
+    path: path.resolve(path.join(__dirname, './assets/css')),
   },
   plugins: [
     new MiniCssExtractPlugin({

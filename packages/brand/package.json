@@ -19,9 +19,10 @@
     "test:watch": "jest --watch",
     "build": "npm-run-all -l -c -s clear build:style rollup",
     "clear": "rimraf build",
-    "clear:css":"rimraf ./assets/css/*",
+    "clear:css": "rimraf ./assets/css/*",
     "rollup": "rollup -c",
     "prepublishOnly": "npm run build",
+    "watch": "webpack -w",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.mdx src util"
   },
   "keywords": [
@@ -113,8 +114,11 @@
     "csso": "^4.2.0",
     "csso-cli": "^3.0.0",
     "less": "^4.1.1",
+    "less-loader": "^8.1.0",
     "less-watch-compiler": "^1.14.6",
+    "mini-css-extract-plugin": "^1.4.1",
     "npm-run-all": "^4.1.5",
+    "postcss-loader": "^5.2.0",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -128,7 +132,10 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
     "signale-logger": "^1.5.0",
+    "style-loader": "^2.0.0",
     "ts-loader": "^8.1.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0"
   }
 }
