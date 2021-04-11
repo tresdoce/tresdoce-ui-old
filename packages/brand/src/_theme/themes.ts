@@ -1,7 +1,7 @@
 import { colors } from './colors';
 import { properties, variants } from './fonts';
 import { themeImages } from './images';
-import { spacing } from './spacing';
+import { spacing } from '../theme/spacing';
 
 export interface Theme {
   images?: any;
