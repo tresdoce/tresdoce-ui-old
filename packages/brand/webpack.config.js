@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(path.join(__dirname, './assets/css')),
+    path: path.resolve(path.join(__dirname, './assets/themes')),
   },
   module: {
     rules: [

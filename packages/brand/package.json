@@ -22,7 +22,7 @@
     "clear:css": "rimraf ./assets/css/*",
     "rollup": "rollup -c",
     "prepublishOnly": "npm run build",
-    "compile-less": "webpack",
+    "compile:themes": "webpack",
     "watch": "webpack -w",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.mdx src util"
   },
