@@ -1,3 +1,11 @@
+export interface FontAlign{
+  [name: string]: string;
+}
+
+export interface FontWeight{
+  [name: string]: string | number;
+}
+
 export interface Typography {
   fontFamily: string;
   fontSizeH1: string;
@@ -8,9 +16,8 @@ export interface Typography {
   fontSizeH6: string;
   fontSizeP: string;
   fontSizeButton: string;
-  fontWeightNormal: number;
-  fontWeightLight: number;
-  fontWeightBold: number;
+  align: FontAlign;
+  weight: FontWeight;
 }
 
 export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[K] } & {
@@ -45,6 +52,30 @@ const size = {
   px96: 96,
 }
 
+const fontWeight = {
+  extraLight: 100,
+  light: 300,
+  normal: 'normal',
+  regular: 400,
+  semiBold: 500,
+  bold: 'bold',
+  ultraBold:900
+};
+
+const align = {
+  center: 'center',
+  left: 'lef',
+  right: 'right',
+};
+
+const fontFamily = {
+  ultraLight: ' \'DINNextLTPro-UltraLightCond\', Helvetica, Arial, sans-serif',
+  light: '\'DINNextLTPro-LightCondensed\', Helvetica, Arial, sans-serif',
+  regular: defaultFontFamily,
+  medium: '\'DINNextLTPro-MediumCond\', Helvetica, Arial, sans-serif',
+  bold: '\'DINNextLTPro-BoldCondensed\', Helvetica, Arial, sans-serif'
+};
+
 const createTypography = (typography: TypographyInput): Typography => {
   const {
     fontFamily = defaultFontFamily,
@@ -53,10 +84,6 @@ const createTypography = (typography: TypographyInput): Typography => {
     fontSize = size.px14,
     htmlFontSize = size.px16,
 
-    /* weights */
-    fontWeightNormal = 400,
-    fontWeightLight = 300,
-    fontWeightBold = 700,
   } = typography;
 
   const coef = fontSize / size.px14;
@@ -72,9 +99,8 @@ const createTypography = (typography: TypographyInput): Typography => {
     fontSizeH6: pxToRem(size.px16),
     fontSizeP: pxToRem(size.px16),
     fontSizeButton: pxToRem(size.px14),
-    fontWeightNormal,
-    fontWeightLight,
-    fontWeightBold,
+    align,
+    weight: fontWeight
   };
 };
 
