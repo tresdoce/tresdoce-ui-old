@@ -1,3 +1,7 @@
+export interface FontFamily{
+  [name: string]: string;
+}
+
 export interface FontAlign{
   [name: string]: string;
 }
@@ -7,7 +11,6 @@ export interface FontWeight{
 }
 
 export interface Typography {
-  fontFamily: string;
   fontSizeH1: string;
   fontSizeH2: string;
   fontSizeH3: string;
@@ -18,6 +21,7 @@ export interface Typography {
   fontSizeButton: string;
   align: FontAlign;
   weight: FontWeight;
+  family: FontFamily,
 }
 
 export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[K] } & {
@@ -26,6 +30,15 @@ export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[
 };
 
 const defaultFontFamily = '\'DINNextLTPro-Condensed\', Helvetica, Arial, sans-serif';
+
+const family = {
+  ultraLight: '\'DINNextLTPro-UltraLightCond\', Helvetica, Arial, sans-serif',
+  light: '\'DINNextLTPro-LightCondensed\', Helvetica, Arial, sans-serif',
+  regular: defaultFontFamily,
+  medium: '\'DINNextLTPro-MediumCond\', Helvetica, Arial, sans-serif',
+  bold: '\'DINNextLTPro-BoldCondensed\', Helvetica, Arial, sans-serif',
+  sans: '\'Helvetica\', Arial, Trebuchet MS, sans-serif'
+};
 
 const size = {
   px8: 8,
@@ -52,7 +65,7 @@ const size = {
   px96: 96,
 }
 
-const fontWeight = {
+const weight = {
   extraLight: 100,
   light: 300,
   normal: 'normal',
@@ -68,29 +81,18 @@ const align = {
   right: 'right',
 };
 
-const fontFamily = {
-  ultraLight: ' \'DINNextLTPro-UltraLightCond\', Helvetica, Arial, sans-serif',
-  light: '\'DINNextLTPro-LightCondensed\', Helvetica, Arial, sans-serif',
-  regular: defaultFontFamily,
-  medium: '\'DINNextLTPro-MediumCond\', Helvetica, Arial, sans-serif',
-  bold: '\'DINNextLTPro-BoldCondensed\', Helvetica, Arial, sans-serif'
-};
-
 const createTypography = (typography: TypographyInput): Typography => {
   const {
-    fontFamily = defaultFontFamily,
-
     /* sizes */
     fontSize = size.px14,
     htmlFontSize = size.px16,
-
   } = typography;
 
   const coef = fontSize / size.px14;
   const pxToRem = (size: number) => `${(size / htmlFontSize) * coef}rem`;
 
   return {
-    fontFamily,
+    family,
     fontSizeH1: pxToRem(size.px42),
     fontSizeH2: pxToRem(size.px32),
     fontSizeH3: pxToRem(size.px28),
@@ -100,7 +102,7 @@ const createTypography = (typography: TypographyInput): Typography => {
     fontSizeP: pxToRem(size.px16),
     fontSizeButton: pxToRem(size.px14),
     align,
-    weight: fontWeight
+    weight
   };
 };
 
