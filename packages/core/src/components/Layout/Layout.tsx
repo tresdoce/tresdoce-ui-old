@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeContext } from '../Theme';
+import FontBaseline from '../FontBaseline';
 
 
 export interface LayoutProps {
@@ -26,6 +27,7 @@ export const Layout: React.FC<LayoutProps> = ({
     {!container && children}
     {container && <div className='container-fluid'>{children}</div>}
 
+    <FontBaseline />
   </ThemeContext.Provider>
 );
 

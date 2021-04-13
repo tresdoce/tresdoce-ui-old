@@ -84,9 +84,10 @@
   },
   "dependencies": {
     "@tresdoce-ui/brand": "^1.0.0",
-    "styled-components": "^5.2.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.2.1",
+    "styled-jsx": "^3.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
@@ -104,6 +105,7 @@
     "@types/jest": "^26.0.22",
     "@types/react": "^17.0.3",
     "@types/styled-components": "^5.1.9",
+    "@types/styled-jsx": "^2.2.8",
     "babel-loader": "^8.2.2",
     "babel-plugin-styled-components": "^1.12.0",
     "babel-preset-react-app": "^10.0.0",
