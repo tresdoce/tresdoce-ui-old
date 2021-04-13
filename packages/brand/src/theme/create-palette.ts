@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export interface Palette {
   white: string;
   grey: string;
@@ -38,7 +40,7 @@ const createPalette = (palette: PaletteInput): Palette => {
     orange = '#F2711C',
     red = '#DB2828',
     primary = '#009688',
-    secondary = '#07C9B7'
+    secondary = '#07C9B7',
   } = palette;
 
   return {

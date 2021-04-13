@@ -1,27 +1,39 @@
-export interface FontFamily{
+declare interface FontFamily {
   [name: string]: string;
 }
 
-export interface FontAlign{
+declare interface FontSizes {
+  [name: string]: number;
+}
+
+declare interface LineHeight {
   [name: string]: string;
 }
 
-export interface FontWeight{
+declare interface LetterSpacing {
+  [name: string]: string;
+}
+
+declare interface FontWeight {
   [name: string]: string | number;
 }
 
+declare interface FontAlign {
+  [name: string]: string;
+}
+
+declare interface ApplicationsSizes {
+  [name: string]: string;
+}
+
 export interface Typography {
-  fontSizeH1: string;
-  fontSizeH2: string;
-  fontSizeH3: string;
-  fontSizeH4: string;
-  fontSizeH5: string;
-  fontSizeH6: string;
-  fontSizeP: string;
-  fontSizeButton: string;
-  align: FontAlign;
-  weight: FontWeight;
   family: FontFamily,
+  sizes: FontSizes;
+  lineHeight: LineHeight;
+  letterSpacing: LetterSpacing;
+  weight: FontWeight;
+  align: FontAlign;
+  applicationsSizes: ApplicationsSizes;
 }
 
 export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[K] } & {
@@ -29,18 +41,16 @@ export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[
   htmlFontSize?: number;
 };
 
-const defaultFontFamily = '\'DINNextLTPro-Condensed\', Helvetica, Arial, sans-serif';
-
 const family = {
   ultraLight: '\'DINNextLTPro-UltraLightCond\', Helvetica, Arial, sans-serif',
   light: '\'DINNextLTPro-LightCondensed\', Helvetica, Arial, sans-serif',
-  regular: defaultFontFamily,
+  regular: '\'DINNextLTPro-Condensed\', Helvetica, Arial, sans-serif',
   medium: '\'DINNextLTPro-MediumCond\', Helvetica, Arial, sans-serif',
   bold: '\'DINNextLTPro-BoldCondensed\', Helvetica, Arial, sans-serif',
-  sans: '\'Helvetica\', Arial, Trebuchet MS, sans-serif'
+  sans: '\'Helvetica\', Arial, Trebuchet MS, sans-serif',
 };
 
-const size = {
+const sizes = {
   px8: 8,
   px10: 10,
   px12: 12,
@@ -63,7 +73,37 @@ const size = {
   px84: 84,
   px92: 92,
   px96: 96,
-}
+};
+
+const lineHeight = {
+  space10: '10px',
+  space12: '12px',
+  space14: '14px',
+  space16: '16px',
+  space18: '18px',
+  space20: '20px',
+  space22: '22px',
+  space24: '24px',
+  space26: '26px',
+  space28: '28px',
+  space32: '32px',
+  space36: '36px',
+  space48: '48px',
+  space56: '56px',
+  space72: '72px',
+};
+
+const letterSpacing = {
+  neg03: '-0.03em',
+  neg02: '-0.02em',
+  neg01: '-0.01em',
+  normal: 'normal',
+  auto: 'auto',
+  space0: '0em',
+  space025: '0.025em',
+  space01: '0.01em',
+  space15: '0.15em',
+};
 
 const weight = {
   extraLight: 100,
@@ -72,7 +112,7 @@ const weight = {
   regular: 400,
   semiBold: 500,
   bold: 'bold',
-  ultraBold:900
+  ultraBold: 900,
 };
 
 const align = {
@@ -83,26 +123,31 @@ const align = {
 
 const createTypography = (typography: TypographyInput): Typography => {
   const {
-    /* sizes */
-    fontSize = size.px14,
-    htmlFontSize = size.px16,
+    fontSize = sizes.px14,
+    htmlFontSize = sizes.px16,
   } = typography;
 
-  const coef = fontSize / size.px14;
+  const coef = fontSize / sizes.px14;
   const pxToRem = (size: number) => `${(size / htmlFontSize) * coef}rem`;
 
   return {
     family,
-    fontSizeH1: pxToRem(size.px42),
-    fontSizeH2: pxToRem(size.px32),
-    fontSizeH3: pxToRem(size.px28),
-    fontSizeH4: pxToRem(size.px24),
-    fontSizeH5: pxToRem(size.px20),
-    fontSizeH6: pxToRem(size.px16),
-    fontSizeP: pxToRem(size.px16),
-    fontSizeButton: pxToRem(size.px14),
+    sizes,
+    lineHeight,
+    letterSpacing,
+    weight,
     align,
-    weight
+    applicationsSizes: {
+      H1: pxToRem(sizes.px42),
+      H2: pxToRem(sizes.px32),
+      H3: pxToRem(sizes.px28),
+      H4: pxToRem(sizes.px24),
+      H5: pxToRem(sizes.px20),
+      H6: pxToRem(sizes.px16),
+      p: pxToRem(sizes.px16),
+      button: pxToRem(sizes.px14),
+      href: pxToRem(sizes.px14),
+    },
   };
 };
 
