@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 declare interface FontFamily {
   [name: string]: string;
 }

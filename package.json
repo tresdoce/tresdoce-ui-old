@@ -20,7 +20,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run storybook",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s packages/brand/assets",
     "test": "lerna exec --no-bail npm run test",
     "lint": "lerna exec --no-bail npm run lint",
     "clear": "lerna exec --no-bail npm run clear",

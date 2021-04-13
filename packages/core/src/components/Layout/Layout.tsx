@@ -10,11 +10,11 @@ export interface LayoutProps {
   resetStyles?: boolean;
 }
 
-export const Layout: React.FunctionComponent<LayoutProps> = ({
- cdnBasepath,
- container,
- children,
- theme,
+export const Layout: React.FC<LayoutProps> = ({
+  cdnBasepath,
+  container,
+  children,
+  theme,
 }) => (
   <ThemeContext.Provider
     value={{
@@ -22,6 +22,7 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({
       cdnBasepath,
     }}
   >
+    {console.log('CORE Layout: ',theme)}
     {!container && children}
     {container && <div className='container-fluid'>{children}</div>}
 

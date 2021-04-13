@@ -1,3 +1,4 @@
+const path = require('path');
 import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
@@ -43,21 +44,18 @@ export const globalTypes = {
   },
 };
 
-const theme = createTheme({
-  palette: {
-    primary: 'blue',
-    secondary: 'red',
-  },
-  typography: {
-    htmlFontSize: 50,
-  },
-});
 
-const GlobalWrapper = story => (
-  <>
-    <Layout theme={theme} cdnBasepath={''}>{story()}</Layout>
-  </>
-);
+const GlobalWrapper = story => {
+  const theme = createTheme();
+
+  const cdnBasepath = '';
+
+  return (
+    <>
+      <Layout theme={theme} cdnBasepath={cdnBasepath}>{story()}</Layout>
+    </>
+  );
+};
 
 addDecorator(GlobalWrapper);
 addDecorator(withKnobs);

@@ -10,6 +10,14 @@ build/**
 **/static/assets/less/**.css
 **/static/assets/less/**.css.map
 
+packages/brand/assets/assets/css/**
+packages/brand/assets/assets/less/**.css
+packages/brand/assets/assets/less/**.css.map
+packages/brand/assets/bower_components
+packages/brand/assets/bower_components/*
+packages/brand/assets/themes
+packages/brand/assets/themes/*
+
 **/app.css
 **/app.css.map
 #IDES
@@ -22,9 +30,6 @@ build/**
 /.vscode
 yarn.lock
 package-lock.json
-
-packages/brand/assets/bower_components
-packages/brand/assets/bower_components/*
 
 
 # Ignores
