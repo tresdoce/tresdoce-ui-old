@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { withTheme } from '../Theme';
 
 export interface FontBaselineProps {
@@ -6,9 +6,8 @@ export interface FontBaselineProps {
 }
 
 export const FontBaseline: React.FC<FontBaselineProps> = ({ cdnBasepath }) => (
-  <Fragment>
+  <>
     <style jsx global>{`
-
       @font-face {
         font-family: 'FontAwesome';
         src: url('${cdnBasepath}/fonts/fontawesome-webfont.eot?v=4.7.0');
@@ -21,7 +20,6 @@ export const FontBaseline: React.FC<FontBaselineProps> = ({ cdnBasepath }) => (
         font-style: normal;
       }
 
-
       @font-face {
         font-family: "DINNextLTPro-BoldCondensed";
         src: url("${cdnBasepath}/fonts/DINNextLTPro-BoldCondensed.woff2") format("woff2"),
@@ -30,8 +28,7 @@ export const FontBaseline: React.FC<FontBaselineProps> = ({ cdnBasepath }) => (
         font-style: normal;
         font-weight: 400;
       }
-
-
+      
       @font-face {
         font-family: "DINNextLTPro-Condensed";
         src: url("${cdnBasepath}/fonts/DINNextLTPro-Condensed.woff2") format("woff2"),
@@ -40,8 +37,7 @@ export const FontBaseline: React.FC<FontBaselineProps> = ({ cdnBasepath }) => (
         font-style: normal;
         font-weight: 400;
       }
-
-
+      
       @font-face {
         font-family: "DINNextLTPro-LightCondensed";
         src: url("${cdnBasepath}/fonts/DINNextLTPro-LightCondensed.woff2") format("woff2"),
@@ -50,8 +46,7 @@ export const FontBaseline: React.FC<FontBaselineProps> = ({ cdnBasepath }) => (
         font-style: normal;
         font-weight: 400;
       }
-
-
+      
       @font-face {
         font-family: "DINNextLTPro-MediumCond";
         src: url("${cdnBasepath}/fonts/DINNextLTPro-MediumCond.woff2") format("woff2"),
@@ -60,8 +55,7 @@ export const FontBaseline: React.FC<FontBaselineProps> = ({ cdnBasepath }) => (
         font-style: normal;
         font-weight: 400;
       }
-
-
+      
       @font-face {
         font-family: "DINNextLTPro-UltraLightCond";
         src: url("${cdnBasepath}/fonts/DINNextLTPro-UltraLightCond.woff2") format("woff2"),
@@ -71,7 +65,7 @@ export const FontBaseline: React.FC<FontBaselineProps> = ({ cdnBasepath }) => (
         font-weight: 400;
       }
     `}</style>
-  </Fragment>
+  </>
 );
 
 FontBaseline.displayName = 'FontBaseline';
