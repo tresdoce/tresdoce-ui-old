@@ -44,12 +44,18 @@ export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[
 };
 
 const family = {
-  ultraLight: '\'DINNextLTPro-UltraLightCond\', Helvetica, Arial, sans-serif',
-  light: '\'DINNextLTPro-LightCondensed\', Helvetica, Arial, sans-serif',
-  regular: '\'DINNextLTPro-Condensed\', Helvetica, Arial, sans-serif',
-  medium: '\'DINNextLTPro-MediumCond\', Helvetica, Arial, sans-serif',
-  bold: '\'DINNextLTPro-BoldCondensed\', Helvetica, Arial, sans-serif',
-  sans: '\'Helvetica\', Arial, Trebuchet MS, sans-serif',
+  FontAwesome: '"FontAwesome"',
+  sans: '"Helvetica", Arial, Trebuchet MS, sans-serif',
+  hairline: '"Lato-Hairline", Helvetica, Arial, sans-serif',
+  hairlineItalic: '"Lato-Hairline-Italic", Helvetica, Arial, sans-serif',
+  light: '"Lato-Light", Helvetica, Arial, sans-serif',
+  lightItalic: '"Lato-LightItalic", Helvetica, Arial, sans-serif',
+  regular: '"Lato", Helvetica, Arial, sans-serif',
+  regularItalic: '"Lato-Italic", Helvetica, Arial, sans-serif',
+  bold: '"Lato-Bold", Helvetica, Arial, sans-serif',
+  boldItalic: '"Lato-BoldItalic", Helvetica, Arial, sans-serif',
+  black: '"Lato-Black", Helvetica, Arial, sans-serif',
+  blackItalic: '"Lato-BlackItalic", Helvetica, Arial, sans-serif'
 };
 
 const sizes = {

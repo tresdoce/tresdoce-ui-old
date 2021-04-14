@@ -24,7 +24,7 @@ export const StyledHeading = styled.h1`
 
 export const StyledDescription = styled.h2`
   ${(props) => `
-    font-family: ${props.theme.typography.family.light};
+    font-family: ${props.theme.typography.family.regular};
     font-size: ${props.theme.typography.applicationsSizes.H2};
     font-weight: ${props.theme.typography.weight.light};
     letter-spacing: ${props.theme.typography.letterSpacing.neg01}
