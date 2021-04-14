@@ -42,13 +42,25 @@ module.exports = async ({ config }) => {
           include: path.resolve(__dirname, '../', 'packages/**/*'),
         },
         {
-          test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
+          test: /\.jpg|png|gif|woff|woff2|eot|ttf|svg|mp4|webm$/,
           use: {
             loader: 'url-loader',
             options: {
               limit: 900000,
             },
           },
+          include: path.resolve(__dirname, '../', 'packages/**/*'),
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|svg)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              query: {
+                name: '[name].[ext]'
+              }
+            }
+          ],
           include: path.resolve(__dirname, '../', 'packages/**/*'),
         },
         {

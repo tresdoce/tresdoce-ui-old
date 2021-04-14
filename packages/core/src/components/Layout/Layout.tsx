@@ -24,9 +24,9 @@ export const Layout: React.FC<LayoutProps> = ({
     }}
   >
     {console.log('CORE Layout: ',theme)}
-    {!container && children}
-    {container && <div className='container-fluid'>{children}</div>}
-
+    {/*{!container && children}
+    {container && <div className='container-fluid'>{children}</div>}*/}
+    <div className='container-fluid'>{children}</div>
     <FontBaseline />
   </ThemeContext.Provider>
 );

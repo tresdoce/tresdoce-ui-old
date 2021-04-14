@@ -16,7 +16,7 @@ export const parameters = {
     viewports: INITIAL_VIEWPORTS,
   },
   docs: {
-    container: DocsContainer,
+    //container: DocsContainer,
     page: DocsPage,
   },
   options: {

@@ -54,7 +54,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpg|png|gif|woff|eot|ttf|svg|mp4|webm)$/,
+        test: /\.(jpg|png|gif|woff2|woff|eot|ttf|svg|mp4|webm)$/,
         use: [
           {
             loader: 'url-loader',
@@ -63,6 +63,19 @@ module.exports = {
             },
           },
         ],
+        include: path.resolve(__dirname, './assets'),
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            query: {
+              name: '[name].[ext]'
+            }
+          }
+        ],
+        include: path.resolve(__dirname, './assets'),
       },
     ],
   },
