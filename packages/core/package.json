@@ -12,7 +12,7 @@
     "rollup": "rollup -c",
     "generate": "node ./util/create-component",
     "prepublishOnly": "npm run build",
-    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.mdx src util"
+    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx src util"
   },
   "keywords": [
     "react",
