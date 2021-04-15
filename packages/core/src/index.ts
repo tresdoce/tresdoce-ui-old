@@ -1,5 +1,5 @@
 /* BASE */
-export { default as FontBaseline } from './components/FontBaseline';
+export { default as Baseline } from './components/Baseline';
 
 /* COMPONENTS */
 export { default as Layout } from './components/Layout';
