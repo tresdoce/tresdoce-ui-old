@@ -44,7 +44,7 @@ export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[
 };
 
 const family = {
-  FontAwesome: '"FontAwesome"',
+  fontAwesome: '"FontAwesome"',
   sans: '"Helvetica", Arial, Trebuchet MS, sans-serif',
   hairline: '"Lato-Hairline", Helvetica, Arial, sans-serif',
   hairlineItalic: '"Lato-Hairline-Italic", Helvetica, Arial, sans-serif',
