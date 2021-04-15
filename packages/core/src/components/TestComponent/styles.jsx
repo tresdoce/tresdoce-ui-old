@@ -29,7 +29,17 @@ export const StyledDescription = styled.h2`
   `}
 `;
 
-export const StyledDescription2 = styled.h2(props => ({
+export const StyledDescription2 = styled.h2`
+  height: 100px;
+  width: 100px;
+  background: red;
+  &:before {
+    font-family: "FontAwesome";
+    content: "\f004";
+  }
+`;
+
+/*export const StyledDescription2 = styled.h2(props => ({
   fontFamily: `FontAwesome`,
   height: "100px",
   width: "100px",
@@ -37,4 +47,4 @@ export const StyledDescription2 = styled.h2(props => ({
   "::before": {
     content: "'\\f004'"
   }
-}));
+}));*/
