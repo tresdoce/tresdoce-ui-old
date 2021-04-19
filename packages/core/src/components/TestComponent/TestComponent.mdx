@@ -11,7 +11,7 @@ import TestComponent from './TestComponent';
 I can embed a story (but not define one, since this file should not contain a `Meta`):
 
 <Preview >
-  <Layout theme={createTheme()} cdnBasepath={''}>
+  <Layout theme={createTheme()} cdnBasepath={''} container={false}>
     <TestComponent type={'primary'}/>
   </Layout>
 </Preview>
@@ -20,7 +20,7 @@ I can embed a story (but not define one, since this file should not contain a `M
 And I can also embed arbitrary markdown & JSX in this file.
 
 <Preview >
-  <Layout theme={createTheme()} cdnBasepath={''}>
+  <Layout theme={createTheme()} cdnBasepath={''} container={true}>
     <TestComponent type={'secondary'}/>
   </Layout>
 </Preview>

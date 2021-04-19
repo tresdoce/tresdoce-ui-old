@@ -23,10 +23,9 @@ export const Layout: React.FC<LayoutProps> = ({
       cdnBasepath,
     }}
   >
-    {console.log('CORE Layout: ',theme)}
-    {/*{!container && children}
-    {container && <div className='container-fluid'>{children}</div>}*/}
-    <div className='container-fluid'>{children}</div>
+    {console.log('CORE Layout: ', theme)}
+    {!container && children}
+    {container && <div className='container-fluid'>{children}</div>}
     <Baseline />
   </ThemeContext.Provider>
 );
