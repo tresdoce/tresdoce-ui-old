@@ -138,6 +138,18 @@ const createTypography = (typography: TypographyInput): Typography => {
   const coef = fontSize / sizes.px14;
   const pxToRem = (size: number) => `${(size / htmlFontSize) * coef}rem`;
 
+  const applicationsSizes = {
+    H1: pxToRem(sizes.px42),
+    H2: pxToRem(sizes.px32),
+    H3: pxToRem(sizes.px28),
+    H4: pxToRem(sizes.px24),
+    H5: pxToRem(sizes.px20),
+    H6: pxToRem(sizes.px16),
+    p: pxToRem(sizes.px16),
+    button: pxToRem(sizes.px14),
+    href: pxToRem(sizes.px14),
+  };
+
   return {
     family,
     sizes,
@@ -145,17 +157,7 @@ const createTypography = (typography: TypographyInput): Typography => {
     letterSpacing,
     weight,
     align,
-    applicationsSizes: {
-      H1: pxToRem(sizes.px42),
-      H2: pxToRem(sizes.px32),
-      H3: pxToRem(sizes.px28),
-      H4: pxToRem(sizes.px24),
-      H5: pxToRem(sizes.px20),
-      H6: pxToRem(sizes.px16),
-      p: pxToRem(sizes.px16),
-      button: pxToRem(sizes.px14),
-      href: pxToRem(sizes.px14),
-    },
+    applicationsSizes,
   };
 };
 

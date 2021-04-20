@@ -34,13 +34,14 @@ export const StyledDescription2 = styled.h2`
   width: 100px;
   background: red;
   &:before {
-    font-family: "FontAwesome";
+    font-family: 'FontAwesome';
     content: "\f004";
   }
 `;
 
 /*export const StyledDescription2 = styled.h2(props => ({
-  fontFamily: `FontAwesome`,
+  //fontFamily: `FontAwesome`,
+  fontFamily: props.theme.typography.family.fontAwesome,
   height: "100px",
   width: "100px",
   background: "red",
