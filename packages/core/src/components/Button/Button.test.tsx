@@ -6,7 +6,8 @@ describe("Test Component", () => {
   let props: ButtonProps;
   beforeEach(() => {
     props = {
-      foo: "bar"
+      foo: "bar",
+      onClick: () => alert('click')
     };
   });
   const renderComponent = () => render(<Button {...props} />);

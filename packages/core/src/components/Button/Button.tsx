@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from 'react';
 import { withTheme } from '../Theme';
 import { ButtonProps } from "./Button.types";
 import {ButtonStyle} from './styles.jsx';

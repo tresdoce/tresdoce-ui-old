@@ -71,7 +71,7 @@ const classic: Theme = {
   scss: { name: '' },
 };
 
-const prefer: Theme = {
+/*const prefer: Theme = {
   images: themeImages('prefer'),
   colors: {
     primary: colors.prefer.primary,
@@ -79,7 +79,7 @@ const prefer: Theme = {
     primary_dark: colors.prefer.dark,
   },
   scss: { name: '' },
-};
+};*/
 
 const move: Theme = {
   images: themeImages('move'),

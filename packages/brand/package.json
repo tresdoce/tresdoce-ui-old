@@ -24,7 +24,7 @@
     "prepublishOnly": "npm run build",
     "compile:themes": "webpack",
     "watch": "webpack -w",
-    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.mdx src util"
+    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.mdx src"
   },
   "keywords": [
     "react",

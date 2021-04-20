@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { withTheme } from '../Theme';
 import { TestComponentProps } from './TestComponent.types';
 import { StyledDescription,StyledDescription2, StyledDiv, StyledHeading } from './styles.jsx';

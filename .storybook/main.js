@@ -29,7 +29,6 @@ module.exports = {
     //'@storybook/addon-links',
     '@storybook/addon-viewport',
     '@storybook/addon-actions',
-    //'@storybook/addon-notes',
     //'@storybook/addon-toolbars',
     //'@storybook/addons',
     //'@storybook/addon-storysource',
