@@ -8,7 +8,7 @@ export type PaletteInput = {
   [name: string]: string;
 }
 
-const defaultPallete = {
+export const defaultPallete = {
   white: '#fff',
   grey: '#767676',
   black: '#1B1C1D',
