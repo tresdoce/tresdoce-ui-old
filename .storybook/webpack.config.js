@@ -4,7 +4,7 @@ const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = async ({ config }) => {
   //console.log(config)
-  config = {
+  /*config = {
     ...config,
     module: {
       ...config.module,
@@ -20,12 +20,12 @@ module.exports = async ({ config }) => {
         {
           test: /\.scss$/,
           use: ['style-loader', 'css-loader', 'sass-loader'],
-          include: path.resolve(__dirname, '../', 'packages/**/*'),
+          include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
         },
         {
           test: /\.less$/,
           use: ['style-loader', 'css-loader', 'less-loader'],
-          include: path.resolve(__dirname, '../', 'packages/**/*'),
+          include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
         },
         {
           test: /\.css$/,
@@ -39,7 +39,7 @@ module.exports = async ({ config }) => {
             },
             'postcss-loader',
           ],
-          include: path.resolve(__dirname, '../', 'packages/**/*'),
+          include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
         },
         {
           test: /\.jpg|png|gif|woff|woff2|eot|ttf|svg|mp4|webm$/,
@@ -49,7 +49,7 @@ module.exports = async ({ config }) => {
               limit: 900000,
             },
           },
-          include: path.resolve(__dirname, '../', 'packages/**/*'),
+          include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
         },
         {
           test: /\.(woff|woff2|eot|ttf|svg)$/,
@@ -61,7 +61,7 @@ module.exports = async ({ config }) => {
               }
             }
           ],
-          include: path.resolve(__dirname, '../', 'packages/**/*'),
+          include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
         },
         {
           test: /\.(stories|story)\.(md|mdx)$/,
@@ -80,7 +80,7 @@ module.exports = async ({ config }) => {
               },
             },
           ],
-          include: path.resolve(__dirname, '../', 'packages/**/*'),
+          include: path.resolve(__dirname, '../', 'packages/!**!/!*'),
         },
         {
           test: /\.(stories|story)\.(tsx|ts|jsx|js|mdx)$/,
@@ -107,7 +107,7 @@ module.exports = async ({ config }) => {
         SC_DISABLE_SPEEDY: true
       })
     ]
-  }
+  }*/
 
   return config;
 };
