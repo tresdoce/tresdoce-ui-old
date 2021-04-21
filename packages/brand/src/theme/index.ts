@@ -1,14 +1,16 @@
 import createPalette, { Palette, PaletteInput } from './create-palette';
 import createTypography, { Typography, TypographyInput } from './create-typography';
-import zIndex, { ZIndex } from './z-index';
 import themeImages, {Image} from './images';
+import sizing, {Sizing} from './sizing';
 import spacing, { Spacing } from './spacing';
+import zIndex, { ZIndex } from './z-index';
 
 export interface Theme {
   palette: Palette,
   typography: Typography,
-  spacing: Spacing,
   images: Image,
+  sizing: Sizing,
+  spacing: Spacing,
   zIndex: ZIndex
 }
 
@@ -29,9 +31,10 @@ const createTheme = (options: ThemeInput): Theme => {
 
   return {
     palette,
-    spacing,
     typography,
     images,
+    sizing,
+    spacing,
     zIndex,
   };
 };

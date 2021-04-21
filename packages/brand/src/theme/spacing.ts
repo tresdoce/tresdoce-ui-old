@@ -12,7 +12,7 @@ export type Spacing = {
   vertical: Space;
 }
 
-export const spacing = {
+const spacing = {
   default: {
     space2: '2px',
     space4: '4px',
