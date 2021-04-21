@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+export type BreakPoints = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+
 export enum EnumBreakPoints {
   xs = 'xs',
   sm = 'sm',
@@ -7,20 +11,33 @@ export enum EnumBreakPoints {
   xxl = 'xxl'
 }
 
-export type MQSizes = {
-  [key in keyof typeof EnumBreakPoints]: string
+/*export type MQSizes {
+  [K in keyof typeof EnumBreakPoints]: string
 }
 
 export type Breakpoints = {
-  [key in keyof typeof EnumBreakPoints]: string
+  [K in keyof typeof EnumBreakPoints]: string
+}*/
+
+declare interface MQSizes{
+  [key: string]: string;
 }
 
-export type Sizing = {
+declare interface Breakpoints{
+  [key: string]: string;
+}
+
+export interface Sizing  {
   MQSizes: MQSizes;
   breakpoints: Breakpoints
 }
 
-const sizing = {
+export type SizingInput = { +readonly [K in keyof Sizing]+?: Sizing[K]} & {
+  MQSizes?: MQSizes;
+  breakpoints?: Breakpoints;
+}
+
+const defaultSizing = {
   MQSizes: {
     xs: '0px', // < 576px
     sm: '576px', // >= 576px
@@ -39,4 +56,8 @@ const sizing = {
   },
 };
 
-export default sizing;
+const createSizing = (sizing: SizingInput): Sizing =>{
+  return _.merge(defaultSizing, sizing)
+}
+
+export default createSizing;
