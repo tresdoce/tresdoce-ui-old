@@ -19,11 +19,11 @@ export type Breakpoints = {
   [K in keyof typeof EnumBreakPoints]: string
 }*/
 
-declare interface MQSizes{
+type MQSizes = {
   [key: string]: string;
 }
 
-declare interface Breakpoints{
+type Breakpoints = {
   [key: string]: string;
 }
 

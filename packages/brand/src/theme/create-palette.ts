@@ -1,25 +1,29 @@
 import _ from 'lodash';
 
-declare interface ColorPalette{
-  [name: string]: string;
-}
+type KeyPallet = string | number;
 
-declare interface ColorPaletteScale {
-  any: string;
+type ColorPalette = {
+  [K in keyof KeyPallet]: string;
 }
 
 export interface Palette {
-  //[key: string]: string;
   color: ColorPalette;
-  primary: ColorPaletteScale;
-  success: ColorPaletteScale;
-  info: ColorPaletteScale;
-  warning: ColorPaletteScale;
-  danger: ColorPaletteScale;
+  primary: ColorPalette;
+  success: ColorPalette;
+  info: ColorPalette;
+  warning: ColorPalette;
+  danger: ColorPalette;
+  [key: string]: ColorPalette;
 }
 
-export type PaletteInput = {
-  [name: string]: string;
+export type PaletteInput = { +readonly  [K in keyof Palette]+?: Palette[K]} & {
+  color?: ColorPalette;
+  primary?: ColorPalette;
+  success?: ColorPalette;
+  info?: ColorPalette;
+  warning?: ColorPalette;
+  danger?: ColorPalette;
+  [key: string]: ColorPalette;
 }
 
 const color = {
