@@ -72,67 +72,241 @@ Note: this package is not used in Storybook's UI, but the visual design is ident
 - [Introducing Storybook Design System](https://medium.com/storybookjs/introducing-storybook-design-system-23fd9b1ac3c0)
 - [GitHub repository](https://github.com/storybookjs/design-system)
 
-## Colours
+## Colors
 
-### Light Theme
-
-<ColorPalette>
-  <ColorItem
-    title="theme.color.background"
-    subtitle="White"
-    colors={[defaultPallete.white]}
-  />
-  <ColorItem
-    title="theme.color.text"
-    subtitle="Black"
-    colors={[defaultPallete.black,defaultPallete.grey]}
-  />
-  <ColorItem
-    title="theme.color.header"
-    subtitle="Grey"
-    colors={[defaultPallete.grey]}
-  />
-</ColorPalette>
-
-### Dark Theme
-
-<ColorPalette>
-  <ColorItem
-    title="theme.color.background"
-    subtitle="White"
-    colors={[defaultPallete.grey]}
-  />
-  <ColorItem
-    title="theme.color.text"
-    subtitle="White"
-    colors={[defaultPallete.white]}
-  />
-  <ColorItem
-    title="theme.color.header"
-    subtitle="Grey"
-    colors={[defaultPallete.grey]}
-  />
-</ColorPalette>
-
-### Shared
+### Primary
 
 <ColorPalette>
   <ColorItem
     title="theme.color.primary"
-    subtitle="Blue"
-    colors={[defaultPallete.blue]}
+    subtitle="Primary"
+    colors={{
+      100: defaultPallete.primary[100],
+      200: defaultPallete.primary[200],
+      300: defaultPallete.primary[300],
+      400: defaultPallete.primary[400],
+      500: defaultPallete.primary[500],
+      600: defaultPallete.primary[600],
+      700: defaultPallete.primary[700],
+      800: defaultPallete.primary[800],
+      900: defaultPallete.primary[900],
+    }}
   />
   <ColorItem
-    title="theme.color.secondary"
-    subtitle="Orange"
-    colors={[defaultPallete.orange]}
+    title="theme.color.primary"
+    subtitle="Primary Transparent"
+    colors={{
+      100: defaultPallete.primary.transparent[100],
+      200: defaultPallete.primary.transparent[200],
+      300: defaultPallete.primary.transparent[300],
+      400: defaultPallete.primary.transparent[400],
+      500: defaultPallete.primary.transparent[500],
+      600: defaultPallete.primary.transparent[600]
+    }}
   />
-  <ColorItem
-    title="theme.color.tertiary"
-    subtitle="Grey"
-    colors={[defaultPallete.grey]}
-  />
+</ColorPalette>
 
+### Success
+
+<ColorPalette>
+  <ColorItem
+    title="theme.color.success"
+    subtitle="Success"
+    colors={{
+      100: defaultPallete.success[100],
+      200: defaultPallete.success[200],
+      300: defaultPallete.success[300],
+      400: defaultPallete.success[400],
+      500: defaultPallete.success[500],
+      600: defaultPallete.success[600],
+      700: defaultPallete.success[700],
+      800: defaultPallete.success[800],
+      900: defaultPallete.success[900],
+    }}
+  />
+  <ColorItem
+    title="theme.color.success"
+    subtitle="Success Transparent"
+    colors={{
+      100: defaultPallete.success.transparent[100],
+      200: defaultPallete.success.transparent[200],
+      300: defaultPallete.success.transparent[300],
+      400: defaultPallete.success.transparent[400],
+      500: defaultPallete.success.transparent[500],
+      600: defaultPallete.success.transparent[600]
+    }}
+  />
+</ColorPalette>
+
+### Info
+
+<ColorPalette>
+  <ColorItem
+    title="theme.color.info"
+    subtitle="Info"
+    colors={{
+      100: defaultPallete.info[100],
+      200: defaultPallete.info[200],
+      300: defaultPallete.info[300],
+      400: defaultPallete.info[400],
+      500: defaultPallete.info[500],
+      600: defaultPallete.info[600],
+      700: defaultPallete.info[700],
+      800: defaultPallete.info[800],
+      900: defaultPallete.info[900],
+    }}
+  />
+  <ColorItem
+    title="theme.color.info"
+    subtitle="Info Transparent"
+    colors={{
+      100: defaultPallete.info.transparent[100],
+      200: defaultPallete.info.transparent[200],
+      300: defaultPallete.info.transparent[300],
+      400: defaultPallete.info.transparent[400],
+      500: defaultPallete.info.transparent[500],
+      600: defaultPallete.info.transparent[600]
+    }}
+  />
+</ColorPalette>
+
+### Warning
+
+<ColorPalette>
+  <ColorItem
+    title="theme.color.warning"
+    subtitle="Warning"
+    colors={{
+      100: defaultPallete.warning[100],
+      200: defaultPallete.warning[200],
+      300: defaultPallete.warning[300],
+      400: defaultPallete.warning[400],
+      500: defaultPallete.warning[500],
+      600: defaultPallete.warning[600],
+      700: defaultPallete.warning[700],
+      800: defaultPallete.warning[800],
+      900: defaultPallete.warning[900],
+    }}
+  />
+  <ColorItem
+    title="theme.color.warning"
+    subtitle="Warning Transparent"
+    colors={{
+      100: defaultPallete.warning.transparent[100],
+      200: defaultPallete.warning.transparent[200],
+      300: defaultPallete.warning.transparent[300],
+      400: defaultPallete.warning.transparent[400],
+      500: defaultPallete.warning.transparent[500],
+      600: defaultPallete.warning.transparent[600]
+    }}
+  />
+</ColorPalette>
+
+### Danger
+
+<ColorPalette>
+  <ColorItem
+    title="theme.color.danger"
+    subtitle="Danger"
+    colors={{
+      100: defaultPallete.danger[100],
+      200: defaultPallete.danger[200],
+      300: defaultPallete.danger[300],
+      400: defaultPallete.danger[400],
+      500: defaultPallete.danger[500],
+      600: defaultPallete.danger[600],
+      700: defaultPallete.danger[700],
+      800: defaultPallete.danger[800],
+      900: defaultPallete.danger[900],
+    }}
+  />
+  <ColorItem
+    title="theme.color.warning"
+    subtitle="Danger Transparent"
+    colors={{
+      100: defaultPallete.danger.transparent[100],
+      200: defaultPallete.danger.transparent[200],
+      300: defaultPallete.danger.transparent[300],
+      400: defaultPallete.danger.transparent[400],
+      500: defaultPallete.danger.transparent[500],
+      600: defaultPallete.danger.transparent[600]
+    }}
+  />
+</ColorPalette>
+
+### Colours
+
+<ColorPalette >
+  <ColorItem
+    title="theme.color.white"
+    subtitle="White"
+    colors={[defaultPallete.color.white]}
+  />
+  <ColorItem
+    title="theme.color.grey"
+    subtitle="Grey"
+    colors={[defaultPallete.color.grey]}
+  />
+  <ColorItem
+    title="theme.color.black"
+    subtitle="Black"
+    colors={[defaultPallete.color.black]}
+  />
+  <ColorItem
+    title="theme.color.brown"
+    subtitle="Brown"
+    colors={[defaultPallete.color.brown]}
+  />
+  <ColorItem
+    title="theme.color.pink"
+    subtitle="Pink"
+    colors={[defaultPallete.color.pink]}
+  />
+  <ColorItem
+    title="theme.color.purple"
+    subtitle="Purple"
+    colors={[defaultPallete.color.purple]}
+  />
+  <ColorItem
+    title="theme.color.violet"
+    subtitle="Violet"
+    colors={[defaultPallete.color.violet]}
+  />
+  <ColorItem
+    title="theme.color.blue"
+    subtitle="Blue"
+    colors={[defaultPallete.color.blue]}
+  />
+  <ColorItem
+    title="theme.color.teal"
+    subtitle="Teal"
+    colors={[defaultPallete.color.teal]}
+  />
+  <ColorItem
+    title="theme.color.green"
+    subtitle="Green"
+    colors={[defaultPallete.color.green]}
+  />
+  <ColorItem
+    title="theme.color.olive"
+    subtitle="Olive"
+    colors={[defaultPallete.color.olive]}
+  />
+  <ColorItem
+    title="theme.color.yellow"
+    subtitle="Yellow"
+    colors={[defaultPallete.color.yellow]}
+  />
+  <ColorItem
+    title="theme.color.orange"
+    subtitle="Orange"
+    colors={[defaultPallete.color.orange]}
+  />
+  <ColorItem
+    title="theme.color.red"
+    subtitle="Red"
+    colors={[defaultPallete.color.red]}
+  />
 </ColorPalette>
 
 ## Typography
