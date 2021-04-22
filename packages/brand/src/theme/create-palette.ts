@@ -1,7 +1,21 @@
 import _ from 'lodash';
 
-export interface Palette {
+declare interface ColorPalette{
   [name: string]: string;
+}
+
+declare interface ColorPaletteScale {
+  any: string;
+}
+
+export interface Palette {
+  //[key: string]: string;
+  color: ColorPalette;
+  primary: ColorPaletteScale;
+  success: ColorPaletteScale;
+  info: ColorPaletteScale;
+  warning: ColorPaletteScale;
+  danger: ColorPaletteScale;
 }
 
 export type PaletteInput = {

@@ -46,7 +46,10 @@ export const globalTypes = {
 
 
 const GlobalWrapper = story => {
-  const theme = createTheme();
+  const theme = createTheme({
+    palette:{
+    }
+  });
 
   const cdnBasepath = '';
 
