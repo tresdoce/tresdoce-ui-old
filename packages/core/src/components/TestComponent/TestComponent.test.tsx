@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {render} from "@testing-library/react";
 
+import { createTheme } from '@tresdoce-ui/brand';
 import TestComponent from "./TestComponent";
 import {TestComponentProps} from "./TestComponent.types";
 
@@ -9,6 +10,7 @@ describe("Test Component", () => {
 
     beforeEach(() => {
         props = {
+            theme: createTheme(),
             type: "primary"
         };
     });
