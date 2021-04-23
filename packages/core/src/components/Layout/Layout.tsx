@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { ThemeProvider } from "styled-components";
 import { ThemeContext } from '../Theme';
+
 import Baseline from '../Baseline';
 
 
@@ -24,9 +26,11 @@ export const Layout: React.FC<LayoutProps> = ({
     }}
   >
     {console.log('CORE Layout: ', theme)}
-    {!container && children}
-    {container && <div className='container-fluid'>{children}</div>}
-    <Baseline />
+    <ThemeProvider theme={theme}>
+      {!container && children}
+      {container && <div className='container-fluid'>{children}</div>}
+      <Baseline />
+    </ThemeProvider>
   </ThemeContext.Provider>
 );
 
