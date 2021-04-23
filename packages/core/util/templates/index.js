@@ -1,5 +1,5 @@
 const component = require("./component");
-const componentStyle = require("./component.style");
+const componentStyles = require("./component.styles");
 const componentIndex = require("./component.index");
 const componentTypes = require("./component.types");
 const componentStories = require("./component.stories");
@@ -9,7 +9,7 @@ const componentTests = require("./component.test");
 
 module.exports = [
   component,
-  componentStyle,
+  componentStyles,
   componentIndex,
   componentTypes,
   componentStories,

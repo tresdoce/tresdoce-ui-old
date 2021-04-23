@@ -2,7 +2,6 @@ const fs = require("fs");
 const templates = require("./templates");
 const signale = require('signale-logger');
 
-
 const componentName = process.argv[2];
 
 if (!componentName) {
@@ -24,7 +23,7 @@ fs.mkdirSync(componentDirectory);
 const generatedTemplates = templates.map((template) => template(componentName));
 
 generatedTemplates.forEach((template) => {
-    fs.writeFileSync(`${componentDirectory}/${template.filename}${template.extension}`, template.content);
+    fs.writeFileSync(`${componentDirectory}/${template.filename}${template.extension}`, template.content, 'utf8');
 });
 
 fs.appendFileSync('./src/index.ts', `export { default as ${componentName} } from './components/${componentName}';`);

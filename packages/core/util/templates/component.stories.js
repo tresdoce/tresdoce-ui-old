@@ -1,8 +1,9 @@
 module.exports = (componentName) => ({
   filename: componentName,
   extension: `.stories.tsx`,
-  content: `import * as React from "react";
+  content: `import * as React from 'react';
 import { Meta } from '@storybook/react';
+
 import ${componentName} from "./${componentName}";
 // @ts-ignore
 import ${componentName}Mdx from "./${componentName}.mdx";
