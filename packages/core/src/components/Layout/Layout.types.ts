@@ -2,6 +2,6 @@ export interface LayoutProps {
   theme: any;
   children?: any;
   cdnBasepath: any;
-  container?: boolean;
+  containerFluid?: boolean;
   resetStyles?: boolean;
 }
