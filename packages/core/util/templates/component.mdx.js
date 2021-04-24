@@ -14,7 +14,7 @@ import ${componentName} from './${componentName}';
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
 
 <Preview >
-  <Layout theme={createTheme()} cdnBasepath={''} container={false}>
+  <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
     <${componentName} foo={'lorem ipsum'} />
   </Layout>
 </Preview>`,

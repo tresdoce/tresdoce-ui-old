@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
 export const ButtonStyle = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1em;
-  padding: 0.25em 1em;
+  ${({theme}) => `
+    background: ${theme.palette.primary[500]};
+    font-family: ${theme.typography.family.regular};
+    border: none;
+    border-radius: ${theme.radiuses.radius4};
+    margin:0;
+    padding: ${theme.spacing.default.space8} ${theme.spacing.default.space12};
+  `};
+  &:hover{
+    ${({theme}) => `
+      background: ${theme.palette.primary[300]};
+    `};
+  }  
 `
