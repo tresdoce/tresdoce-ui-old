@@ -16,7 +16,7 @@ describe('Test Component', () => {
   const renderComponent = () => render(<TestComponent {...props} />);
 
   it('should have primary className with default props', () => {
-    const { getByTestId } = renderComponent();
+    const { getByTestId,  } = renderComponent();
     const testComponent = getByTestId('test-component');
     expect(testComponent).toHaveClass('test-component-primary');
   });

@@ -11,7 +11,7 @@ const ${componentName}: React.FC<${componentName}Props> = ({
   foo,
   ...rest
 }) => (
-    <${componentName}Style>{foo}</${componentName}Style>
+    <${componentName}Style data-testid='id-${componentName}'>{foo}</${componentName}Style>
 );
 
 export default withTheme(${componentName});`,

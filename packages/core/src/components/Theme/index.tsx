@@ -11,7 +11,6 @@ export interface ThemeProps {
 }
 
 export const ThemeContext = React.createContext<ThemeProps>({
-  //theme: themes.classic,
   theme: createTheme(),
   cdnBasepath: '',
 });
