@@ -1,5 +1,6 @@
 import { Meta, Preview } from '@storybook/addon-docs/blocks';
-import { createTheme } from '@tresdoce-ui/brand';
+//import { createTheme } from '@tresdoce-ui/brand';
+import { createTheme} from '../../../../brand';
 import Layout  from '../Layout';
 
 import Button from './Button';
@@ -12,7 +13,7 @@ I can embed a story (but not define one, since this file should not contain a `M
 
 <Preview >
   <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
-    <Button foo={'dsad'} onClick={()=>alert('dsad')}/>
+    <Button foo={'Text button'} onClick={()=>alert('click in button')}/>
   </Layout>
 </Preview>
 
