@@ -1,123 +1,69 @@
-export interface Space {
-  [name: string]: string;
+import _ from 'lodash';
+
+type KeyRadius = string | number;
+
+type Radius = {
+  [K in keyof KeyRadius]: string;
 }
 
-export type Spacing = {
-  default: Space;
-  top: Space;
-  right: Space;
-  bottom: Space;
-  left: Space;
-  horizontal: Space;
-  vertical: Space;
+export interface Radiuses {
+  radius: Radius;
+  percentages: Radius;
+  [key: string]: Radius;
 }
 
-const spacing = {
-  default: {
-    space2: '2px',
-    space4: '4px',
-    space8: '8px',
-    space12: '12px',
-    space16: '16px',
-    space24: '24px',
-    space32: '32px',
-    space40: '40px',
-    space48: '48px',
-    space64: '64px',
-    space80: '80px',
-    space96: '96px',
-    space160: '160px',
+export type RadiusesInput = { +readonly  [K in keyof Radiuses]+?: Radiuses[K] } & {
+  radius?: Radiuses,
+  percentages?: Radiuses,
+  [key: string]: Radiuses
+}
+
+const defaultRadiuses = {
+  defaultRadius: '4px',
+  radius:{
+    2: '2px',
+    4: '4px',
+    8: '8px',
+    12: '12px',
+    16: '16px',
+    24: '24px',
+    32: '32px',
+    40: '40px',
+    48: '48px',
+    64: '64px',
+    80: '80px',
+    96: '96px',
+    160: '160px',
   },
-  top: {
-    space2: '2px 0 0 0',
-    space4: '4px 0 0 0',
-    space8: '8px 0 0 0',
-    space12: '12px 0 0 0',
-    space16: '16px 0 0 0',
-    space24: '24px 0 0 0',
-    space32: '32px 0 0 0',
-    space40: '40px 0 0 0',
-    space48: '48px 0 0 0',
-    space64: '64px 0 0 0',
-    space80: '80px 0 0 0',
-    space96: '96px 0 0 0',
-    space160: '160px 0 0 0',
-  },
-  right: {
-    space2: '0 2px 0 0',
-    space4: '0 4px 0 0',
-    space8: '0 8px 0 0',
-    space12: '0 12px 0 0',
-    space16: '0 16px 0 0',
-    space24: '0 24px 0 0',
-    space32: '0 32px 0 0',
-    space40: '0 40px 0 0',
-    space48: '0 48px 0 0',
-    space64: '0 64px 0 0',
-    space80: '0 80px 0 0',
-    space96: '0 96px 0 0',
-    space160: '0 160px 0 0',
-  },
-  bottom: {
-    space2: '0 0 2px 0',
-    space4: '0 0 4px 0',
-    space8: '0 0 8px 0',
-    space12: '0 0 12px 0',
-    space16: '0 0 16px 0',
-    space24: '0 0 24px 0',
-    space32: '0 0 32px 0',
-    space40: '0 0 40px 0',
-    space48: '0 0 48px 0',
-    space64: '0 0 64px 0',
-    space80: '0 0 80px 0',
-    space96: '0 0 96px 0',
-    space160: '0 0 160px 0',
-  },
-  left: {
-    space2: '0 0 0 2px',
-    space4: '0 0 0 4px',
-    space8: '0 0 0 8px',
-    space12: '0 0 0 12px',
-    space16: '0 0 0 16px',
-    space24: '0 0 0 24px',
-    space32: '0 0 0 32px',
-    space40: '0 0 0 40px',
-    space48: '0 0 0 48px',
-    space64: '0 0 0 64px',
-    space80: '0 0 0 80px',
-    space96: '0 0 0 96px',
-    space160: '0 0 0 160px',
-  },
-  horizontal: {
-    space2: '0 2px',
-    space4: '0 4px',
-    space8: '0 8px',
-    space12: '0 12px',
-    space16: '0 16px',
-    space24: '0 24px',
-    space32: '0 32px',
-    space40: '0 40px',
-    space48: '0 48px',
-    space64: '0 64px',
-    space80: '0 80px',
-    space96: '0 96px',
-    space160: '0 160px',
-  },
-  vertical: {
-    space2: '2px 0',
-    space4: '4px 0',
-    space8: '8px 0',
-    space12: '12px 0',
-    space16: '16px 0',
-    space24: '24px 0',
-    space32: '32px 0',
-    space40: '40px 0',
-    space48: '48px 0',
-    space64: '64px 0',
-    space80: '80px 0',
-    space96: '96px 0',
-    space160: '160px 0',
+  percentages: {
+    0: '0%',
+    2: '2%',
+    4: '4%',
+    8: '8%',
+    10: '10%',
+    15: '15%',
+    20: '20%',
+    25: '25%',
+    30: '30%',
+    35: '35%',
+    40: '40%',
+    45: '45%',
+    50: '50%',
+    55: '55%',
+    60: '60%',
+    65: '65%',
+    70: '70%',
+    75: '75%',
+    80: '80%',
+    85: '85%',
+    90: '90%',
+    95: '95%',
+    100: '100%',
   },
 };
 
-export default spacing;
+const createRadiuses = (radiuses?: RadiusesInput): Radiuses => {
+  return _.merge(defaultRadiuses, radiuses);
+}
+
+export default createRadiuses;

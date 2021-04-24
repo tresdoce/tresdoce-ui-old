@@ -46,13 +46,13 @@ export const globalTypes = {
 
 
 const GlobalWrapper = story => {
-  const theme = createTheme();
+  const theme = createTheme({});
 
   const cdnBasepath = '';
 
   return (
     <>
-      <Layout theme={theme} cdnBasepath={cdnBasepath}>{story()}</Layout>
+      <Layout theme={theme} containerFluid={false} cdnBasepath={cdnBasepath}>{story()}</Layout>
     </>
   );
 };

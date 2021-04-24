@@ -10,12 +10,12 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
 <ColorPalette>
   <ColorItem
     title="Primary"
-    subtitle="theme.color.primary.default"
+    subtitle="theme.palette.color.primary.default"
     colors={[defaultPallete.primary.default]}
   />
   <ColorItem
     title="Primary Scale"
-    subtitle="theme.color.primary[100-900]"
+    subtitle="theme.palette.color.primary[100-900]"
     colors={{
       100: defaultPallete.primary[100],
       200: defaultPallete.primary[200],
@@ -30,7 +30,7 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
   />
   <ColorItem
     title="Primary Transparent"
-    subtitle="theme.color.primary.transparent[100-600]"
+    subtitle="theme.palette.color.primary.transparent[100-600]"
     colors={{
       100: defaultPallete.primary.transparent[100],
       200: defaultPallete.primary.transparent[200],
@@ -47,7 +47,7 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
 <ColorPalette>
   <ColorItem
     title="Success"
-    subtitle="theme.color.success.default"
+    subtitle="theme.palette.color.success.default"
     colors={[defaultPallete.success.default]}
   />
   <ColorItem
@@ -67,7 +67,7 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
   />
   <ColorItem
     title="Success Transparent"
-    subtitle="theme.color.success.transparent[100-600]"
+    subtitle="theme.palette.color.success.transparent[100-600]"
     colors={{
       100: defaultPallete.success.transparent[100],
       200: defaultPallete.success.transparent[200],
@@ -84,12 +84,12 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
 <ColorPalette>
   <ColorItem
     title="Info"
-    subtitle="theme.color.info.default"
+    subtitle="theme.palette.color.info.default"
     colors={[defaultPallete.info.default]}
   />
   <ColorItem
     title="Info Scale"
-    subtitle="theme.color.info[100-900]"
+    subtitle="theme.palette.color.info[100-900]"
     colors={{
       100: defaultPallete.info[100],
       200: defaultPallete.info[200],
@@ -104,7 +104,7 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
   />
   <ColorItem
     title="Info Transparent"
-    subtitle="theme.color.info.transparent[100-600]"
+    subtitle="theme.palette.color.info.transparent[100-600]"
     colors={{
       100: defaultPallete.info.transparent[100],
       200: defaultPallete.info.transparent[200],
@@ -121,12 +121,12 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
 <ColorPalette>
   <ColorItem
     title="Warning"
-    subtitle="theme.color.warning.default"
+    subtitle="theme.palette.color.warning.default"
     colors={[defaultPallete.warning.default]}
   />
   <ColorItem
     title="Warning Scale"
-    subtitle="theme.color.warning[100-900]"
+    subtitle="theme.palette.color.warning[100-900]"
     colors={{
       100: defaultPallete.warning[100],
       200: defaultPallete.warning[200],
@@ -141,7 +141,7 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
   />
   <ColorItem
     title="Warning Transparent"
-    subtitle="theme.color.warning.transparent[100-600]"
+    subtitle="theme.palette.color.warning.transparent[100-600]"
     colors={{
       100: defaultPallete.warning.transparent[100],
       200: defaultPallete.warning.transparent[200],
@@ -158,12 +158,12 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
 <ColorPalette>
   <ColorItem
     title="Danger"
-    subtitle="theme.color.danger.default"
+    subtitle="theme.palette.color.danger.default"
     colors={[defaultPallete.danger.default]}
   />
   <ColorItem
     title="Danger Scale"
-    subtitle="theme.color.danger[100-900]"
+    subtitle="theme.palette.color.danger[100-900]"
     colors={{
       100: defaultPallete.danger[100],
       200: defaultPallete.danger[200],
@@ -178,7 +178,7 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
   />
   <ColorItem
     title="Danger Transparent"
-    subtitle="theme.color.danger.transparent[100-600]"
+    subtitle="theme.palette.color.danger.transparent[100-600]"
     colors={{
       100: defaultPallete.danger.transparent[100],
       200: defaultPallete.danger.transparent[200],
@@ -197,7 +197,7 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
     Object.keys(defaultPallete.color).map((color, index) => <ColorItem
       key={index}
       title={`${color.charAt(0).toUpperCase()}${color.slice(1)}`}
-      subtitle={`theme.color.${color}`}
+      subtitle={`theme.palette.color.${color}`}
       colors={[defaultPallete.color[color]]}
     />)
   ]}
