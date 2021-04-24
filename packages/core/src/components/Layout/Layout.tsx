@@ -1,17 +1,9 @@
 import * as React from 'react';
 import { ThemeProvider } from "styled-components";
 import { ThemeContext } from '../Theme';
+import { LayoutProps } from './Layout.types';
 
 import Baseline from '../Baseline';
-
-
-export interface LayoutProps {
-  theme: any;
-  children?: any;
-  cdnBasepath: any;
-  container?: boolean;
-  resetStyles?: boolean;
-}
 
 export const Layout: React.FC<LayoutProps> = ({
   cdnBasepath,
