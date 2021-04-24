@@ -5,6 +5,7 @@ import { ButtonProps } from "./Button.types";
 describe("Test Component", () => {
   let props: ButtonProps;
   beforeEach(() => {
+    console.error = jest.fn()
     props = {
       foo: "bar",
       onClick: () => alert('click')
