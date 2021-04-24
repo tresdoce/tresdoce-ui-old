@@ -8,7 +8,6 @@ describe('Test Component', () => {
   let props: TestComponentProps;
 
   beforeEach(() => {
-    console.error = jest.fn()
     props = {
       type: 'primary',
     };
