@@ -5,7 +5,7 @@ export const ButtonStyle = styled.button`
     background: ${theme.palette.primary[500]};
     font-family: ${theme.typography.family.regular};
     border: none;
-    border-radius: ${theme.radiuses.radius4};
+    border-radius: ${theme.radiuses.defaultRadius};
     color: ${theme.palette.color.white};
     margin:0;
     padding: ${theme.spacing.default.space8} ${theme.spacing.default.space12};
