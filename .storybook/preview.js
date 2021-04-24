@@ -3,7 +3,7 @@ import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
+import { DocsPage } from '@storybook/addon-docs/blocks';
 import tdTheme from './theme';
 
 import { createTheme } from '../packages/brand/src/';
@@ -46,7 +46,7 @@ export const globalTypes = {
 
 
 const GlobalWrapper = story => {
-  const theme = createTheme({});
+  const theme = createTheme();
 
   const cdnBasepath = '';
 

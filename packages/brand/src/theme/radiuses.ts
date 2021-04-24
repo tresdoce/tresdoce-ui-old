@@ -12,10 +12,10 @@ export interface Radiuses {
   [key: string]: Radius;
 }
 
-export type RadiusesInput = { +readonly  [K in keyof Radiuses]+?: Radiuses[K] } & {
-  radius?: Radiuses,
-  percentages?: Radiuses,
-  [key: string]: Radiuses
+export type RadiusesInput = { +readonly [K in keyof Radiuses]+?: Radiuses[K] } & {
+  radius?: Radius,
+  percentages?: Radius,
+  [key: string]: Radius,
 }
 
 const defaultRadiuses = {
