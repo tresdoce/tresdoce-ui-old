@@ -2,6 +2,8 @@
   "name": "@tresdoce-ui/brand",
   "version": "1.0.0",
   "description": "React components library - Brand",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
   "scripts": {
     "compile:less": "lessc ./assets/less/app.less ./assets/css/app.css --source-map",
     "compile:less-w": "less-watch-compiler ./assets/less/ ./assets/css app.less",
@@ -15,13 +17,9 @@
     "bower:install:dependencies": "bower install",
     "test": "jest",
     "test:watch": "jest --watch",
-    "publish": "pack publish",
-    "build": "npm-run-all -l -c -s clear build:style pika:build copy:npmrc",
-    "clear": "shx rm -rf pkg build",
+    "build": "npm-run-all -l -c -s clear build:style rollup",
+    "clear": "rimraf build",
     "clear:css": "rimraf ./assets/css/*",
-    "pika:build": "pika build",
-    "pika:publish": "pika publish",
-    "copy:npmrc": "shx cp -r .npmrc pkg",
     "rollup": "rollup -c",
     "prepublishOnly": "npm run build",
     "compile:themes": "webpack",
@@ -71,6 +69,9 @@
       "@commitlint/config-conventional"
     ]
   },
+  "files": [
+    "build"
+  ],
   "eslintConfig": {
     "extends": "@tresdoce-toolkit"
   },
@@ -80,48 +81,6 @@
     "semi": true,
     "tabWidth": 2,
     "printWidth": 100
-  },
-  "@pika/pack": {
-    "pipeline": [
-      [
-        "@pika/plugin-standard-pkg",
-        {
-          "exclude": [
-            "**/*.test.*",
-            "**/__snapshots/*"
-          ]
-        }
-      ],
-      [
-        "@pika/plugin-build-node",
-        {
-          "exclude": [
-            "**/*.test.*",
-            "**/__snapshots/*"
-          ]
-        }
-      ],
-      [
-        "@pika/plugin-build-web",
-        {
-          "exclude": [
-            "**/*.test.*",
-            "**/__snapshots/*"
-          ]
-        }
-      ],
-      [
-        "@pika/plugin-build-types"
-      ],
-      [
-        "@pika/plugin-copy-assets",
-        {
-          "files": [
-            "assets/"
-          ]
-        }
-      ]
-    ]
   },
   "peerDependencies": {
     "react": "^16.8.0",
@@ -135,28 +94,17 @@
   },
   "dependencies": {
     "clsx": "^1.1.1",
-    "shx": "^0.3.3",
     "styled-components": "^5.2.3"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
-    "@pika/cli": "^0.2.0",
-    "@pika/pack": "^0.5.0",
-    "@pika/plugin-build-node": "^0.9.2",
-    "@pika/plugin-build-types": "^0.9.2",
-    "@pika/plugin-build-web": "^0.9.2",
-    "@pika/plugin-copy-assets": "^0.9.2",
-    "@pika/plugin-standard-pkg": "^0.9.2",
-    "@pika/plugin-ts-standard-pkg": "^0.9.2",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-image": "^2.0.6",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
     "@tresdoce-toolkit/eslint-config": "^1.0.0",
-    "@types/eslint": "^7.2.10",
-    "@types/estree": "0.0.47",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "@types/styled-components": "^5.1.9",
@@ -166,7 +114,6 @@
     "bower-nexus3-resolver": "^1.0.2",
     "csso": "^4.2.0",
     "csso-cli": "^3.0.0",
-    "eslint": "^7.25.0",
     "file-loader": "^6.2.0",
     "less": "^4.1.1",
     "less-loader": "^8.1.0",
@@ -190,7 +137,7 @@
     "signale-logger": "^1.5.0",
     "style-loader": "^2.0.0",
     "ts-loader": "^8.1.0",
-    "typescript": "^3.9.9",
+    "typescript": "^4.2.4",
     "url-loader": "^4.1.1",
     "webpack": "^5.31.2",
     "webpack-cli": "^4.6.0"

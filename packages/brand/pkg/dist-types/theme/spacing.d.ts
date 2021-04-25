@@ -1,0 +1,120 @@
+export interface Space {
+    [name: string]: string;
+}
+export declare type Spacing = {
+    default: Space;
+    top: Space;
+    right: Space;
+    bottom: Space;
+    left: Space;
+    horizontal: Space;
+    vertical: Space;
+};
+declare const spacing: {
+    default: {
+        space2: string;
+        space4: string;
+        space8: string;
+        space12: string;
+        space16: string;
+        space24: string;
+        space32: string;
+        space40: string;
+        space48: string;
+        space64: string;
+        space80: string;
+        space96: string;
+        space160: string;
+    };
+    top: {
+        space2: string;
+        space4: string;
+        space8: string;
+        space12: string;
+        space16: string;
+        space24: string;
+        space32: string;
+        space40: string;
+        space48: string;
+        space64: string;
+        space80: string;
+        space96: string;
+        space160: string;
+    };
+    right: {
+        space2: string;
+        space4: string;
+        space8: string;
+        space12: string;
+        space16: string;
+        space24: string;
+        space32: string;
+        space40: string;
+        space48: string;
+        space64: string;
+        space80: string;
+        space96: string;
+        space160: string;
+    };
+    bottom: {
+        space2: string;
+        space4: string;
+        space8: string;
+        space12: string;
+        space16: string;
+        space24: string;
+        space32: string;
+        space40: string;
+        space48: string;
+        space64: string;
+        space80: string;
+        space96: string;
+        space160: string;
+    };
+    left: {
+        space2: string;
+        space4: string;
+        space8: string;
+        space12: string;
+        space16: string;
+        space24: string;
+        space32: string;
+        space40: string;
+        space48: string;
+        space64: string;
+        space80: string;
+        space96: string;
+        space160: string;
+    };
+    horizontal: {
+        space2: string;
+        space4: string;
+        space8: string;
+        space12: string;
+        space16: string;
+        space24: string;
+        space32: string;
+        space40: string;
+        space48: string;
+        space64: string;
+        space80: string;
+        space96: string;
+        space160: string;
+    };
+    vertical: {
+        space2: string;
+        space4: string;
+        space8: string;
+        space12: string;
+        space16: string;
+        space24: string;
+        space32: string;
+        space40: string;
+        space48: string;
+        space64: string;
+        space80: string;
+        space96: string;
+        space160: string;
+    };
+};
+export default spacing;
