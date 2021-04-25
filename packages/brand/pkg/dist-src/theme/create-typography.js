@@ -1,0 +1,114 @@
+//import _ from 'lodash';
+const family = {
+  fontAwesome: '"FontAwesome"',
+  sans: '"Helvetica", Arial, Trebuchet MS, sans-serif',
+  hairline: '"Lato-Hairline", Helvetica, Arial, sans-serif',
+  hairlineItalic: '"Lato-Hairline-Italic", Helvetica, Arial, sans-serif',
+  light: '"Lato-Light", Helvetica, Arial, sans-serif',
+  lightItalic: '"Lato-LightItalic", Helvetica, Arial, sans-serif',
+  regular: '"Lato", Helvetica, Arial, sans-serif',
+  regularItalic: '"Lato-Italic", Helvetica, Arial, sans-serif',
+  bold: '"Lato-Bold", Helvetica, Arial, sans-serif',
+  boldItalic: '"Lato-BoldItalic", Helvetica, Arial, sans-serif',
+  black: '"Lato-Black", Helvetica, Arial, sans-serif',
+  blackItalic: '"Lato-BlackItalic", Helvetica, Arial, sans-serif'
+};
+const sizes = {
+  px8: 8,
+  px10: 10,
+  px12: 12,
+  px14: 14,
+  px16: 16,
+  px18: 18,
+  px20: 20,
+  px24: 24,
+  px28: 28,
+  px30: 30,
+  px32: 32,
+  px36: 36,
+  px42: 42,
+  px48: 48,
+  px54: 54,
+  px60: 60,
+  px64: 64,
+  px68: 68,
+  px76: 76,
+  px84: 84,
+  px92: 92,
+  px96: 96
+};
+const lineHeight = {
+  space10: '10px',
+  space12: '12px',
+  space14: '14px',
+  space16: '16px',
+  space18: '18px',
+  space20: '20px',
+  space22: '22px',
+  space24: '24px',
+  space26: '26px',
+  space28: '28px',
+  space32: '32px',
+  space36: '36px',
+  space48: '48px',
+  space56: '56px',
+  space72: '72px'
+};
+const letterSpacing = {
+  neg03: '-0.03em',
+  neg02: '-0.02em',
+  neg01: '-0.01em',
+  normal: 'normal',
+  auto: 'auto',
+  space0: '0em',
+  space025: '0.025em',
+  space01: '0.01em',
+  space15: '0.15em'
+};
+const weight = {
+  extraLight: 100,
+  light: 300,
+  normal: 'normal',
+  regular: 400,
+  semiBold: 500,
+  bold: 'bold',
+  ultraBold: 900
+};
+const align = {
+  center: 'center',
+  left: 'lef',
+  right: 'right'
+};
+
+const createTypography = typography => {
+  const {
+    fontSize = sizes.px14,
+    htmlFontSize = sizes.px16
+  } = typography;
+  const coef = fontSize / sizes.px14;
+
+  const pxToRem = size => `${size / htmlFontSize * coef}rem`;
+
+  const applicationsSizes = {
+    H1: pxToRem(sizes.px42),
+    H2: pxToRem(sizes.px32),
+    H3: pxToRem(sizes.px28),
+    H4: pxToRem(sizes.px24),
+    H5: pxToRem(sizes.px20),
+    H6: pxToRem(sizes.px16),
+    p: pxToRem(sizes.px16),
+    button: pxToRem(sizes.px14),
+    href: pxToRem(sizes.px14)
+  };
+  return {
+    family,
+    sizes,
+    lineHeight,
+    letterSpacing,
+    weight,
+    align,
+    applicationsSizes
+  };
+};
+
+export default createTypography;

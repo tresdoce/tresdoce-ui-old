@@ -17,8 +17,11 @@ packages/brand/assets/bower_components
 packages/brand/assets/bower_components/*
 packages/brand/assets/themes
 packages/brand/assets/themes/*
-packages/brand/pgk
-packages/brand/pgk/*
+packages/brand/pkg
+packages/brand/pkg/*
+
+packages/core/pkg
+packages/core/pkg/*
 
 **/app.css
 **/app.css.map

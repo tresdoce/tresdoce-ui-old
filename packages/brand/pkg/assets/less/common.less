@@ -1,0 +1,230 @@
+// COMMON TAGS // -------------------------------
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  //font-size: 62.5%;
+  min-height: 100%;
+  height: 100%;
+  //height: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  //position: relative;
+  margin: 0 0;
+  .font-size(1.4);
+  //height: auto;
+  height: 100%;
+  overflow: visible;
+}
+
+code {
+  font-size: 80%;
+}
+
+strong {
+  font-weight: @font-bold;
+}
+
+em {
+  font-style: italic;
+}
+
+a, button {
+  outline: 0;
+  .Transitions (all 0.7s ease);
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+a, a:link, a:active, a:visited {
+  outline: 0 !important;
+  color: @color-link;
+  font-weight: @font-regular;
+}
+
+a:hover, a:focus {
+  color: @color-link-over;
+  text-decoration: none;
+  outline: 0;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+
+  strong {
+    font-weight: @font-bold;
+  }
+
+  span {
+    vertical-align: -webkit-baseline-middle;
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.lowercase {
+    text-transform: lowercase;
+  }
+}
+
+input, textarea {
+  .RoundedShape(0px);
+  .BoxShadow (none);
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+hr {
+  border-top: 2px solid @color-cyan;
+}
+
+.vertical-align {
+  //display: flex;
+  display: block;
+  align-items: center;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.block {
+  display: block;
+  margin: 6px auto;
+}
+
+.allCaps {
+  text-transform: uppercase;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.no-padding-margin {
+  padding: 0px;
+  margin: 0px;
+}
+
+.text-center-forced {
+  text-align: center !important;
+}
+
+/* centered columns styles */
+//http://www.minimit.com/demos/bootstrap-3-responsive-centered-columns
+.row-centered {
+  text-align: center;
+}
+
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: -4px;
+}
+
+.col-fixed {
+  /* custom width */
+  width: 320px;
+}
+
+.col-min {
+  /* custom min width */
+  min-width: 320px;
+}
+
+.col-max {
+  /* custom max width */
+  max-width: 320px;
+}
+
+// ----------------------------------------------
+
+// COMMON STYLES // -----------------------------
+
+.container {
+  .Transitions (all 0.5s ease);
+}
+
+.custom {
+  .wrapper {
+    min-height: 100%;
+
+    .main-content {
+      padding: @navH-mobile 0px @footerH-mobile;
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.is-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.is-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+* And with max cross-browser enabled.
+* Nobody should ever write this by hand.
+* Use a preprocesser with autoprefixing.
+*/
+.is-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.is-flex > [class*='col-'] {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+// ----------------------------------------------
