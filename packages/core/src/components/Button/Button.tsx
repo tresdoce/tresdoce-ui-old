@@ -2,7 +2,7 @@ import * as React from 'react';
 import filterProps from '../../utils/filter-props';
 import { withTheme } from '../Theme';
 import { ButtonProps } from './Button.types';
-import { ButtonStyle } from './styles.jsx';
+import { ButtonStyle } from './styles';
 
 const Button: React.FC<ButtonProps> = ({
  foo,

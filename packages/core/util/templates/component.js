@@ -6,7 +6,7 @@ import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { withTheme } from '../Theme';
 import { ${componentName}Props } from "./${componentName}.types";
-import { ${componentName}Style } from "./styles.jsx";
+import { ${componentName}Style } from "./styles.tsx";
 
 const ${componentName}: React.FC<${componentName}Props> = ({ 
   className,

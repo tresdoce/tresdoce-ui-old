@@ -21,6 +21,6 @@ export const Default = () => {
     'primary': 'primary',
     'secondary': 'secondary',
   };
-  const type = select('type', typeOptions, 'primary', 'GROUP-THEME');
-  return <TestComponent type={type} />;
+  const mode = select('mode', typeOptions, 'primary', 'GROUP-THEME');
+  return <TestComponent mode={mode} />;
 };

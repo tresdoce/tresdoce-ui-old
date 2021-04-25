@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import { TestComponentProps } from './TestComponent.types';
 
-export const StyledDiv = styled.div`
+export const StyledDiv = styled.div<TestComponentProps>`
   background-color: white;
   border: 1px solid black;
   padding: 16px;
   width: 460px;
   text-align: center;
   ${(props) =>
-      props.type === 'secondary' && `
+      props.mode === 'secondary' && `
         background-color: black;
         color: white;
      `}

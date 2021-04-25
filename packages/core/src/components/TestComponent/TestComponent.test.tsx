@@ -9,7 +9,7 @@ describe('Test Component', () => {
 
   beforeEach(() => {
     props = {
-      type: 'primary',
+      mode: 'primary',
     };
   });
 
@@ -22,7 +22,7 @@ describe('Test Component', () => {
   });
 
   it('should have secondary className with theme set as secondary', () => {
-    props.type = 'secondary';
+    props.mode = 'secondary';
     const { getByTestId } = renderComponent();
     const testComponent = getByTestId('test-component');
     expect(testComponent).toHaveClass('test-component-secondary');

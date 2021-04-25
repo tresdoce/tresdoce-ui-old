@@ -1,4 +1,6 @@
+type ComponentMode = "primary" | "secondary";
+
 export interface TestComponentProps {
-    type: "primary" | "secondary";
+    mode: ComponentMode;
 }
 
