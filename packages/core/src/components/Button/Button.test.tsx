@@ -1,21 +1,29 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+
+import { createTheme } from '../../../../brand/src';
+import Layout from '../Layout';
+
 import Button from './Button';
 import { ButtonProps } from './Button.types';
 
-describe('Test Component', () => {
+describe('Test Button Component', () => {
+
   let props: ButtonProps;
+
   beforeEach(() => {
     props = {
       foo: 'bar',
       onClick: () => alert('click'),
     };
   });
-  const renderComponent = () => render(<Button {...props} />);
+
+  const renderComponent = () => render(<Layout theme={createTheme({})} cdnBasepath={''}><Button {...props} /></Layout>);
+
   it('should render foo text correctly', () => {
     props.foo = 'harvey was here';
     const { getByTestId } = renderComponent();
     const component = getByTestId('Button');
-    expect(component).toHaveTextContent('harvey was here');
+    expect(component).toHaveTextContent(props.foo);
   });
 });

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { createTheme } from '@tresdoce-ui/brand';
+import { createTheme } from '../../../../brand/src';
 
 import Layout from './Layout';
 import { LayoutProps } from './Layout.types';
@@ -11,7 +11,7 @@ describe('Test Layout', () => {
   beforeEach(() => {
     props = {
       cdnBasepath: '',
-      theme: createTheme(),
+      theme: createTheme({}),
     };
   });
 

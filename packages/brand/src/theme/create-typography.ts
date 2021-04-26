@@ -1,30 +1,30 @@
 //import _ from 'lodash';
 
-declare interface FontFamily {
+type FontFamily = {
   [name: string]: string;
 }
 
-declare interface FontSizes {
+type FontSizes = {
   [name: string]: number;
 }
 
-declare interface LineHeight {
+type LineHeight = {
   [name: string]: string;
 }
 
-declare interface LetterSpacing {
+type LetterSpacing = {
   [name: string]: string;
 }
 
-declare interface FontWeight {
+type FontWeight = {
   [name: string]: string | number;
 }
 
-declare interface FontAlign {
+type FontAlign = {
   [name: string]: string;
 }
 
-declare interface ApplicationsSizes {
+type ApplicationsSizes = {
   [name: string]: string;
 }
 

@@ -1,8 +1,8 @@
 import createPalette, { Palette, PaletteInput } from './create-palette';
 import createTypography, { Typography, TypographyInput } from './create-typography';
-import themeImages, {Image} from './images';
-import createSizing, {Sizing, SizingInput} from './sizing';
-import createRadiuses, {Radiuses, RadiusesInput} from './radiuses';
+import themeImages, { Image } from './images';
+import createSizing, { Sizing, SizingInput } from './sizing';
+import createRadiuses, { Radiuses, RadiusesInput } from './radiuses';
 import spacing, { Spacing } from './spacing';
 import zIndex, { ZIndex } from './z-index';
 
@@ -44,7 +44,7 @@ const createTheme = (options: ThemeInput): Theme => {
     sizing,
     spacing,
     radiuses,
-    zIndex
+    zIndex,
   };
 };
 

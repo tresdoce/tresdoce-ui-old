@@ -1,10 +1,14 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
+import { createTheme } from '../../../../brand/src';
+import Layout from '../Layout';
+
 import TestComponent from './TestComponent';
 import { TestComponentProps } from './TestComponent.types';
+import Button from '../Button/Button';
 
-describe('Test Component', () => {
+describe('Test TestComponent', () => {
   let props: TestComponentProps;
 
   beforeEach(() => {
@@ -13,7 +17,7 @@ describe('Test Component', () => {
     };
   });
 
-  const renderComponent = () => render(<TestComponent {...props} />);
+  const renderComponent = () => render(<Layout theme={createTheme({})} cdnBasepath={''}><TestComponent {...props} /></Layout>);
 
   it('should have primary className with default props', () => {
     const { getByTestId,  } = renderComponent();
