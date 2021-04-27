@@ -23,6 +23,11 @@ packages/brand/pkg/*
 packages/core/pkg
 packages/core/pkg/*
 
+packages/brand/coverage
+packages/brand/coverage/*
+packages/core/coverage
+packages/core/coverage/*
+
 **/app.css
 **/app.css.map
 #IDES

@@ -8,7 +8,7 @@
     "build"
   ],
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest --detectOpenHandles --runInBand --coverage",
     "test:watch": "jest --watch",
     "build": "npm-run-all -l -c -s clear pika:build copy:npmrc",
     "clear": "shx rm -rf pkg build",
