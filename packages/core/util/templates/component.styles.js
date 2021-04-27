@@ -6,7 +6,7 @@ import { ${componentName}Props } from './${componentName}.types';
   
 export const ${componentName}Style = styled.div<${componentName}Props>\`
   border: 2px solid black;
-  \$\{({ theme }) => \`padding: \$\{theme.spacing.default.space12} \`\};
+  $\{({ theme }) => \`padding: $\{theme.spacing.default.space12};\`};
 \`
 `
 });

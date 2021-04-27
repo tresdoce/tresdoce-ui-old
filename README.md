@@ -16,7 +16,7 @@ Los componentes que contiene este repositorio se desarrollan con las siguientes 
 - **Styled-components**: v5
 - **TypeScript**: v4
 - **Storybook**: v6
-- Build: **RollUp**
+- Build: **Pika Pack**
 
 ## ¿Cómo instalo Tresdoce-ui en mi proyecto?
 

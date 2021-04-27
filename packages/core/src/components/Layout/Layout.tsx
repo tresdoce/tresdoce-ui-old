@@ -22,7 +22,7 @@ export const Layout: React.FC<LayoutProps> = ({
         cdnBasepath,
       }}
     >
-      {console.log('CORE Layout: ', theme)}
+      {{/*console.log('CORE Layout: ', theme)*/}}
       <ThemeProvider theme={theme}>
         <div className={containerFluid ? 'container-fluid' : 'container'} {...filteredProps}>{children}</div>
         <Baseline />

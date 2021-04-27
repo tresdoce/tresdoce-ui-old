@@ -6,7 +6,6 @@ import Layout from '../Layout';
 
 import TestComponent from './TestComponent';
 import { TestComponentProps } from './TestComponent.types';
-import Button from '../Button/Button';
 
 describe('Test TestComponent', () => {
   let props: TestComponentProps;
