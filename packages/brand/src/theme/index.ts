@@ -23,7 +23,7 @@ export interface ThemeInput {
   sizing?: SizingInput,
 }
 
-const createTheme = (options: ThemeInput): Theme => {
+const createTheme = (options?: ThemeInput): Theme => {
   const {
     palette: paletteInput = {},
     typography: typographyInput = {},

@@ -8,6 +8,19 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
 # Colors
 
 <ColorPalette>
+  {[
+    Object.keys(defaultPallete.color).map((color, index) => <ColorItem
+      key={index}
+      title={`${color.charAt(0).toUpperCase()}${color.slice(1)}`}
+      subtitle={`theme.palette.color.${color}`}
+      colors={[defaultPallete.color[color]]}
+    />)
+  ]}
+</ColorPalette>
+
+# Primary Color
+
+<ColorPalette>
   <ColorItem
     title="Primary"
     subtitle="theme.palette.color.primary.default"
@@ -15,34 +28,567 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
   />
   <ColorItem
     title="Primary Scale"
-    subtitle="theme.palette.color.primary[100-900]"
+    subtitle="theme.palette.color.primary[0-9]"
     colors={{
-      100: defaultPallete.primary[100],
-      200: defaultPallete.primary[200],
-      300: defaultPallete.primary[300],
-      400: defaultPallete.primary[400],
-      500: defaultPallete.primary[500],
-      600: defaultPallete.primary[600],
-      700: defaultPallete.primary[700],
-      800: defaultPallete.primary[800],
-      900: defaultPallete.primary[900],
+      0: defaultPallete.primary[0],
+      1: defaultPallete.primary[1],
+      2: defaultPallete.primary[2],
+      3: defaultPallete.primary[3],
+      4: defaultPallete.primary[4],
+      5: defaultPallete.primary[5],
+      6: defaultPallete.primary[6],
+      7: defaultPallete.primary[7],
+      8: defaultPallete.primary[8],
+      9: defaultPallete.primary[9],
     }}
   />
   <ColorItem
     title="Primary Transparent"
-    subtitle="theme.palette.color.primary.transparent[100-600]"
+    subtitle="theme.palette.color.primary.transparent[0-5]"
     colors={{
-      100: defaultPallete.primary.transparent[100],
-      200: defaultPallete.primary.transparent[200],
-      300: defaultPallete.primary.transparent[300],
-      400: defaultPallete.primary.transparent[400],
-      500: defaultPallete.primary.transparent[500],
-      600: defaultPallete.primary.transparent[600]
+      0: defaultPallete.primary.transparent[0],
+      1: defaultPallete.primary.transparent[1],
+      2: defaultPallete.primary.transparent[2],
+      3: defaultPallete.primary.transparent[3],
+      4: defaultPallete.primary.transparent[4],
+      5: defaultPallete.primary.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+# Color Palettes
+
+<ColorPalette>
+  <ColorItem
+    title="Dark"
+    subtitle="theme.palette.color.dark.default"
+    colors={[defaultPallete.dark.default]}
+  />
+  <ColorItem
+    title="Dark Scale"
+    subtitle="theme.color.dark[0-9]"
+    colors={{
+      0: defaultPallete.dark[0],
+      1: defaultPallete.dark[1],
+      2: defaultPallete.dark[2],
+      3: defaultPallete.dark[3],
+      4: defaultPallete.dark[4],
+      5: defaultPallete.dark[5],
+      6: defaultPallete.dark[6],
+      7: defaultPallete.dark[7],
+      8: defaultPallete.dark[8],
+      9: defaultPallete.dark[9],
+    }}
+  />
+  <ColorItem
+    title="Dark Transparent"
+    subtitle="theme.palette.color.dark.transparent[0-5]"
+    colors={{
+      0: defaultPallete.dark.transparent[0],
+      1: defaultPallete.dark.transparent[1],
+      2: defaultPallete.dark.transparent[2],
+      3: defaultPallete.dark.transparent[3],
+      4: defaultPallete.dark.transparent[4],
+      5: defaultPallete.dark.transparent[5]
     }}
   />
 </ColorPalette>
 
 <hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Gray"
+    subtitle="theme.palette.color.gray.default"
+    colors={[defaultPallete.gray.default]}
+  />
+  <ColorItem
+    title="Gray Scale"
+    subtitle="theme.color.gray[0-9]"
+    colors={{
+      0: defaultPallete.gray[0],
+      1: defaultPallete.gray[1],
+      2: defaultPallete.gray[2],
+      3: defaultPallete.gray[3],
+      4: defaultPallete.gray[4],
+      5: defaultPallete.gray[5],
+      6: defaultPallete.gray[6],
+      7: defaultPallete.gray[7],
+      8: defaultPallete.gray[8],
+      9: defaultPallete.gray[9],
+    }}
+  />
+  <ColorItem
+    title="Gray Transparent"
+    subtitle="theme.palette.color.gray.transparent[0-5]"
+    colors={{
+      0: defaultPallete.gray.transparent[0],
+      1: defaultPallete.gray.transparent[1],
+      2: defaultPallete.gray.transparent[2],
+      3: defaultPallete.gray.transparent[3],
+      4: defaultPallete.gray.transparent[4],
+      5: defaultPallete.gray.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Red"
+    subtitle="theme.palette.color.red.default"
+    colors={[defaultPallete.red.default]}
+  />
+  <ColorItem
+    title="Red Scale"
+    subtitle="theme.color.red[0-9]"
+    colors={{
+      0: defaultPallete.red[0],
+      1: defaultPallete.red[1],
+      2: defaultPallete.red[2],
+      3: defaultPallete.red[3],
+      4: defaultPallete.red[4],
+      5: defaultPallete.red[5],
+      6: defaultPallete.red[6],
+      7: defaultPallete.red[7],
+      8: defaultPallete.red[8],
+      9: defaultPallete.red[9],
+    }}
+  />
+  <ColorItem
+    title="Red Transparent"
+    subtitle="theme.palette.color.red.transparent[0-5]"
+    colors={{
+      0: defaultPallete.red.transparent[0],
+      1: defaultPallete.red.transparent[1],
+      2: defaultPallete.red.transparent[2],
+      3: defaultPallete.red.transparent[3],
+      4: defaultPallete.red.transparent[4],
+      5: defaultPallete.red.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Pink"
+    subtitle="theme.palette.color.pink.default"
+    colors={[defaultPallete.pink.default]}
+  />
+  <ColorItem
+    title="Pink Scale"
+    subtitle="theme.color.pink[0-9]"
+    colors={{
+      0: defaultPallete.pink[0],
+      1: defaultPallete.pink[1],
+      2: defaultPallete.pink[2],
+      3: defaultPallete.pink[3],
+      4: defaultPallete.pink[4],
+      5: defaultPallete.pink[5],
+      6: defaultPallete.pink[6],
+      7: defaultPallete.pink[7],
+      8: defaultPallete.pink[8],
+      9: defaultPallete.pink[9],
+    }}
+  />
+  <ColorItem
+    title="Pink Transparent"
+    subtitle="theme.palette.color.pink.transparent[0-5]"
+    colors={{
+      0: defaultPallete.pink.transparent[0],
+      1: defaultPallete.pink.transparent[1],
+      2: defaultPallete.pink.transparent[2],
+      3: defaultPallete.pink.transparent[3],
+      4: defaultPallete.pink.transparent[4],
+      5: defaultPallete.pink.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Grape"
+    subtitle="theme.palette.color.grape.default"
+    colors={[defaultPallete.grape.default]}
+  />
+  <ColorItem
+    title="Grape Scale"
+    subtitle="theme.color.grape[0-9]"
+    colors={{
+      0: defaultPallete.grape[0],
+      1: defaultPallete.grape[1],
+      2: defaultPallete.grape[2],
+      3: defaultPallete.grape[3],
+      4: defaultPallete.grape[4],
+      5: defaultPallete.grape[5],
+      6: defaultPallete.grape[6],
+      7: defaultPallete.grape[7],
+      8: defaultPallete.grape[8],
+      9: defaultPallete.grape[9],
+    }}
+  />
+  <ColorItem
+    title="Grape Transparent"
+    subtitle="theme.palette.color.grape.transparent[0-5]"
+    colors={{
+      0: defaultPallete.grape.transparent[0],
+      1: defaultPallete.grape.transparent[1],
+      2: defaultPallete.grape.transparent[2],
+      3: defaultPallete.grape.transparent[3],
+      4: defaultPallete.grape.transparent[4],
+      5: defaultPallete.grape.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Violet"
+    subtitle="theme.palette.color.violet.default"
+    colors={[defaultPallete.violet.default]}
+  />
+  <ColorItem
+    title="Violet Scale"
+    subtitle="theme.color.violet[0-9]"
+    colors={{
+      0: defaultPallete.violet[0],
+      1: defaultPallete.violet[1],
+      2: defaultPallete.violet[2],
+      3: defaultPallete.violet[3],
+      4: defaultPallete.violet[4],
+      5: defaultPallete.violet[5],
+      6: defaultPallete.violet[6],
+      7: defaultPallete.violet[7],
+      8: defaultPallete.violet[8],
+      9: defaultPallete.violet[9],
+    }}
+  />
+  <ColorItem
+    title="Violet Transparent"
+    subtitle="theme.palette.color.violet.transparent[0-5]"
+    colors={{
+      0: defaultPallete.violet.transparent[0],
+      1: defaultPallete.violet.transparent[1],
+      2: defaultPallete.violet.transparent[2],
+      3: defaultPallete.violet.transparent[3],
+      4: defaultPallete.violet.transparent[4],
+      5: defaultPallete.violet.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Indigo"
+    subtitle="theme.palette.color.indigo.default"
+    colors={[defaultPallete.indigo.default]}
+  />
+  <ColorItem
+    title="Indigo Scale"
+    subtitle="theme.color.indigo[0-9]"
+    colors={{
+      0: defaultPallete.indigo[0],
+      1: defaultPallete.indigo[1],
+      2: defaultPallete.indigo[2],
+      3: defaultPallete.indigo[3],
+      4: defaultPallete.indigo[4],
+      5: defaultPallete.indigo[5],
+      6: defaultPallete.indigo[6],
+      7: defaultPallete.indigo[7],
+      8: defaultPallete.indigo[8],
+      9: defaultPallete.indigo[9],
+    }}
+  />
+  <ColorItem
+    title="Indigo Transparent"
+    subtitle="theme.palette.color.indigo.transparent[0-5]"
+    colors={{
+      0: defaultPallete.indigo.transparent[0],
+      1: defaultPallete.indigo.transparent[1],
+      2: defaultPallete.indigo.transparent[2],
+      3: defaultPallete.indigo.transparent[3],
+      4: defaultPallete.indigo.transparent[4],
+      5: defaultPallete.indigo.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Blue"
+    subtitle="theme.palette.color.blue.default"
+    colors={[defaultPallete.blue.default]}
+  />
+  <ColorItem
+    title="Blue Scale"
+    subtitle="theme.color.blue[0-9]"
+    colors={{
+      0: defaultPallete.blue[0],
+      1: defaultPallete.blue[1],
+      2: defaultPallete.blue[2],
+      3: defaultPallete.blue[3],
+      4: defaultPallete.blue[4],
+      5: defaultPallete.blue[5],
+      6: defaultPallete.blue[6],
+      7: defaultPallete.blue[7],
+      8: defaultPallete.blue[8],
+      9: defaultPallete.blue[9],
+    }}
+  />
+  <ColorItem
+    title="Blue Transparent"
+    subtitle="theme.palette.color.blue.transparent[0-5]"
+    colors={{
+      0: defaultPallete.blue.transparent[0],
+      1: defaultPallete.blue.transparent[1],
+      2: defaultPallete.blue.transparent[2],
+      3: defaultPallete.blue.transparent[3],
+      4: defaultPallete.blue.transparent[4],
+      5: defaultPallete.blue.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Cyan"
+    subtitle="theme.palette.color.cyan.default"
+    colors={[defaultPallete.cyan.default]}
+  />
+  <ColorItem
+    title="Cyan Scale"
+    subtitle="theme.color.cyan[0-9]"
+    colors={{
+      0: defaultPallete.cyan[0],
+      1: defaultPallete.cyan[1],
+      2: defaultPallete.cyan[2],
+      3: defaultPallete.cyan[3],
+      4: defaultPallete.cyan[4],
+      5: defaultPallete.cyan[5],
+      6: defaultPallete.cyan[6],
+      7: defaultPallete.cyan[7],
+      8: defaultPallete.cyan[8],
+      9: defaultPallete.cyan[9],
+    }}
+  />
+  <ColorItem
+    title="Cyan Transparent"
+    subtitle="theme.palette.color.cyan.transparent[0-5]"
+    colors={{
+      0: defaultPallete.cyan.transparent[0],
+      1: defaultPallete.cyan.transparent[1],
+      2: defaultPallete.cyan.transparent[2],
+      3: defaultPallete.cyan.transparent[3],
+      4: defaultPallete.cyan.transparent[4],
+      5: defaultPallete.cyan.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Teal"
+    subtitle="theme.palette.color.teal.default"
+    colors={[defaultPallete.teal.default]}
+  />
+  <ColorItem
+    title="Teal Scale"
+    subtitle="theme.color.teal[0-9]"
+    colors={{
+      0: defaultPallete.teal[0],
+      1: defaultPallete.teal[1],
+      2: defaultPallete.teal[2],
+      3: defaultPallete.teal[3],
+      4: defaultPallete.teal[4],
+      5: defaultPallete.teal[5],
+      6: defaultPallete.teal[6],
+      7: defaultPallete.teal[7],
+      8: defaultPallete.teal[8],
+      9: defaultPallete.teal[9],
+    }}
+  />
+  <ColorItem
+    title="Teal Transparent"
+    subtitle="theme.palette.color.teal.transparent[0-5]"
+    colors={{
+      0: defaultPallete.teal.transparent[0],
+      1: defaultPallete.teal.transparent[1],
+      2: defaultPallete.teal.transparent[2],
+      3: defaultPallete.teal.transparent[3],
+      4: defaultPallete.teal.transparent[4],
+      5: defaultPallete.teal.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Green"
+    subtitle="theme.palette.color.green.default"
+    colors={[defaultPallete.green.default]}
+  />
+  <ColorItem
+    title="Green Scale"
+    subtitle="theme.color.green[0-9]"
+    colors={{
+      0: defaultPallete.green[0],
+      1: defaultPallete.green[1],
+      2: defaultPallete.green[2],
+      3: defaultPallete.green[3],
+      4: defaultPallete.green[4],
+      5: defaultPallete.green[5],
+      6: defaultPallete.green[6],
+      7: defaultPallete.green[7],
+      8: defaultPallete.green[8],
+      9: defaultPallete.green[9],
+    }}
+  />
+  <ColorItem
+    title="Green Transparent"
+    subtitle="theme.palette.color.green.transparent[0-5]"
+    colors={{
+      0: defaultPallete.green.transparent[0],
+      1: defaultPallete.green.transparent[1],
+      2: defaultPallete.green.transparent[2],
+      3: defaultPallete.green.transparent[3],
+      4: defaultPallete.green.transparent[4],
+      5: defaultPallete.green.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Lime"
+    subtitle="theme.palette.color.lime.default"
+    colors={[defaultPallete.lime.default]}
+  />
+  <ColorItem
+    title="Lime Scale"
+    subtitle="theme.color.lime[0-9]"
+    colors={{
+      0: defaultPallete.lime[0],
+      1: defaultPallete.lime[1],
+      2: defaultPallete.lime[2],
+      3: defaultPallete.lime[3],
+      4: defaultPallete.lime[4],
+      5: defaultPallete.lime[5],
+      6: defaultPallete.lime[6],
+      7: defaultPallete.lime[7],
+      8: defaultPallete.lime[8],
+      9: defaultPallete.lime[9],
+    }}
+  />
+  <ColorItem
+    title="Lime Transparent"
+    subtitle="theme.palette.color.lime.transparent[0-5]"
+    colors={{
+      0: defaultPallete.lime.transparent[0],
+      1: defaultPallete.lime.transparent[1],
+      2: defaultPallete.lime.transparent[2],
+      3: defaultPallete.lime.transparent[3],
+      4: defaultPallete.lime.transparent[4],
+      5: defaultPallete.lime.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Yellow"
+    subtitle="theme.palette.color.yellow.default"
+    colors={[defaultPallete.yellow.default]}
+  />
+  <ColorItem
+    title="Yellow Scale"
+    subtitle="theme.color.yellow[0-9]"
+    colors={{
+      0: defaultPallete.yellow[0],
+      1: defaultPallete.yellow[1],
+      2: defaultPallete.yellow[2],
+      3: defaultPallete.yellow[3],
+      4: defaultPallete.yellow[4],
+      5: defaultPallete.yellow[5],
+      6: defaultPallete.yellow[6],
+      7: defaultPallete.yellow[7],
+      8: defaultPallete.yellow[8],
+      9: defaultPallete.yellow[9],
+    }}
+  />
+  <ColorItem
+    title="Yellow Transparent"
+    subtitle="theme.palette.color.yellow.transparent[0-5]"
+    colors={{
+      0: defaultPallete.yellow.transparent[0],
+      1: defaultPallete.yellow.transparent[1],
+      2: defaultPallete.yellow.transparent[2],
+      3: defaultPallete.yellow.transparent[3],
+      4: defaultPallete.yellow.transparent[4],
+      5: defaultPallete.yellow.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+<hr/>
+
+<ColorPalette>
+  <ColorItem
+    title="Orange"
+    subtitle="theme.palette.color.orange.default"
+    colors={[defaultPallete.orange.default]}
+  />
+  <ColorItem
+    title="Orange Scale"
+    subtitle="theme.color.orange[0-9]"
+    colors={{
+      0: defaultPallete.orange[0],
+      1: defaultPallete.orange[1],
+      2: defaultPallete.orange[2],
+      3: defaultPallete.orange[3],
+      4: defaultPallete.orange[4],
+      5: defaultPallete.orange[5],
+      6: defaultPallete.orange[6],
+      7: defaultPallete.orange[7],
+      8: defaultPallete.orange[8],
+      9: defaultPallete.orange[9],
+    }}
+  />
+  <ColorItem
+    title="Orange Transparent"
+    subtitle="theme.palette.color.orange.transparent[0-5]"
+    colors={{
+      0: defaultPallete.orange.transparent[0],
+      1: defaultPallete.orange.transparent[1],
+      2: defaultPallete.orange.transparent[2],
+      3: defaultPallete.orange.transparent[3],
+      4: defaultPallete.orange.transparent[4],
+      5: defaultPallete.orange.transparent[5]
+    }}
+  />
+</ColorPalette>
+
+# Default states colors
 
 <ColorPalette>
   <ColorItem
@@ -52,29 +598,30 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
   />
   <ColorItem
     title="Success Scale"
-    subtitle="theme.color.success[100-900]"
+    subtitle="theme.color.success[0-9]"
     colors={{
-      100: defaultPallete.success[100],
-      200: defaultPallete.success[200],
-      300: defaultPallete.success[300],
-      400: defaultPallete.success[400],
-      500: defaultPallete.success[500],
-      600: defaultPallete.success[600],
-      700: defaultPallete.success[700],
-      800: defaultPallete.success[800],
-      900: defaultPallete.success[900],
+      0: defaultPallete.success[0],
+      1: defaultPallete.success[1],
+      2: defaultPallete.success[2],
+      3: defaultPallete.success[3],
+      4: defaultPallete.success[4],
+      5: defaultPallete.success[5],
+      6: defaultPallete.success[6],
+      7: defaultPallete.success[7],
+      8: defaultPallete.success[8],
+      9: defaultPallete.success[9],
     }}
   />
   <ColorItem
     title="Success Transparent"
-    subtitle="theme.palette.color.success.transparent[100-600]"
+    subtitle="theme.palette.color.success.transparent[0-5]"
     colors={{
-      100: defaultPallete.success.transparent[100],
-      200: defaultPallete.success.transparent[200],
-      300: defaultPallete.success.transparent[300],
-      400: defaultPallete.success.transparent[400],
-      500: defaultPallete.success.transparent[500],
-      600: defaultPallete.success.transparent[600]
+      0: defaultPallete.success.transparent[0],
+      1: defaultPallete.success.transparent[1],
+      2: defaultPallete.success.transparent[2],
+      3: defaultPallete.success.transparent[3],
+      4: defaultPallete.success.transparent[4],
+      5: defaultPallete.success.transparent[5]
     }}
   />
 </ColorPalette>
@@ -89,29 +636,30 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
   />
   <ColorItem
     title="Info Scale"
-    subtitle="theme.palette.color.info[100-900]"
+    subtitle="theme.palette.color.info[0-9]"
     colors={{
-      100: defaultPallete.info[100],
-      200: defaultPallete.info[200],
-      300: defaultPallete.info[300],
-      400: defaultPallete.info[400],
-      500: defaultPallete.info[500],
-      600: defaultPallete.info[600],
-      700: defaultPallete.info[700],
-      800: defaultPallete.info[800],
-      900: defaultPallete.info[900],
+      0: defaultPallete.info[0],
+      1: defaultPallete.info[1],
+      2: defaultPallete.info[2],
+      3: defaultPallete.info[3],
+      4: defaultPallete.info[4],
+      5: defaultPallete.info[5],
+      6: defaultPallete.info[6],
+      7: defaultPallete.info[7],
+      8: defaultPallete.info[8],
+      9: defaultPallete.info[9],
     }}
   />
   <ColorItem
     title="Info Transparent"
-    subtitle="theme.palette.color.info.transparent[100-600]"
+    subtitle="theme.palette.color.info.transparent[0-5]"
     colors={{
-      100: defaultPallete.info.transparent[100],
-      200: defaultPallete.info.transparent[200],
-      300: defaultPallete.info.transparent[300],
-      400: defaultPallete.info.transparent[400],
-      500: defaultPallete.info.transparent[500],
-      600: defaultPallete.info.transparent[600]
+      0: defaultPallete.info.transparent[0],
+      1: defaultPallete.info.transparent[1],
+      2: defaultPallete.info.transparent[2],
+      3: defaultPallete.info.transparent[3],
+      4: defaultPallete.info.transparent[4],
+      5: defaultPallete.info.transparent[5]
     }}
   />
 </ColorPalette>
@@ -126,29 +674,29 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
   />
   <ColorItem
     title="Warning Scale"
-    subtitle="theme.palette.color.warning[100-900]"
+    subtitle="theme.palette.color.warning[0-9]"
     colors={{
-      100: defaultPallete.warning[100],
-      200: defaultPallete.warning[200],
-      300: defaultPallete.warning[300],
-      400: defaultPallete.warning[400],
-      500: defaultPallete.warning[500],
-      600: defaultPallete.warning[600],
-      700: defaultPallete.warning[700],
-      800: defaultPallete.warning[800],
-      900: defaultPallete.warning[900],
+      1: defaultPallete.warning[1],
+      2: defaultPallete.warning[2],
+      3: defaultPallete.warning[3],
+      4: defaultPallete.warning[4],
+      5: defaultPallete.warning[5],
+      6: defaultPallete.warning[6],
+      7: defaultPallete.warning[7],
+      8: defaultPallete.warning[8],
+      9: defaultPallete.warning[9],
     }}
   />
   <ColorItem
     title="Warning Transparent"
-    subtitle="theme.palette.color.warning.transparent[100-600]"
+    subtitle="theme.palette.color.warning.transparent[0-5]"
     colors={{
-      100: defaultPallete.warning.transparent[100],
-      200: defaultPallete.warning.transparent[200],
-      300: defaultPallete.warning.transparent[300],
-      400: defaultPallete.warning.transparent[400],
-      500: defaultPallete.warning.transparent[500],
-      600: defaultPallete.warning.transparent[600]
+      0: defaultPallete.warning.transparent[0],
+      1: defaultPallete.warning.transparent[1],
+      2: defaultPallete.warning.transparent[2],
+      3: defaultPallete.warning.transparent[3],
+      4: defaultPallete.warning.transparent[4],
+      5: defaultPallete.warning.transparent[5]
     }}
   />
 </ColorPalette>
@@ -163,42 +711,30 @@ import { defaultPallete } from '../packages/brand/src/theme/create-palette';
   />
   <ColorItem
     title="Danger Scale"
-    subtitle="theme.palette.color.danger[100-900]"
+    subtitle="theme.palette.color.danger[0-9]"
     colors={{
-      100: defaultPallete.danger[100],
-      200: defaultPallete.danger[200],
-      300: defaultPallete.danger[300],
-      400: defaultPallete.danger[400],
-      500: defaultPallete.danger[500],
-      600: defaultPallete.danger[600],
-      700: defaultPallete.danger[700],
-      800: defaultPallete.danger[800],
-      900: defaultPallete.danger[900],
+      0: defaultPallete.danger[0],
+      1: defaultPallete.danger[1],
+      2: defaultPallete.danger[2],
+      3: defaultPallete.danger[3],
+      4: defaultPallete.danger[4],
+      5: defaultPallete.danger[5],
+      6: defaultPallete.danger[6],
+      7: defaultPallete.danger[7],
+      8: defaultPallete.danger[8],
+      9: defaultPallete.danger[9],
     }}
   />
   <ColorItem
     title="Danger Transparent"
-    subtitle="theme.palette.color.danger.transparent[100-600]"
+    subtitle="theme.palette.color.danger.transparent[0-5]"
     colors={{
-      100: defaultPallete.danger.transparent[100],
-      200: defaultPallete.danger.transparent[200],
-      300: defaultPallete.danger.transparent[300],
-      400: defaultPallete.danger.transparent[400],
-      500: defaultPallete.danger.transparent[500],
-      600: defaultPallete.danger.transparent[600]
+      0: defaultPallete.danger.transparent[0],
+      1: defaultPallete.danger.transparent[1],
+      2: defaultPallete.danger.transparent[2],
+      3: defaultPallete.danger.transparent[3],
+      4: defaultPallete.danger.transparent[4],
+      5: defaultPallete.danger.transparent[5]
     }}
   />
-</ColorPalette>
-
-<hr/>
-
-<ColorPalette>
-  {[
-    Object.keys(defaultPallete.color).map((color, index) => <ColorItem
-      key={index}
-      title={`${color.charAt(0).toUpperCase()}${color.slice(1)}`}
-      subtitle={`theme.palette.color.${color}`}
-      colors={[defaultPallete.color[color]]}
-    />)
-  ]}
 </ColorPalette>

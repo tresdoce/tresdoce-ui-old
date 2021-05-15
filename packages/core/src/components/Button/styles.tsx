@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ButtonStyle = styled.button`
   ${({theme}) => `
-    background: ${theme.palette.primary[500]};
+    background: ${theme.palette.primary[5]};
     font-family: ${theme.typography.family.regular};
     border: none;
     border-radius: ${theme.radiuses.defaultRadius};
@@ -13,7 +13,7 @@ export const ButtonStyle = styled.button`
   
   &:hover{
     ${({theme}) => `
-      background: ${theme.palette.primary[300]};
+      background: ${theme.palette.primary[3]};
       color: ${theme.palette.color.black};
     `};
   }  
