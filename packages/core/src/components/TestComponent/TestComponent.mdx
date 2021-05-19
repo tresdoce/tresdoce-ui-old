@@ -1,4 +1,4 @@
-import { Meta, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 //import { createTheme } from '@tresdoce-ui/brand';
 import { createTheme } from '../../../../brand/src';
 import Layout  from '../Layout';
@@ -11,20 +11,20 @@ import TestComponent from './TestComponent';
 
 I can embed a story (but not define one, since this file should not contain a `Meta`):
 
-<Preview >
+<Canvas >
     <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
       <TestComponent mode={'primary'}/>
     </Layout>
-</Preview>
+</Canvas>
 
 
 And I can also embed arbitrary markdown & JSX in this file.
 
-<Preview >
+<Canvas >
   <Layout theme={createTheme()} cdnBasepath={''} >
     <TestComponent mode={'secondary'}/>
   </Layout>
-</Preview>
+</Canvas>
 
 ```javascript
 mode: 'primary' | 'secondary'

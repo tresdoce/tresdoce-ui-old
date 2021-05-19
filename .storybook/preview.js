@@ -1,7 +1,5 @@
-const path = require('path');
 import React from 'react';
 import { addDecorator } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { DocsPage } from '@storybook/addon-docs/blocks';
 
@@ -55,4 +53,3 @@ const GlobalWrapper = story => {
 };
 
 addDecorator(GlobalWrapper);
-addDecorator(withKnobs);
