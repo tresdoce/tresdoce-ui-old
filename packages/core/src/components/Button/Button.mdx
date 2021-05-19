@@ -1,7 +1,8 @@
-import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta, Source } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
 //import { createTheme } from '@tresdoce-ui/brand';
 import { createTheme } from '../../../../brand/src';
-import Layout  from '../Layout';
+import Layout from '../Layout';
 
 import Button from './Button';
 
@@ -11,15 +12,19 @@ import Button from './Button';
 
 I can embed a story (but not define one, since this file should not contain a `Meta`):
 
-<Canvas >
+<Canvas>
   <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
-    <Button foo={'Text button'} onClick={()=>alert('click in button')}/>
+    <Button foo={'Text button'} onClick={() => alert('click in button')} />
   </Layout>
 </Canvas>
 
 
 And I can also embed arbitrary markdown & JSX in this file.
 
-```javascript
-foo: text
-```
+
+<Source
+  language='jsx'
+  dark={false}
+  code={dedent`import { Button } from '@tresdoce-ui/core';
+        <Button foo={'Text button'} onClick={()=>alert('click in button')}/>`}
+/>
