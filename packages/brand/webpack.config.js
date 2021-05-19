@@ -79,11 +79,13 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new MiniCSSExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[name].css',
-    }),
-  ],
+  resolve: {
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new MiniCSSExtractPlugin({
+        filename: '[name].css',
+        chunkFilename: '[name].css',
+      }),
+    ],
+  }
 };

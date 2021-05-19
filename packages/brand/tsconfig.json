@@ -22,7 +22,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "build"]

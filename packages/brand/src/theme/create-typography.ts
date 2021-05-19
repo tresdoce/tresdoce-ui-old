@@ -1,3 +1,4 @@
+import { pxToRem } from '../utils';
 //import _ from 'lodash';
 
 type FontFamily = {
@@ -55,7 +56,7 @@ const family = {
   bold: '"Lato-Bold", Helvetica, Arial, sans-serif',
   boldItalic: '"Lato-BoldItalic", Helvetica, Arial, sans-serif',
   black: '"Lato-Black", Helvetica, Arial, sans-serif',
-  blackItalic: '"Lato-BlackItalic", Helvetica, Arial, sans-serif'
+  blackItalic: '"Lato-BlackItalic", Helvetica, Arial, sans-serif',
 };
 
 const sizes = {
@@ -135,19 +136,23 @@ const createTypography = (typography: TypographyInput): Typography => {
     htmlFontSize = sizes.px16,
   } = typography;
 
+  /*
   const coef = fontSize / sizes.px14;
   const pxToRem = (size: number) => `${(size / htmlFontSize) * coef}rem`;
+  pxToRem(sizes.px42)
+  */
+
 
   const applicationsSizes = {
-    H1: pxToRem(sizes.px42),
-    H2: pxToRem(sizes.px32),
-    H3: pxToRem(sizes.px28),
-    H4: pxToRem(sizes.px24),
-    H5: pxToRem(sizes.px20),
-    H6: pxToRem(sizes.px16),
-    p: pxToRem(sizes.px16),
-    button: pxToRem(sizes.px14),
-    href: pxToRem(sizes.px14),
+    H1: pxToRem(sizes.px42, fontSize, htmlFontSize),
+    H2: pxToRem(sizes.px32, fontSize, htmlFontSize),
+    H3: pxToRem(sizes.px28, fontSize, htmlFontSize),
+    H4: pxToRem(sizes.px24, fontSize, htmlFontSize),
+    H5: pxToRem(sizes.px20, fontSize, htmlFontSize),
+    H6: pxToRem(sizes.px16, fontSize, htmlFontSize),
+    p: pxToRem(sizes.px16, fontSize, htmlFontSize),
+    button: pxToRem(sizes.px14, fontSize, htmlFontSize),
+    href: pxToRem(sizes.px14, fontSize, htmlFontSize),
   };
 
   return {
