@@ -4,7 +4,6 @@ import { addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { DocsPage } from '@storybook/addon-docs/blocks';
-import tdTheme from './theme';
 
 import { createTheme } from '../packages/brand/src/';
 import { Layout } from '../packages/core/src/index';
@@ -20,12 +19,11 @@ export const parameters = {
     page: DocsPage,
   },
   options: {
-    theme: tdTheme,
     showPanel: true,
     isFullscreen: false,
     storySort: (a, b) => a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
-  controls: { disabled: true, expanded: true },
+  controls: { disable: true, expanded: true },
   exportedParameter: 'exportedParameter',
   a11y: {
     config: {},
@@ -47,7 +45,6 @@ export const globalTypes = {
 
 const GlobalWrapper = story => {
   const theme = createTheme();
-
   const cdnBasepath = '';
 
   return (
