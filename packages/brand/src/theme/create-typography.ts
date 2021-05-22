@@ -29,7 +29,7 @@ type TextTransform = {
   [name: string]: string;
 }
 
-type ApplicationsSizes = {
+type Variants = {
   [name: string]: string;
 }
 
@@ -41,11 +41,7 @@ export interface Typography {
   weight: FontWeight;
   align: FontAlign;
   transform: TextTransform;
-  applicationsSizes: ApplicationsSizes;
-}
-
-export interface Variants {
-  [name: string]: Typography;
+  variants: Variants;
 }
 
 export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[K] } & {
@@ -153,8 +149,18 @@ const createTypography = (typography: TypographyInput): Typography => {
     htmlFontSize = sizes.px16,
   } = typography;
 
+  const variants = {
+    H1: {
+      size: pxToRem(sizes.px42, fontSize, htmlFontSize),
+      lineHeight: lineHeight.height48,
+    },
+    H2: {
+      size: pxToRem(sizes.px42, fontSize, htmlFontSize),
+      lineHeight: lineHeight.height48,
+    },
+  };
 
-  const applicationsSizes = {
+  /*const variants = {
     H1: pxToRem(sizes.px42, fontSize, htmlFontSize),
     H2: pxToRem(sizes.px32, fontSize, htmlFontSize),
     H3: pxToRem(sizes.px28, fontSize, htmlFontSize),
@@ -164,7 +170,7 @@ const createTypography = (typography: TypographyInput): Typography => {
     p: pxToRem(sizes.px16, fontSize, htmlFontSize),
     button: pxToRem(sizes.px14, fontSize, htmlFontSize),
     href: pxToRem(sizes.px14, fontSize, htmlFontSize),
-  };
+  };*/
 
   const properties = {
     family,
@@ -174,7 +180,7 @@ const createTypography = (typography: TypographyInput): Typography => {
     weight,
     align,
     transform,
-    applicationsSizes
+    variants
   };
 
   return _.merge({},properties);

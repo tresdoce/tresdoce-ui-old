@@ -17,7 +17,8 @@ export const StyledDiv = styled.div<TestComponentProps>`
 export const StyledHeading = styled.h1`
   ${({ theme }) => `
     font-family: ${theme.typography.family.bold};
-    font-size: ${theme.typography.applicationsSizes.H1};
+    font-size: ${theme.typography.variants.H1.size};
+    line-height: ${theme.typography.variants.H1.lineHeight};
     letter-spacing: ${theme.typography.letterSpacing.neg01}
   `}
 `;
@@ -25,7 +26,8 @@ export const StyledHeading = styled.h1`
 export const StyledDescription = styled.h2`
   ${({ theme }) => `
     font-family: ${theme.typography.family.regular};
-    font-size: ${theme.typography.applicationsSizes.H2};
+    font-size: ${theme.typography.variants.H2.size};
+    line-height: ${theme.typography.variants.H2.lineHeight};
     letter-spacing: ${theme.typography.letterSpacing.neg01}
   `}
 `;
