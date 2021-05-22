@@ -1,5 +1,5 @@
 import { pxToRem } from '../utils';
-//import _ from 'lodash';
+import _ from 'lodash';
 
 type FontFamily = {
   [name: string]: string;
@@ -25,6 +25,10 @@ type FontAlign = {
   [name: string]: string;
 }
 
+type TextTransform = {
+  [name: string]: string;
+}
+
 type ApplicationsSizes = {
   [name: string]: string;
 }
@@ -36,7 +40,12 @@ export interface Typography {
   letterSpacing: LetterSpacing;
   weight: FontWeight;
   align: FontAlign;
+  transform: TextTransform;
   applicationsSizes: ApplicationsSizes;
+}
+
+export interface Variants {
+  [name: string]: Typography;
 }
 
 export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[K] } & {
@@ -85,21 +94,21 @@ const sizes = {
 };
 
 const lineHeight = {
-  space10: '10px',
-  space12: '12px',
-  space14: '14px',
-  space16: '16px',
-  space18: '18px',
-  space20: '20px',
-  space22: '22px',
-  space24: '24px',
-  space26: '26px',
-  space28: '28px',
-  space32: '32px',
-  space36: '36px',
-  space48: '48px',
-  space56: '56px',
-  space72: '72px',
+  height10: '10px',
+  height12: '12px',
+  height14: '14px',
+  height16: '16px',
+  height18: '18px',
+  height20: '20px',
+  height22: '22px',
+  height24: '24px',
+  height26: '26px',
+  height28: '28px',
+  height32: '32px',
+  height36: '36px',
+  height48: '48px',
+  height56: '56px',
+  height72: '72px',
 };
 
 const letterSpacing = {
@@ -130,17 +139,19 @@ const align = {
   right: 'right',
 };
 
+const transform = {
+  initial: 'initial',
+  capitalize: 'capitalize',
+  lowercase: 'lowercase',
+  uppercase: 'uppercase',
+  none: 'none',
+};
+
 const createTypography = (typography: TypographyInput): Typography => {
   const {
     fontSize = sizes.px14,
     htmlFontSize = sizes.px16,
   } = typography;
-
-  /*
-  const coef = fontSize / sizes.px14;
-  const pxToRem = (size: number) => `${(size / htmlFontSize) * coef}rem`;
-  pxToRem(sizes.px42)
-  */
 
 
   const applicationsSizes = {
@@ -155,15 +166,18 @@ const createTypography = (typography: TypographyInput): Typography => {
     href: pxToRem(sizes.px14, fontSize, htmlFontSize),
   };
 
-  return {
+  const properties = {
     family,
     sizes,
     lineHeight,
     letterSpacing,
     weight,
     align,
-    applicationsSizes,
+    transform,
+    applicationsSizes
   };
+
+  return _.merge({},properties);
 };
 
 export default createTypography;

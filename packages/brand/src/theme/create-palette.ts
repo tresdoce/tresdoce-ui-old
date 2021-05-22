@@ -5,6 +5,7 @@
 */
 
 import _ from 'lodash';
+import { hexToRgba } from '../utils';
 
 type KeyPallet = string | number;
 
@@ -394,6 +395,7 @@ const primary = {
     3: 'rgba(40, 130, 206, 0.32)',
     4: 'rgba(40, 130, 206, 0.4)',
     5: 'rgba(40, 130, 206, 0.48)',
+    //test: hexToRgba('#3182CE', 0.08),
   },
 };
 

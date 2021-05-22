@@ -1,1 +1,1 @@
-export { pxToRem } from './functions';
+export { pxToRem, hexToRgba } from './functions';

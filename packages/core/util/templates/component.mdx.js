@@ -1,10 +1,11 @@
 module.exports = (componentName) => ({
   filename: componentName,
   extension: `.mdx`,
-  content: `import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+  content: `import { Canvas, Meta, Source } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
 //import { createTheme } from '@tresdoce-ui/brand';
 import { createTheme } from '../../../../brand/src';
-import Layout  from '../Layout';
+import Layout from '../Layout';
 
 import ${componentName} from './${componentName}';
 
@@ -18,6 +19,13 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry.
   <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
     <${componentName} foo={'lorem ipsum'} />
   </Layout>
-</Canvas>`,
+</Canvas>
 
+<Source
+  language='jsx'
+  dark={false}
+  code={dedent\`import { ${componentName} } from '@tresdoce-ui/core';
+        <${componentName} foo={'lorem ipsum'}/>\`}
+/>
+`,
 });
