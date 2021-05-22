@@ -6,7 +6,7 @@ import { TestComponentProps } from './TestComponent.types';
 import { StyledDescription, StyledDescription2, StyledDiv, StyledHeading } from './styles';
 
 const TestComponent: React.FC<TestComponentProps> = ({
-                                                       mode,
+ mode,
  ...rest
 }) => {
   const filteredProps = filterProps(rest);
