@@ -34,6 +34,7 @@ export interface Palette {
   info: ColorPalette;
   warning: ColorPalette;
   danger: ColorPalette;
+
   [key: string]: ColorPalette;
 }
 
@@ -80,12 +81,14 @@ const dark = {
   9: '#01010A',
   default: '#34354A',
   transparent: {
-    0: 'rgba(52,53,74, 0.08)',
-    1: 'rgba(52,53,74, 0.16)',
-    2: 'rgba(52,53,74, 0.24)',
-    3: 'rgba(52,53,74, 0.32)',
-    4: 'rgba(52,53,74, 0.4)',
-    5: 'rgba(52,53,74, 0.48)',
+    //old: rgba(52,53,74, 0.08),
+    //func: hexToRgba('#34354A', 0.08),
+    0: hexToRgba('#34354A', 0.08),
+    1: hexToRgba('#34354A', 0.16),
+    2: hexToRgba('#34354A', 0.24),
+    3: hexToRgba('#34354A', 0.32),
+    4: hexToRgba('#34354A', 0.4),
+    5: hexToRgba('#34354A', 0.48),
   },
 };
 
@@ -102,12 +105,14 @@ const gray = {
   9: '#17191C',
   default: '#727F8D',
   transparent: {
-    0: 'rgba(114, 127, 141, 0.08)',
-    1: 'rgba(114, 127, 141, 0.16)',
-    2: 'rgba(114, 127, 141, 0.24)',
-    3: 'rgba(114, 127, 141, 0.32)',
-    4: 'rgba(114, 127, 141, 0.4)',
-    5: 'rgba(114, 127, 141, 0.48)',
+    //old: rgba(114, 127, 141, 0.08),
+    //func: hexToRgba('#727F8D', 0.08),
+    0: hexToRgba('#727F8D', 0.08),
+    1: hexToRgba('#727F8D', 0.16),
+    2: hexToRgba('#727F8D', 0.24),
+    3: hexToRgba('#727F8D', 0.32),
+    4: hexToRgba('#727F8D', 0.4),
+    5: hexToRgba('#727F8D', 0.48),
   },
 };
 
@@ -124,12 +129,14 @@ const red = {
   9: '#C92A2A',
   default: '#FF6B6B',
   transparent: {
-    0: 'rgba(255, 107, 107, 0.08)',
-    1: 'rgba(255, 107, 107, 0.16)',
-    2: 'rgba(255, 107, 107, 0.24)',
-    3: 'rgba(255, 107, 107, 0.32)',
-    4: 'rgba(255, 107, 107, 0.4)',
-    5: 'rgba(255, 107, 107, 0.48)',
+    //old: rgba(255, 107, 107, 0.08),
+    //func: hexToRgba('#FF6B6B', 0.08),
+    0: hexToRgba('#FF6B6B', 0.08),
+    1: hexToRgba('#FF6B6B', 0.16),
+    2: hexToRgba('#FF6B6B', 0.24),
+    3: hexToRgba('#FF6B6B', 0.32),
+    4: hexToRgba('#FF6B6B', 0.4),
+    5: hexToRgba('#FF6B6B', 0.48),
   },
 };
 
@@ -146,12 +153,14 @@ const pink = {
   9: '#A61E4D',
   default: '#F06595',
   transparent: {
-    0: 'rgba(240, 101, 149, 0.08)',
-    1: 'rgba(240, 101, 149, 0.16)',
-    2: 'rgba(240, 101, 149, 0.24)',
-    3: 'rgba(240, 101, 149, 0.32)',
-    4: 'rgba(240, 101, 149, 0.4)',
-    5: 'rgba(240, 101, 149, 0.48)',
+    //old: rgba(240, 101, 149, 0.08),
+    //func: hexToRgba('#F06595', 0.08),
+    0: hexToRgba('#F06595', 0.08),
+    1: hexToRgba('#F06595', 0.16),
+    2: hexToRgba('#F06595', 0.24),
+    3: hexToRgba('#F06595', 0.32),
+    4: hexToRgba('#F06595', 0.4),
+    5: hexToRgba('#F06595', 0.48),
   },
 };
 
@@ -168,12 +177,14 @@ const grape = {
   9: '#862E9C',
   default: '#CC5DE8',
   transparent: {
-    0: 'rgba(204, 93, 232, 0.08)',
-    1: 'rgba(204, 93, 232, 0.16)',
-    2: 'rgba(204, 93, 232, 0.24)',
-    3: 'rgba(204, 93, 232, 0.32)',
-    4: 'rgba(204, 93, 232, 0.4)',
-    5: 'rgba(204, 93, 232, 0.48)',
+    //old: rgba(204, 93, 232, 0.08),
+    //func: hexToRgba('#CC5DE8', 0.08),
+    0: hexToRgba('#CC5DE8', 0.08),
+    1: hexToRgba('#CC5DE8', 0.16),
+    2: hexToRgba('#CC5DE8', 0.24),
+    3: hexToRgba('#CC5DE8', 0.32),
+    4: hexToRgba('#CC5DE8', 0.4),
+    5: hexToRgba('#CC5DE8', 0.48),
   },
 };
 
@@ -190,12 +201,14 @@ const violet = {
   9: '#5F3DC4',
   default: '#845EF7',
   transparent: {
-    0: 'rgba(132, 94, 247, 0.08)',
-    1: 'rgba(132, 94, 247, 0.16)',
-    2: 'rgba(132, 94, 247, 0.24)',
-    3: 'rgba(132, 94, 247, 0.32)',
-    4: 'rgba(132, 94, 247, 0.4)',
-    5: 'rgba(132, 94, 247, 0.48)',
+    //old: rgba(132, 94, 247, 0.08),
+    //func: hexToRgba('#845EF7', 0.08),
+    0: hexToRgba('#845EF7', 0.08),
+    1: hexToRgba('#845EF7', 0.16),
+    2: hexToRgba('#845EF7', 0.24),
+    3: hexToRgba('#845EF7', 0.32),
+    4: hexToRgba('#845EF7', 0.4),
+    5: hexToRgba('#845EF7', 0.48),
   },
 };
 
@@ -212,12 +225,14 @@ const indigo = {
   9: '#364FC7',
   default: '#5C7CFA',
   transparent: {
-    0: 'rgba(92, 124, 250, 0.08)',
-    1: 'rgba(92, 124, 250, 0.16)',
-    2: 'rgba(92, 124, 250, 0.24)',
-    3: 'rgba(92, 124, 250, 0.32)',
-    4: 'rgba(92, 124, 250, 0.4)',
-    5: 'rgba(92, 124, 250, 0.48)',
+    //old: rgba(92, 124, 250, 0.08),
+    //func: hexToRgba('#5C7CFA', 0.08),
+    0: hexToRgba('#5C7CFA', 0.08),
+    1: hexToRgba('#5C7CFA', 0.16),
+    2: hexToRgba('#5C7CFA', 0.24),
+    3: hexToRgba('#5C7CFA', 0.32),
+    4: hexToRgba('#5C7CFA', 0.4),
+    5: hexToRgba('#5C7CFA', 0.48),
   },
 };
 
@@ -234,12 +249,14 @@ const blue = {
   9: '#1864AB',
   default: '#339AF0',
   transparent: {
-    0: 'rgba(51, 154, 240, 0.08)',
-    1: 'rgba(51, 154, 240, 0.16)',
-    2: 'rgba(51, 154, 240, 0.24)',
-    3: 'rgba(51, 154, 240, 0.32)',
-    4: 'rgba(51, 154, 240, 0.4)',
-    5: 'rgba(51, 154, 240, 0.48)',
+    //old: rgba(51, 154, 240, 0.08),
+    //func: hexToRgba('#339AF0', 0.08),
+    0: hexToRgba('#339AF0', 0.08),
+    1: hexToRgba('#339AF0', 0.16),
+    2: hexToRgba('#339AF0', 0.24),
+    3: hexToRgba('#339AF0', 0.32),
+    4: hexToRgba('#339AF0', 0.4),
+    5: hexToRgba('#339AF0', 0.48),
   },
 };
 
@@ -256,12 +273,14 @@ const cyan = {
   9: '#0B7285',
   default: '#22B8CF',
   transparent: {
-    0: 'rgba(34, 184, 207, 0.08)',
-    1: 'rgba(34, 184, 207, 0.16)',
-    2: 'rgba(34, 184, 207, 0.24)',
-    3: 'rgba(34, 184, 207, 0.32)',
-    4: 'rgba(34, 184, 207, 0.4)',
-    5: 'rgba(34, 184, 207, 0.48)',
+    //old: rgba(34, 184, 207, 0.08),
+    //func: hexToRgba('#22B8CF', 0.08),
+    0: hexToRgba('#22B8CF', 0.08),
+    1: hexToRgba('#22B8CF', 0.16),
+    2: hexToRgba('#22B8CF', 0.24),
+    3: hexToRgba('#22B8CF', 0.32),
+    4: hexToRgba('#22B8CF', 0.4),
+    5: hexToRgba('#22B8CF', 0.48),
   },
 };
 
@@ -278,12 +297,14 @@ const teal = {
   9: '#087F5B',
   default: '#20C997',
   transparent: {
-    0: 'rgba(32, 201, 151, 0.08)',
-    1: 'rgba(32, 201, 151, 0.16)',
-    2: 'rgba(32, 201, 151, 0.24)',
-    3: 'rgba(32, 201, 151, 0.32)',
-    4: 'rgba(32, 201, 151, 0.4)',
-    5: 'rgba(32, 201, 151, 0.48)',
+    //old: rgba(32, 201, 151, 0.08),
+    //func: hexToRgba('#20C997', 0.08),
+    0: hexToRgba('#20C997', 0.08),
+    1: hexToRgba('#20C997', 0.16),
+    2: hexToRgba('#20C997', 0.24),
+    3: hexToRgba('#20C997', 0.32),
+    4: hexToRgba('#20C997', 0.4),
+    5: hexToRgba('#20C997', 0.48),
   },
 };
 
@@ -300,12 +321,14 @@ const green = {
   9: '#2b8a3e',
   default: '#51cf66',
   transparent: {
-    0: 'rgba(81, 207, 102, 0.08)',
-    1: 'rgba(81, 207, 102, 0.16)',
-    2: 'rgba(81, 207, 102, 0.24)',
-    3: 'rgba(81, 207, 102, 0.32)',
-    4: 'rgba(81, 207, 102, 0.4)',
-    5: 'rgba(81, 207, 102, 0.48)',
+    //old: rgba(81, 207, 102, 0.08),
+    //func: hexToRgba('#51cf66', 0.08),
+    0: hexToRgba('#51cf66', 0.08),
+    1: hexToRgba('#51cf66', 0.16),
+    2: hexToRgba('#51cf66', 0.24),
+    3: hexToRgba('#51cf66', 0.32),
+    4: hexToRgba('#51cf66', 0.4),
+    5: hexToRgba('#51cf66', 0.48),
   },
 };
 
@@ -322,12 +345,14 @@ const lime = {
   9: '#5C940D',
   default: '#94D82D',
   transparent: {
-    0: 'rgba(148, 216, 45, 0.08)',
-    1: 'rgba(148, 216, 45, 0.16)',
-    2: 'rgba(148, 216, 45, 0.24)',
-    3: 'rgba(148, 216, 45, 0.32)',
-    4: 'rgba(148, 216, 45, 0.4)',
-    5: 'rgba(148, 216, 45, 0.48)',
+    //old: rgba(148, 216, 45, 0.08),
+    //func: hexToRgba('#94D82D', 0.08),
+    0: hexToRgba('#94D82D', 0.08),
+    1: hexToRgba('#94D82D', 0.16),
+    2: hexToRgba('#94D82D', 0.24),
+    3: hexToRgba('#94D82D', 0.32),
+    4: hexToRgba('#94D82D', 0.4),
+    5: hexToRgba('#94D82D', 0.48),
   },
 };
 
@@ -344,12 +369,14 @@ const yellow = {
   9: '#E67700',
   default: '#FCC419',
   transparent: {
-    0: 'rgba(252, 196, 25, 0.08)',
-    1: 'rgba(252, 196, 25, 0.16)',
-    2: 'rgba(252, 196, 25, 0.24)',
-    3: 'rgba(252, 196, 25, 0.32)',
-    4: 'rgba(252, 196, 25, 0.4)',
-    5: 'rgba(252, 196, 25, 0.48)',
+    //old: rgba(252, 196, 25, 0.08),
+    //func: hexToRgba('#FCC419', 0.08),
+    0: hexToRgba('#FCC419', 0.08),
+    1: hexToRgba('#FCC419', 0.16),
+    2: hexToRgba('#FCC419', 0.24),
+    3: hexToRgba('#FCC419', 0.32),
+    4: hexToRgba('#FCC419', 0.4),
+    5: hexToRgba('#FCC419', 0.48),
   },
 };
 
@@ -366,12 +393,14 @@ const orange = {
   9: '#D9480F',
   default: '#FF922B',
   transparent: {
-    0: 'rgba(255, 146, 43, 0.08)',
-    1: 'rgba(255, 146, 43, 0.16)',
-    2: 'rgba(255, 146, 43, 0.24)',
-    3: 'rgba(255, 146, 43, 0.32)',
-    4: 'rgba(255, 146, 43, 0.4)',
-    5: 'rgba(255, 146, 43, 0.48)',
+    //old: rgba(255, 146, 43, 0.08),
+    //func: hexToRgba('#FF922B', 0.08),
+    0: hexToRgba('#FF922B', 0.08),
+    1: hexToRgba('#FF922B', 0.16),
+    2: hexToRgba('#FF922B', 0.24),
+    3: hexToRgba('#FF922B', 0.32),
+    4: hexToRgba('#FF922B', 0.4),
+    5: hexToRgba('#FF922B', 0.48),
   },
 };
 
@@ -389,23 +418,24 @@ const primary = {
   9: '#0A1A29',
   default: '#3182CE',
   transparent: {
-    0: 'rgba(40, 130, 206, 0.08)',
-    1: 'rgba(40, 130, 206, 0.16)',
-    2: 'rgba(40, 130, 206, 0.24)',
-    3: 'rgba(40, 130, 206, 0.32)',
-    4: 'rgba(40, 130, 206, 0.4)',
-    5: 'rgba(40, 130, 206, 0.48)',
-    //test: hexToRgba('#3182CE', 0.08),
+    //old: rgba(40, 130, 206, 0.08),
+    //func: hexToRgba('#3182CE', 0.08),
+    0: hexToRgba('#3182CE', 0.08),
+    1: hexToRgba('#3182CE', 0.16),
+    2: hexToRgba('#3182CE', 0.24),
+    3: hexToRgba('#3182CE', 0.32),
+    4: hexToRgba('#3182CE', 0.4),
+    5: hexToRgba('#3182CE', 0.48),
   },
 };
 
-const success = _.assign({},green);
+const success = _.assign({}, green);
 
-const info = _.assign({},blue);
+const info = _.assign({}, blue);
 
-const warning = _.assign({},yellow);
+const warning = _.assign({}, yellow);
 
-const danger = _.assign({},red);
+const danger = _.assign({}, red);
 
 export const defaultPallete = {
   color,
