@@ -82,4 +82,6 @@ const FontTest: React.FC<FontTestProps> = ({
   );
 };
 
+FontTest.displayName = '@tresdoce-ui/core/FontTest';
+
 export default withTheme(FontTest);

@@ -6,7 +6,7 @@ import { LayoutProps } from './Layout.types';
 
 import Baseline from '../Baseline';
 
-export const Layout: React.FC<LayoutProps> = ({
+const Layout: React.FC<LayoutProps> = ({
   cdnBasepath,
   containerFluid = false,
   children,
@@ -31,6 +31,7 @@ export const Layout: React.FC<LayoutProps> = ({
   );
 };
 
-Layout.displayName = 'Layout';
+
+Layout.displayName = '@tresdoce-ui/core/Layout';
 
 export default Layout;

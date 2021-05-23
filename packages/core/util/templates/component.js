@@ -26,5 +26,7 @@ const ${componentName}: React.FC<${componentName}Props> = ({
     );
 };
 
+${componentName}.displayName = '@tresdoce-ui/core/${componentName}';
+
 export default withTheme(${componentName});`,
 });

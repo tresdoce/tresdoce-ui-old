@@ -18,4 +18,7 @@ const Button: React.FC<ButtonProps> = ({
       className='foo-bar'>{foo}</ButtonStyle>
   );
 };
+
+Button.displayName = '@tresdoce-ui/core/Button';
+
 export default withTheme(Button);
