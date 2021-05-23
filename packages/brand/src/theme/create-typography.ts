@@ -1,6 +1,8 @@
 import { pxToRem } from '../utils';
 import _ from 'lodash';
 
+type KeyLineHeight = string | number;
+
 type FontFamily = {
   [name: string]: string;
 }
@@ -10,7 +12,7 @@ type FontSizes = {
 }
 
 type LineHeight = {
-  [name: string]: string;
+  [K in keyof KeyLineHeight]: string | number;
 }
 
 type LetterSpacing = {
@@ -29,25 +31,15 @@ type TextTransform = {
   [name: string]: string;
 }
 
-type Variants = {
-  [name: string]: string;
-}
-
-export interface Typography {
-  family: FontFamily,
-  sizes: FontSizes;
-  lineHeight: LineHeight;
-  letterSpacing: LetterSpacing;
+type VariantProperties = {
   weight: FontWeight;
-  align: FontAlign;
-  transform: TextTransform;
-  variants: Variants;
+  size: FontSizes;
+  lineHeight: LineHeight;
 }
 
-export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[K] } & {
-  fontSize?: number;
-  htmlFontSize?: number;
-};
+type Variants = {
+  [name: string]: VariantProperties;
+}
 
 const family = {
   fontAwesome: '"FontAwesome"',
@@ -90,21 +82,16 @@ const sizes = {
 };
 
 const lineHeight = {
-  height10: '10px',
-  height12: '12px',
-  height14: '14px',
-  height16: '16px',
-  height18: '18px',
-  height20: '20px',
-  height22: '22px',
-  height24: '24px',
-  height26: '26px',
-  height28: '28px',
-  height32: '32px',
-  height36: '36px',
-  height48: '48px',
-  height56: '56px',
-  height72: '72px',
+  normal: 'normal',
+  initial: 'initial',
+  120: 1.20,
+  125: 1.25,
+  130: 1.3,
+  135: 1.35,
+  140: 1.4,
+  145: 1.45,
+  150: 1.5,
+  155: 1.55,
 };
 
 const letterSpacing = {
@@ -143,47 +130,79 @@ const transform = {
   none: 'none',
 };
 
-const createTypography = (typography: TypographyInput): Typography => {
-  const {
-    fontSize = sizes.px14,
-    htmlFontSize = sizes.px16,
-  } = typography;
+const variants = {
+  H1: {
+    weight: weight.bold,
+    size: pxToRem(sizes.px42),
+    lineHeight: lineHeight['120'],
+  },
+  H2: {
+    weight: weight.bold,
+    size: pxToRem(sizes.px32),
+    lineHeight: lineHeight['130'],
+  },
+  H3: {
+    weight: weight.bold,
+    size: pxToRem(sizes.px28),
+    lineHeight: lineHeight['130'],
+  },
+  H4: {
+    weight: weight.bold,
+    size: pxToRem(sizes.px24),
+    lineHeight: lineHeight['130'],
+  },
+  H5: {
+    weight: weight.bold,
+    size: pxToRem(sizes.px20),
+    lineHeight: lineHeight['135'],
+  },
+  H6: {
+    weight: weight.bold,
+    size: pxToRem(sizes.px16),
+    lineHeight: lineHeight['140'],
+  },
+  p: {
+    weight: weight.regular,
+    size: pxToRem(sizes.px16),
+    lineHeight: lineHeight['140'],
+  },
+};
 
-  const variants = {
-    H1: {
-      size: pxToRem(sizes.px42, fontSize, htmlFontSize),
-      lineHeight: lineHeight.height48,
-    },
-    H2: {
-      size: pxToRem(sizes.px42, fontSize, htmlFontSize),
-      lineHeight: lineHeight.height48,
-    },
-  };
+export const defaultProperties = {
+  family,
+  sizes,
+  lineHeight,
+  letterSpacing,
+  weight,
+  align,
+  transform,
+  variants,
+};
 
-  /*const variants = {
-    H1: pxToRem(sizes.px42, fontSize, htmlFontSize),
-    H2: pxToRem(sizes.px32, fontSize, htmlFontSize),
-    H3: pxToRem(sizes.px28, fontSize, htmlFontSize),
-    H4: pxToRem(sizes.px24, fontSize, htmlFontSize),
-    H5: pxToRem(sizes.px20, fontSize, htmlFontSize),
-    H6: pxToRem(sizes.px16, fontSize, htmlFontSize),
-    p: pxToRem(sizes.px16, fontSize, htmlFontSize),
-    button: pxToRem(sizes.px14, fontSize, htmlFontSize),
-    href: pxToRem(sizes.px14, fontSize, htmlFontSize),
-  };*/
+export interface Typography {
+  family: FontFamily,
+  sizes: FontSizes;
+  lineHeight: LineHeight;
+  letterSpacing: LetterSpacing;
+  weight: FontWeight;
+  align: FontAlign;
+  transform: TextTransform;
+  variants: Variants;
+}
 
-  const properties = {
-    family,
-    sizes,
-    lineHeight,
-    letterSpacing,
-    weight,
-    align,
-    transform,
-    variants
-  };
+export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[K] } & {
+  family?: FontFamily,
+  sizes?: FontSizes;
+  lineHeight?: LineHeight;
+  letterSpacing?: LetterSpacing;
+  weight?: FontWeight;
+  align?: FontAlign;
+  transform?: TextTransform;
+  variants?: Variants;
+};
 
-  return _.merge({},properties);
+const createTypography = (typography?: TypographyInput): Typography => {
+  return _.merge(defaultProperties, typography);
 };
 
 export default createTypography;

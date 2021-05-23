@@ -1,18 +1,56 @@
 import { Meta, Typeset } from '@storybook/addon-docs/blocks';
-import '../packages/brand/assets/css/app.min.css';
+import { defaultProperties } from '../packages/brand/src/theme/create-typography';
 
-<Meta title="Font" />
+<Meta title="Design System/Font" />
 
 # Typography
-
-### Header
 
 **Font**: Lato
 **Weight**: 900
 
+# Headings
+
 <Typeset
   fontFamily="Lato"
-  fontSizes={[10, 20, 30, 40, 50]}
-  fontWeight={900}
-  sampleText={'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'}
+  fontSizes={[42, 32, 28, 24, 20, 16]}
+  fontWeight={'bold'}
+  sampleText={'Lorem Ipsum es simplemente el texto.'}
 />
+
+# Weights
+
+<Typeset
+  fontFamily="Lato-Hairline"
+  fontSizes={[24]}
+  fontWeight={100}
+  sampleText={'Extra Light'}
+/>
+
+<Typeset
+  fontFamily="Lato-Light"
+  fontSizes={[24]}
+  fontWeight={300}
+  sampleText={'Light'}
+/>
+
+<Typeset
+  fontFamily="Lato"
+  fontSizes={[24]}
+  fontWeight={'normal'}
+  sampleText={'Normal/Regular'}
+/>
+
+<Typeset
+  fontFamily="Lato-Bold"
+  fontSizes={[24]}
+  fontWeight={'bold'}
+  sampleText={'Bold'}
+/>
+
+<Typeset
+  fontFamily="Lato-Black"
+  fontSizes={[24]}
+  fontWeight={900}
+  sampleText={'Ultra Bold'}
+/>
+

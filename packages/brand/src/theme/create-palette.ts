@@ -34,7 +34,6 @@ export interface Palette {
   info: ColorPalette;
   warning: ColorPalette;
   danger: ColorPalette;
-
   [key: string]: ColorPalette;
 }
 

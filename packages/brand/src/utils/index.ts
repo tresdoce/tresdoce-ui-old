@@ -1,1 +1,1 @@
-export { pxToRem, hexToRgba } from './functions';
+export { pxToRem, hexToRgba, getLineHeight } from './functions';

@@ -9,6 +9,9 @@ export const pxToRem = (size: number, fontSize: number = 14, htmlFontSize: numbe
   return `${(size / htmlFontSize) * coef}rem`;
 }
 
+export const getLineHeight = (fontSize: number, lineHeight: number = 1.5): string => {
+  return `${lineHeight*fontSize}px`;
+}
 
 export const hexToRgba = (hex: string, alpha: number): string => {
   if (!hex || typeof alpha !== 'number' || alpha > 1 || alpha < 0) {
