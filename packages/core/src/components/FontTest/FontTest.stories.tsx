@@ -6,7 +6,7 @@ import FontTest from "./FontTest";
 import FontTestMdx from "./FontTest.mdx";
 
 export default {
-    title: "FontTest",
+    title: "Components/FontTest",
     component: FontTest,
     parameters: {
       docs: {
