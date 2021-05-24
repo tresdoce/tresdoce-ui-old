@@ -17,7 +17,6 @@ describe('Test Baseline', () => {
 
   it('should render', async () => {
     const { container } = renderComponent();
-
     expect(container).not.toBeNull();
   });
 });

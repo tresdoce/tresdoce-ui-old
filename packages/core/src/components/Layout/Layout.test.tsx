@@ -11,7 +11,7 @@ describe('Test Layout', () => {
   beforeEach(() => {
     props = {
       cdnBasepath: '',
-      theme: createTheme({}),
+      theme: createTheme(),
       containerFluid: false
     };
   });
@@ -20,15 +20,12 @@ describe('Test Layout', () => {
 
   it('should render container', async () => {
     const { container } = renderComponent();
-
     expect(container).not.toBeNull();
   });
 
   it('should render container-fluid', async () => {
     props.containerFluid = true;
-
     const { container } = renderComponent();
-
     expect(container).not.toBeNull();
     expect(container.firstChild).toHaveClass('container-fluid');
   });
