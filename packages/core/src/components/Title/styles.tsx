@@ -5,7 +5,6 @@ export const headingStyle = css`
     font-family: ${theme.typography.family.regular};
     font-weight: ${theme.typography.weight.normal};
     letter-spacing: ${theme.typography.letterSpacing.normal};
-    color: #ccc;
   `};
 `;
 

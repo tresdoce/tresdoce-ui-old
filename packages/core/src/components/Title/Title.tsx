@@ -3,18 +3,18 @@ import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { withTheme } from '../Theme';
 import { TitleProps } from './Title.types';
-import {H1, H2, H3, H4, H5, H6} from './styles';
+import * as headingStyles from './styles';
 
 const headingLevels = [1, 2, 3, 4, 5, 6];
 
 const Title: React.FC<TitleProps> = ({
-   className,
-   level,
-   children,
-   ...rest
- }) => {
+ className,
+ level,
+ children,
+ ...rest
+}) => {
 
-  if(!headingLevels.includes(level)){
+  if (!headingLevels.includes(level)) {
     return null;
   }
 
@@ -24,10 +24,9 @@ const Title: React.FC<TitleProps> = ({
     [className]: !!className,
   });
 
-  const element = `h${level}`;
+  const element = headingStyles[`H${level}`];
 
   return React.createElement(element, {
-      'data-testid': 'id-Title',
       'className': classes,
       ...filteredProps,
     },
