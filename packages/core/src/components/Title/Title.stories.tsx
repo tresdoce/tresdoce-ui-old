@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
 
-import Title from "./Title";
+import Title from './Title';
 // @ts-ignore
-import TitleMdx from "./Title.mdx";
+import TitleMdx from './Title.mdx';
 
-import { text, select } from '@storybook/addon-knobs';
+import { select, text } from '@storybook/addon-knobs';
 
 export default {
     title: "Components/Title",
@@ -29,8 +29,16 @@ export const Default = () => {
     h5: 5,
     h6: 6,
   };
+  const alignOptions = {
+    left:'left',
+    center: 'center',
+    right:'right',
+    justify:'justify'
+  };
+
   const level = select('level', levelsOptions, 1);
+  const align = select('align', alignOptions, 'left');
   const children = text('children', 'This is a heading');
 
-  return (<Title level={level} >{children}</Title>);
+  return (<Title level={level} align={align}>{children}</Title>);
 }

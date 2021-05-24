@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   stories: [
     '../Docs/**/*.stories.@(mdx)',
@@ -32,7 +34,18 @@ module.exports = {
     '@storybook/addon-actions',
     //'@storybook/addon-toolbars',
     //'@storybook/addons',
-    //'@storybook/addon-storysource',
+    /*{
+      name: '@storybook/addon-storysource',
+      options: {
+        rule: {
+          // test: [/\.stories\.jsx?$/], This is default
+          include: [path.resolve(__dirname, '../packages/core/src/')], // You can specify directories
+        },
+        loaderOptions: {
+          prettierConfig: { printWidth: 80, singleQuote: false },
+        },
+      },
+    },*/
     '@storybook/react'
   ],
   typescript: {

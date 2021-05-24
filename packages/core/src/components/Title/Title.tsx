@@ -9,7 +9,8 @@ const headingLevels = [1, 2, 3, 4, 5, 6];
 
 const Title: React.FC<TitleProps> = ({
  className,
- level,
+ level = 1,
+ align= 'left',
  children,
  ...rest
 }) => {
@@ -27,6 +28,7 @@ const Title: React.FC<TitleProps> = ({
   const element = headingStyles[`H${level}`];
   return React.createElement(element, {
       'className': classes,
+      align,
       ...filteredProps,
     },
     children

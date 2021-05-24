@@ -1,6 +1,5 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-
 //import { createTheme } from '@tresdoce-ui/brand';
 
 import { createTheme } from '../../../../brand/src'; //themes
@@ -11,7 +10,7 @@ export interface ThemeProps {
 }
 
 export const ThemeContext = React.createContext<ThemeProps>({
-  theme: createTheme,
+  theme: createTheme(),
   cdnBasepath: '',
 });
 

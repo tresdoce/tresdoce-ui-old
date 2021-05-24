@@ -117,9 +117,10 @@ const weight = {
 };
 
 const align = {
+  left: 'left',
   center: 'center',
-  left: 'lef',
   right: 'right',
+  justify: 'justify'
 };
 
 const transform = {

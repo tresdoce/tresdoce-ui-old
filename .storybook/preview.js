@@ -1,13 +1,13 @@
 import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { DocsPage } from '@storybook/addon-docs/blocks';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 
 import { createTheme } from '../packages/brand/src/';
 import { Layout } from '../packages/core/src/index';
 
 export const parameters = {
-  layout: 'centered',
+  layout: 'fullscreen',
   actions: { argTypesRegex: '^on[A-Z].*' },
   viewport: {
     viewports: INITIAL_VIEWPORTS,
