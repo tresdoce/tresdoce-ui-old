@@ -3,6 +3,9 @@ module.exports = (componentName) => ({
   extension: `.test.tsx`,
   content: `import * as React from "react";
 import { render } from "@testing-library/react";
+import { createTheme } from '../../../../brand/src';
+import Layout from '../Layout';
+
 import ${componentName} from "./${componentName}";
 import { ${componentName}Props } from "./${componentName}.types";
 
@@ -15,7 +18,7 @@ describe("Test ${componentName}", () => {
     };
   });
   
-  const renderComponent = () => render(<${componentName} {...props} />);
+  const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><${componentName} {...props} /></Layout>);
   
   it("should render foo text correctly", () => {
     props.foo = "harvey was here";

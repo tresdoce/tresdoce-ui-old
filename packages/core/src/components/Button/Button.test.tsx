@@ -18,7 +18,7 @@ describe('Test Button Component', () => {
     };
   });
 
-  const renderComponent = () => render(<Layout theme={createTheme({})} cdnBasepath={''}><Button {...props} /></Layout>);
+  const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Button {...props} /></Layout>);
 
   it('should render foo text correctly', () => {
     props.foo = 'harvey was here';

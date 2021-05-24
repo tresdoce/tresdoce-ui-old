@@ -25,12 +25,11 @@ const Title: React.FC<TitleProps> = ({
   });
 
   const element = headingStyles[`H${level}`];
-
   return React.createElement(element, {
       'className': classes,
       ...filteredProps,
     },
-    children,
+    children
   );
 };
 

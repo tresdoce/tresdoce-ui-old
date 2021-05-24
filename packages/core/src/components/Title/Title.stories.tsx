@@ -14,6 +14,9 @@ export default {
       docs: {
         page: TitleMdx,
       },
+      knobs: {
+        escapeHTML: false
+      }
     }
 } as Meta;
 
@@ -27,6 +30,7 @@ export const Default = () => {
     h6: 6,
   };
   const level = select('level', levelsOptions, 1);
-  const children = text('children', `This is a heading`)
-  return <Title level={level} >{children}</Title>;
+  const children = text('children', 'This is a heading');
+
+  return (<Title level={level} >{children}</Title>);
 }
