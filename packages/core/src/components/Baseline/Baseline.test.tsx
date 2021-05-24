@@ -1,19 +1,22 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
+import { createTheme } from '../../../../brand/src';
+import Layout from '../Layout';
+
 import Baseline from './Baseline';
-import {BaselineProps} from './Baseline.types'
+import { BaselineProps } from './Baseline.types';
 
 describe('Test Baseline', () => {
   let props: BaselineProps;
 
   beforeEach(() => {
     props = {
-      cdnBasepath: ''
+      cdnBasepath: '',
     };
   });
 
-  const renderComponent = () => render(<Baseline {...props} />);
+  const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Baseline {...props} /></Layout>);
 
   it('should render', async () => {
     const { container } = renderComponent();

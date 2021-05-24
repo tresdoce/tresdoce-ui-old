@@ -12,10 +12,12 @@ const Button: React.FC<ButtonProps> = ({
   const filteredProps = filterProps(rest);
   return (
     <ButtonStyle
-      {...filteredProps}
+      className='foo-bar'
       onClick={onClick}
-      data-testid='Button'
-      className='foo-bar'>{foo}</ButtonStyle>
+      {...filteredProps}
+    >
+      {foo}
+    </ButtonStyle>
   );
 };
 

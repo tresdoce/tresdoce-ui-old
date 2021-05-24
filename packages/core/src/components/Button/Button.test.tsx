@@ -8,7 +8,6 @@ import Button from './Button';
 import { ButtonProps } from './Button.types';
 
 describe('Test Button Component', () => {
-
   let props: ButtonProps;
 
   beforeEach(() => {
@@ -22,8 +21,10 @@ describe('Test Button Component', () => {
 
   it('should render foo text correctly', () => {
     props.foo = 'harvey was here';
+    props['data-testId'] = 'id-Button';
+
     const { getByTestId } = renderComponent();
-    const component = getByTestId('Button');
+    const component = getByTestId(props['data-testId']);
     expect(component).toHaveTextContent(props.foo);
   });
 });
