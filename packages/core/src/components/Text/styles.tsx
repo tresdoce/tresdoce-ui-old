@@ -10,10 +10,11 @@ export const textStyle = css`
 `
 export const P = styled.p<StyleTextProps>`
   ${textStyle};
-  ${({ theme, align }) => `
+  ${({ theme, align, capitalize }) => `
     font-size: ${theme.typography.variants.p.size};
     font-weight: ${theme.typography.variants.p.weight};
     line-height: ${theme.typography.variants.p.lineHeight};
     text-align: ${ align ? theme.typography.align[align] : 'left'};
+    text-transform: ${ capitalize ? theme.typography.capitalize[capitalize] : 'initial'}
   `};
 `

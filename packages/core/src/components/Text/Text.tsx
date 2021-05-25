@@ -8,6 +8,7 @@ import * as textStyles from "./styles";
 const Text: React.FC<TextProps> = ({
   className,
   align= 'left',
+  capitalize= 'initial',
   children,
   ...rest
 }) => {
@@ -21,6 +22,7 @@ const Text: React.FC<TextProps> = ({
   return React.createElement(element, {
       'className': classes,
       align,
+      capitalize,
       ...filteredProps,
     },
     children

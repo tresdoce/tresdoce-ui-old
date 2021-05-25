@@ -27,7 +27,7 @@ type FontAlign = {
   [name: string]: string;
 }
 
-type TextTransform = {
+type TextCapitalize = {
   [name: string]: string;
 }
 
@@ -123,13 +123,16 @@ const align = {
   justify: 'justify'
 };
 
-const transform = {
+const capitalize = {
   initial: 'initial',
+  inherit: 'inherit',
   capitalize: 'capitalize',
   lowercase: 'lowercase',
   uppercase: 'uppercase',
+  'first-letter':'first-letter',
   none: 'none',
 };
+
 
 const variants = {
   H1: {
@@ -176,7 +179,7 @@ export const defaultProperties = {
   letterSpacing,
   weight,
   align,
-  transform,
+  capitalize,
   variants,
 };
 
@@ -187,7 +190,7 @@ export interface Typography {
   letterSpacing: LetterSpacing;
   weight: FontWeight;
   align: FontAlign;
-  transform: TextTransform;
+  capitalize: TextCapitalize;
   variants: Variants;
 }
 
@@ -198,7 +201,7 @@ export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[
   letterSpacing?: LetterSpacing;
   weight?: FontWeight;
   align?: FontAlign;
-  transform?: TextTransform;
+  capitalize?: TextCapitalize;
   variants?: Variants;
 };
 

@@ -25,4 +25,24 @@ describe("Test Text", () => {
     const component = getByTestId(props['data-testId']);
     expect(component).toHaveTextContent(props.children);
   });
+
+  it("should render text component align center", () => {
+    props.children = "harvey was here";
+    props.align = 'center';
+    props['data-testId'] = 'id-Text';
+
+    const { getByTestId } = renderComponent();
+    const component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`text-align: ${props.align}`);
+  });
+
+  it("should render text component align right", () => {
+    props.children = "harvey was here";
+    props.align = 'right';
+    props['data-testId'] = 'id-Text';
+
+    const { getByTestId } = renderComponent();
+    const component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`text-align: ${props.align}`);
+  });
 });
