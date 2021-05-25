@@ -27,6 +27,6 @@ describe('Test Layout', () => {
     props.containerFluid = true;
     const { container } = renderComponent();
     expect(container).not.toBeNull();
-    expect(container.firstChild).toHaveClass('container-fluid');
+    expect(container.firstChild.firstChild).toHaveClass('container-fluid');
   });
 });
