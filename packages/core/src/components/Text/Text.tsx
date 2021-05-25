@@ -9,6 +9,8 @@ const Text: React.FC<TextProps> = ({
   className,
   align= 'left',
   capitalize= 'initial',
+  weight= 'initial',
+  fontStyle = 'initial',
   children,
   ...rest
 }) => {
@@ -23,6 +25,8 @@ const Text: React.FC<TextProps> = ({
       'className': classes,
       align,
       capitalize,
+      weight,
+      fontStyle,
       ...filteredProps,
     },
     children

@@ -23,6 +23,10 @@ type FontWeight = {
   [name: string]: string | number;
 }
 
+type FontStyle = {
+  [name: string]: string;
+}
+
 type FontAlign = {
   [name: string]: string;
 }
@@ -116,6 +120,15 @@ const weight = {
   ultraBold: 900,
 };
 
+const fontStyle = {
+  normal: 'normal',
+  italic: 'italic',
+  oblique: 'oblique',
+  inherit: 'inherit',
+  initial: 'initial',
+  unset: 'unset'
+}
+
 const align = {
   left: 'left',
   center: 'center',
@@ -178,6 +191,7 @@ export const defaultProperties = {
   lineHeight,
   letterSpacing,
   weight,
+  fontStyle,
   align,
   capitalize,
   variants,
@@ -189,6 +203,7 @@ export interface Typography {
   lineHeight: LineHeight;
   letterSpacing: LetterSpacing;
   weight: FontWeight;
+  fontStyle: FontStyle;
   align: FontAlign;
   capitalize: TextCapitalize;
   variants: Variants;
@@ -200,6 +215,7 @@ export type TypographyInput = { +readonly [K in keyof Typography]+?: Typography[
   lineHeight?: LineHeight;
   letterSpacing?: LetterSpacing;
   weight?: FontWeight;
+  fontStyle?: FontStyle;
   align?: FontAlign;
   capitalize?: TextCapitalize;
   variants?: Variants;
