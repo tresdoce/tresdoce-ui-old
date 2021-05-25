@@ -1,0 +1,37 @@
+import { Canvas, Meta, Source } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
+import { createTheme } from '../../../../brand/src';
+import Layout from '../Layout';
+
+import Text from './Text';
+
+<Meta title="Text" component={Text} />
+
+# Text
+
+<Canvas >
+  <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
+    <Text align={'left'}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Text>
+  </Layout>
+
+  <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
+    <Text align={'center'}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Text>
+  </Layout>
+
+  <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
+    <Text align={'right'}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Text>
+  </Layout>
+
+  <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
+    <Text align={'justify'}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Text>
+  </Layout>
+</Canvas>
+
+<Source
+  language='jsx'
+  dark={false}
+  code={dedent`
+    import { Text } from '@tresdoce-ui/core';
+    <Text align={'left'}>Lorem Ipsum is simply dummy text...</Text>
+  `}
+/>

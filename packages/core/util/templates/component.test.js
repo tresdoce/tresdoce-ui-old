@@ -22,8 +22,9 @@ describe("Test ${componentName}", () => {
   
   it("should render foo text correctly", () => {
     props.foo = "harvey was here";
+    props['data-testId'] = "id-${componentName}";
     const { getByTestId } = renderComponent();
-    const component = getByTestId("id-${componentName}");
+    const component = getByTestId(props['data-testId']);
     expect(component).toHaveTextContent("harvey was here");
   });
 });`
