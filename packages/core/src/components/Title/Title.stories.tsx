@@ -17,17 +17,17 @@ export default {
       knobs: {
         escapeHTML: false
       }
-    }
+    },
 } as Meta;
 
 export const Default = () => {
   const levelsOptions = {
-    h1: 1,
-    h2: 2,
-    h3: 3,
-    h4: 4,
-    h5: 5,
-    h6: 6,
+    '1 (h1)': 1,
+    '2 (h2)': 2,
+    '3 (h3)': 3,
+    '4 (h4)': 4,
+    '5 (h5)': 5,
+    '6 (h6)': 6,
   };
   const alignOptions = {
     left:'left',

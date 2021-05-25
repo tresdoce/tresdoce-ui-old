@@ -24,7 +24,9 @@ const Layout: React.FC<LayoutProps> = ({
     >
       {console.log('CORE Layout: ', theme)}
       <ThemeProvider theme={theme}>
-        <div className={containerFluid ? 'container-fluid' : 'container'} {...filteredProps}>{children}</div>
+        <div className='wrapper'>
+          <div className={containerFluid ? 'container-fluid' : 'container'} {...filteredProps}>{children}</div>
+        </div>
         <Baseline />
       </ThemeProvider>
     </ThemeContext.Provider>
