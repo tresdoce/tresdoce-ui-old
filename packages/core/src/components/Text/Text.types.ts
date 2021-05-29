@@ -1,4 +1,5 @@
-type AlignHeadings = 'left' | 'center' | 'right' | 'justify' | string;
+type AlignText = 'left' | 'center' | 'right' | 'justify' | string;
+
 type FontCapitalize =
   'initial'
   | 'inherit'
@@ -15,7 +16,7 @@ type FontStyle = 'normal' | 'italic' | 'oblique' | 'inherit' | 'initial' | 'unse
 
 export interface TextProps {
   className?: string;
-  align?: AlignHeadings;
+  align?: AlignText;
   capitalize?: FontCapitalize;
   weight?: FontWeight;
   fontStyle?: FontStyle;
@@ -25,7 +26,7 @@ export interface TextProps {
 }
 
 export interface StyleTextProps {
-  align?: AlignHeadings;
+  align?: AlignText;
   capitalize?: FontCapitalize;
   weight?: FontWeight;
   fontStyle?: FontStyle;
