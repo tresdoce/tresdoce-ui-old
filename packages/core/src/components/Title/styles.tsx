@@ -3,7 +3,7 @@ import { StyleTitleProps } from './Title.types';
 
 export const headingStyle = css`
   ${({ theme }) => `
-    font-family: ${theme.typography.family.regular};
+    font-family: ${theme.typography.family.primary};
     font-weight: ${theme.typography.weight.normal};
     letter-spacing: ${theme.typography.letterSpacing.normal};
   `};

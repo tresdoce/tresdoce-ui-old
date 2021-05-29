@@ -48,16 +48,7 @@ type Variants = {
 const family = {
   fontAwesome: '"FontAwesome"',
   sans: '"Helvetica", Arial, Trebuchet MS, sans-serif',
-  hairline: '"Lato-Hairline", Helvetica, Arial, sans-serif',
-  hairlineItalic: '"Lato-Hairline-Italic", Helvetica, Arial, sans-serif',
-  light: '"Lato-Light", Helvetica, Arial, sans-serif',
-  lightItalic: '"Lato-LightItalic", Helvetica, Arial, sans-serif',
-  regular: '"Lato", Helvetica, Arial, sans-serif',
-  regularItalic: '"Lato-Italic", Helvetica, Arial, sans-serif',
-  bold: '"Lato-Bold", Helvetica, Arial, sans-serif',
-  boldItalic: '"Lato-BoldItalic", Helvetica, Arial, sans-serif',
-  black: '"Lato-Black", Helvetica, Arial, sans-serif',
-  blackItalic: '"Lato-BlackItalic", Helvetica, Arial, sans-serif',
+  primary: '"Roboto", Helvetica, Arial, sans-serif',
 };
 
 const sizes = {
@@ -111,14 +102,14 @@ const letterSpacing = {
 };
 
 const weight = {
-  extraLight: 100,
-  light: 300,
+  thin: 100,
+  light:300,
+  regular:400,
   normal: 'normal',
-  regular: 400,
-  semiBold: 500,
-  bold: 'bold',
-  ultraBold: 900,
-};
+  medium: 500,
+  bold:700,
+  black: 900,
+}
 
 const fontStyle = {
   normal: 'normal',
@@ -146,42 +137,41 @@ const capitalize = {
   none: 'none',
 };
 
-
 const variants = {
   H1: {
     weight: weight.bold,
     size: pxToRem(sizes.px42),
-    lineHeight: lineHeight['120'],
+    lineHeight: lineHeight['130'],//120
   },
   H2: {
     weight: weight.bold,
     size: pxToRem(sizes.px32),
-    lineHeight: lineHeight['130'],
+    lineHeight: lineHeight['135'],//120
   },
   H3: {
     weight: weight.bold,
     size: pxToRem(sizes.px28),
-    lineHeight: lineHeight['130'],
+    lineHeight: lineHeight['140'],//120
   },
   H4: {
     weight: weight.bold,
     size: pxToRem(sizes.px24),
-    lineHeight: lineHeight['130'],
+    lineHeight: lineHeight['145'],//125
   },
   H5: {
     weight: weight.bold,
     size: pxToRem(sizes.px20),
-    lineHeight: lineHeight['135'],
+    lineHeight: lineHeight['150'],//130
   },
   H6: {
     weight: weight.bold,
     size: pxToRem(sizes.px16),
-    lineHeight: lineHeight['140'],
+    lineHeight: lineHeight['150'],//130
   },
   p: {
-    weight: weight.regular,
-    size: pxToRem(sizes.px16),
-    lineHeight: lineHeight['140'],
+    weight: weight.normal,
+    size: pxToRem(sizes.px14),
+    lineHeight: lineHeight['135'],
   },
 };
 
