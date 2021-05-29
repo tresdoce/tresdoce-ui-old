@@ -13,10 +13,7 @@ export default {
   parameters: {
     docs: {
       page: TextMdx,
-    },
-    knobs: {
-      escapeHTML: false,
-    },
+    }
   },
 } as Meta;
 
@@ -65,7 +62,6 @@ export const Default = () => {
     capitalize={capitalize}
     weight={weight}
     fontStyle={fontStyle}
-  >
-    {children}
-  </Text>;
+    dangerouslySetInnerHTML={{__html: children}}
+  />;
 };

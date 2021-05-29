@@ -16,12 +16,15 @@ export const parameters = {
     //container: DocsContainer,
     page: DocsPage,
   },
+  knobs: {
+    escapeHTML: false
+  },
   options: {
     showPanel: true,
     isFullscreen: false,
     storySort: (a, b) => a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
-  controls: { disable: true, expanded: true },
+  controls: { disable: true, expanded: false },
   exportedParameter: 'exportedParameter',
   a11y: {
     config: {},

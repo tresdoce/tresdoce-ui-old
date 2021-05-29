@@ -13,9 +13,6 @@ export default {
     parameters: {
       docs: {
         page: TitleMdx,
-      },
-      knobs: {
-        escapeHTML: false
       }
     },
 } as Meta;
@@ -40,5 +37,5 @@ export const Default = () => {
   const align = select('align', alignOptions, 'left');
   const children = text('children', 'This is a heading');
 
-  return (<Title level={level} align={align}>{children}</Title>);
+  return (<Title level={level} align={align} dangerouslySetInnerHTML={{__html: children}}/>);
 }
