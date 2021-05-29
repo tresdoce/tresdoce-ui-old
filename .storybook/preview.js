@@ -22,7 +22,8 @@ export const parameters = {
   options: {
     showPanel: true,
     isFullscreen: false,
-    storySort: (a, b) => a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
+    order: ['Intro', 'Design System', ['Colors', 'Font'], 'Components'],
+    //storySort: (a, b) => a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
   controls: { disable: true, expanded: false },
   exportedParameter: 'exportedParameter',
