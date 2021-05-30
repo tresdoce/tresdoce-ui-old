@@ -7,6 +7,7 @@ import Layout from '../Layout';
 import Title from "./Title";
 import { TitleProps } from "./Title.types";
 
+
 describe("Component - Title", () => {
   let props: TitleProps;
 
@@ -25,8 +26,9 @@ describe("Component - Title", () => {
   });
 
   const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Title {...props} /></Layout>);
+  const updateComponent = (renderer, props) => renderer(<Layout theme={createTheme()} cdnBasepath={''}><Title {...props} /></Layout>);
 
-  const expectHeading = (getByTestId, props) => {
+  /*const expectHeading = (getByTestId, props) => {
     const component = getByTestId(props['data-testId']);
     expect(component).toHaveTextContent(props.children);
     expect(component.tagName).toEqual(`H${props.level}`);
@@ -271,6 +273,6 @@ describe("Component - Title", () => {
 
     const { getByTestId } = renderComponent();
     expectHeading(getByTestId, props);
-  });
+  });*/
 
 });

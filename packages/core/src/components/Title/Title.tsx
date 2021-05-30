@@ -12,10 +12,10 @@ const Title: React.FC<TitleProps> = ({
  level = 1,
  color,
  size,
- align = 'left',
- fontStyle = 'initial',
- weight = 'initial',
- capitalize = 'initial',
+ align ,
+ fontStyle,
+ weight ,
+ capitalize,
  children,
  ...rest
 }) => {

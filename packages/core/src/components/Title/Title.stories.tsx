@@ -59,13 +59,13 @@ export const Default = () => {
     unset: 'unset'
   };
 
-  const level = select('level', levelsOpt, 1);
-  const children = text('children', 'This is a heading');
-  const align = select('align', alignOpt, 'left');
-  const textColor = color('color', '#1B1C1D');
-  const fontStyle = select('fontStyle', styleOpt, 'normal');
-  const weight = select('weight', weightOpt, 'bold');
-  const capitalize = select('capitalize', capitalizeOpt, 'initial');
+  const level = select('Level', levelsOpt, 1);
+  const children = text('Children', 'This is a heading');
+  const align = select('Align', alignOpt, 'left');
+  const textColor = color('Color', '#1B1C1D');
+  const fontStyle = select('Font-style', styleOpt, 'normal');
+  const weight = select('Weight', weightOpt, 'bold');
+  const capitalize = select('Capitalize', capitalizeOpt, 'initial');
 
   return <Title
     level={level}

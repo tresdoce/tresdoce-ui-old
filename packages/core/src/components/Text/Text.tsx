@@ -9,10 +9,10 @@ const Text: React.FC<TextProps> = ({
    className,
    color,
    size,
-   align = 'left',
-   fontStyle = 'initial',
-   weight = 'initial',
-   capitalize = 'initial',
+   align ,
+   fontStyle,
+   weight ,
+   capitalize ,
    children,
    ...rest
  }) => {

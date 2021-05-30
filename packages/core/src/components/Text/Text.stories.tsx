@@ -51,13 +51,13 @@ export const Default = () => {
     unset: 'unset'
   };
 
-  const textColor = color('color', '#1B1C1D');
-  const size = text('size', '0.875rem');
-  const align = select('align', alignOpt, 'left');
-  const fontStyle = select('fontStyle', styleOpt, 'normal');
-  const weight = select('weight', weightOpt, 'normal');
-  const capitalize = select('capitalize', capitalizeOpt, 'initial');
-  const children = text('children', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.');
+  const textColor = color('Color', '#1B1C1D');
+  const size = text('Size', '0.875rem');
+  const align = select('Align', alignOpt, 'left');
+  const fontStyle = select('Font-style', styleOpt, 'normal');
+  const weight = select('Weight', weightOpt, 'normal');
+  const capitalize = select('Capitalize', capitalizeOpt, 'initial');
+  const children = text('Children', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.');
 
   return <Text
     color={textColor}

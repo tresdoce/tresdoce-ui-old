@@ -2,6 +2,7 @@ import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { select } from '@storybook/addon-knobs';
 
 import { createTheme } from '../packages/brand/src/';
 import { Layout } from '../packages/core/src/index';
@@ -49,9 +50,15 @@ const GlobalWrapper = story => {
   const theme = createTheme();
   const cdnBasepath = '';
 
+  const containerFluidOpt = {
+    'container': false,
+    'container-fluid': true,
+  };
+  const containerFluid = select('Container fluid', containerFluidOpt, false);
+
   return (
     <>
-      <Layout theme={theme} containerFluid={false} cdnBasepath={cdnBasepath}>{story()}</Layout>
+      <Layout theme={theme} containerFluid={containerFluid} cdnBasepath={cdnBasepath}>{story()}</Layout>
     </>
   );
 };

@@ -33,6 +33,10 @@ describe('Component - Text', () => {
     const component = getByTestId(props['data-testId']);
     expect(component.tagName).toEqual('P');
     expect(component).toHaveTextContent(props.children);
+    expect(component).toHaveStyle(`text-align: left`);
+    expect(component).toHaveStyle(`font-style: normal`);
+    expect(component).toHaveStyle(`font-weight: normal`);
+    expect(component).toHaveStyle(`text-transform: initial`);
   });
 
   it('Should be render text component align left, center, right and justify', () => {
