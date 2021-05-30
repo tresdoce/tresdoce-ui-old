@@ -19,13 +19,18 @@ describe("Component - ${componentName}", () => {
   });
   
   const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><${componentName} {...props} /></Layout>);
+  const updateComponent = (renderer, props) => renderer(<Layout theme={createTheme()} cdnBasepath={''}><${componentName} {...props} /></Layout>);
   
   it("should render foo text correctly", () => {
     props.foo = "harvey was here";
     props['data-testId'] = "id-${componentName}";
-    const { getByTestId } = renderComponent();
+    const { getByTestId, rerender } = renderComponent();
     const component = getByTestId(props['data-testId']);
-    expect(component).toHaveTextContent("harvey was here");
+    expect(component).toHaveTextContent(props.foo);
+    
+    props.foo = 'harvey was here 2';
+    updateComponent(rerender, props);
+    expect(component).toHaveTextContent(props.foo);
   });
 });`
 });
