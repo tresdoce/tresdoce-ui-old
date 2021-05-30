@@ -5,7 +5,7 @@ import { createTheme } from '../../../../brand/src';
 import Layout from './Layout';
 import { LayoutProps } from './Layout.types';
 
-describe('Test Layout', () => {
+describe('Component - Layout', () => {
   let props: LayoutProps;
 
   beforeEach(() => {

@@ -1,63 +1,60 @@
-import * as React from "react";
-import { render } from "@testing-library/react";
+import * as React from 'react';
+import { render } from '@testing-library/react';
 import { createTheme } from '../../../../brand/src';
 import Layout from '../Layout';
 
-import Text from "./Text";
-import { TextProps } from "./Text.types";
+import Text from './Text';
+import { TextProps } from './Text.types';
 
-describe("Test Text", () => {
+describe('Component - Text', () => {
   let props: TextProps;
 
   beforeEach(() => {
     props = {
-      'align': 'left',
-      'children': ""
+      'className': '',
+      'color': '',
+      'size': '',
+      'align': '',
+      'fontStyle': '',
+      'weight': '',
+      'capitalize': '',
+      'children': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     };
   });
 
   const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Text {...props} /></Layout>);
+  const updateComponent = (renderer, props) => renderer(<Layout theme={createTheme()} cdnBasepath={''}><Text {...props} /></Layout>);
 
-  const expectText = (getByTestId, props) => {
+  it('Should be render component text', () => {
+    props['data-testId'] = 'id-test-component-text';
+
+    const { getByTestId } = renderComponent();
+    expect(getByTestId).not.toBeNull();
     const component = getByTestId(props['data-testId']);
-    expect(component).toHaveTextContent(props.children);
     expect(component.tagName).toEqual('P');
-    expect(component).toHaveStyle(`text-align: ${props.align}`);
-  }
+    expect(component).toHaveTextContent(props.children);
+  });
 
-
-  it("should render text component correctly", () => {
-    props['data-testId'] = 'id-Text';
-    props.children = "harvey was here";
+  it('Should be render component text align left, center, right and justify', () => {
+    props['data-testId'] = 'id-test-component-text';
     props.align = 'left';
-    const { getByTestId } = renderComponent();
-    expectText(getByTestId, props);
-  });
 
-  it("should render text component align center", () => {
-    props['data-testId'] = 'id-Text';
-    props.children = "harvey was here";
+    const { getByTestId, rerender } = renderComponent();
+    expect(getByTestId).not.toBeNull();
+    const component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`text-align: ${props.align}`);
+
     props.align = 'center';
+    updateComponent(rerender,props);
+    expect(component).toHaveStyle(`text-align: ${props.align}`);
 
-    const { getByTestId } = renderComponent();
-    expectText(getByTestId, props);
-  });
-
-  it("should render text component align right", () => {
-    props['data-testId'] = 'id-Text';
-    props.children = "harvey was here";
     props.align = 'right';
+    updateComponent(rerender,props);
+    expect(component).toHaveStyle(`text-align: ${props.align}`);
 
-    const { getByTestId } = renderComponent();
-    expectText(getByTestId, props);
-  });
-
-  it("should render text component align justify", () => {
-    props['data-testId'] = 'id-Text';
-    props.children = "harvey was here";
     props.align = 'justify';
-
-    const { getByTestId } = renderComponent();
-    expectText(getByTestId, props);
+    updateComponent(rerender,props);
+    expect(component).toHaveStyle(`text-align: ${props.align}`);
   });
+
 });

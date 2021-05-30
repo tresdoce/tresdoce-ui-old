@@ -1,6 +1,6 @@
 type LevelHeadings = 1 | 2 | 3 | 4 | 5 | 6;
 
-type AlignHeadings = 'left' | 'center' | 'right' | 'justify';
+type AlignHeadings = 'left' | 'center' | 'right' | 'justify' | string;
 
 type FontCapitalize =
   'initial'
@@ -12,7 +12,7 @@ type FontCapitalize =
   | 'none'
   | string;
 
-type FontWeight = 'thin' | 'light' | 'regular' | 'normal' | 'medium' | 'bold' | 'black' | number;
+type FontWeight = 'thin' | 'light' | 'regular' | 'normal' | 'medium' | 'bold' | 'black' | number | string;
 
 type FontStyle = 'normal' | 'italic' | 'oblique' | 'inherit' | 'initial' | 'unset' | string;
 

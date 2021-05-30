@@ -10,7 +10,7 @@ type FontCapitalize =
   | 'none'
   | string;
 
-type FontWeight = 'thin' | 'light' | 'regular' | 'normal' | 'medium' | 'bold' | 'black' | number;
+type FontWeight = 'thin' | 'light' | 'regular' | 'normal' | 'medium' | 'bold' | 'black' | number | string;
 
 type FontStyle = 'normal' | 'italic' | 'oblique' | 'inherit' | 'initial' | 'unset' | string;
 

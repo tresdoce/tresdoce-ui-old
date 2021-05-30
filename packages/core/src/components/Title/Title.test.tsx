@@ -7,14 +7,20 @@ import Layout from '../Layout';
 import Title from "./Title";
 import { TitleProps } from "./Title.types";
 
-describe("Test Title", () => {
+describe("Component - Title", () => {
   let props: TitleProps;
 
   beforeEach(() => {
     props = {
+      'className':'',
       'level': 1,
-      'children': 'This is a heading',
-      'align': 'left'
+      'color':'',
+      'size':'',
+      'align': '',
+      'fontStyle':'',
+      'weight':'',
+      'capitalize':'',
+      'children': 'This is a heading'
     };
   });
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ButtonStyle = styled.button`
   ${({theme}) => `
     background: ${theme.palette.primary[5]};
-    font-family: ${theme.typography.family.regular};
+    font-family: ${theme.typography.family.primary};
     border: none;
     border-radius: ${theme.radiuses.defaultRadius};
     color: ${theme.palette.color.white};

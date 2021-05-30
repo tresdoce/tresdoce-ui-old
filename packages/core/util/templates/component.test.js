@@ -9,7 +9,7 @@ import Layout from '../Layout';
 import ${componentName} from "./${componentName}";
 import { ${componentName}Props } from "./${componentName}.types";
 
-describe("Test ${componentName}", () => {
+describe("Component - ${componentName}", () => {
   let props: ${componentName}Props;
   
   beforeEach(() => {

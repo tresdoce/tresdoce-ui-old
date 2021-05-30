@@ -7,7 +7,7 @@ import Layout from '../Layout';
 import Baseline from './Baseline';
 import { BaselineProps } from './Baseline.types';
 
-describe('Test Baseline', () => {
+describe('Component - Baseline', () => {
   let props: BaselineProps;
 
   beforeEach(() => {

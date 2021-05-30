@@ -7,7 +7,7 @@ import Layout from '../Layout';
 import Button from './Button';
 import { ButtonProps } from './Button.types';
 
-describe('Test Button Component', () => {
+describe('Component - Button', () => {
   let props: ButtonProps;
 
   beforeEach(() => {

@@ -7,7 +7,7 @@ import Layout from '../Layout';
 import TestComponent from './TestComponent';
 import { TestComponentProps } from './TestComponent.types';
 
-describe('Test TestComponent', () => {
+describe('Component - TestComponent', () => {
   let props: TestComponentProps;
 
   beforeEach(() => {
