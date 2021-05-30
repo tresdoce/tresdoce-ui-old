@@ -1,4 +1,4 @@
-type LevelHeadings = 1 | 2 | 3 | 4 | 5 | 6;
+type LevelHeadings = 1 | 2 | 3 | 4 | 5 | 6 | number;
 
 type AlignHeadings = 'left' | 'center' | 'right' | 'justify' | string;
 
