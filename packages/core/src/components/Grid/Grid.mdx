@@ -1,0 +1,26 @@
+import { Canvas, Meta, Source } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
+//import { createTheme } from '@tresdoce-ui/brand';
+import { createTheme } from '../../../../brand/src';
+import Layout from '../Layout';
+
+import Grid from './Grid';
+
+<Meta title="Grid" component={Grid} />
+
+# Title Grid
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+
+<Canvas >
+  <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
+    <Grid foo={'lorem ipsum'} />
+  </Layout>
+</Canvas>
+
+<Source
+  language='jsx'
+  dark={false}
+  code={dedent`import { Grid } from '@tresdoce-ui/core';
+        <Grid foo={'lorem ipsum'}/>`}
+/>

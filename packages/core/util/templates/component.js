@@ -20,7 +20,7 @@ const ${componentName}: React.FC<${componentName}Props> = ({
   });
   
   return(
-    <${componentName}Style className={classes} data-testid='id-${componentName}' {...filteredProps}>
+    <${componentName}Style className={classes} {...filteredProps}>
       {foo}
     </${componentName}Style>
     );
