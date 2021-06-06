@@ -18,7 +18,7 @@ export const GridStyle = styled.div<GridProps>`
   border: 2px solid black;
   ${({ theme, justify, align, gutter }) => `
     //padding: ${theme.spacing.default.space12};
-    margin: calc(-${gutter}px / 2);
+    //margin: calc(-${gutter}px / 2);
     display: flex;
     flex-wrap: wrap;
     justify-content: ${justify};
