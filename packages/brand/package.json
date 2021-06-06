@@ -13,7 +13,7 @@
     "bower:remove:assets": "rimraf assets/bower_components",
     "bower:clean:cache": "bower cache clean",
     "bower:install:dependencies": "bower install",
-    "test": "",
+    "test": "node -v",
     "test:jest": "jest --runInBand",
     "test:watch": "jest --watch",
     "publish": "pack publish",

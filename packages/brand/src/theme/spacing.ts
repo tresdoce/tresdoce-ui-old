@@ -10,9 +10,11 @@ export type Spacing = {
   left: Space;
   horizontal: Space;
   vertical: Space;
+  [name: string]: Space;
 }
 
 const spacing = {
+  gutter: "15px",
   default: {
     space2: '2px',
     space4: '4px',
