@@ -13,7 +13,7 @@ const Col: React.FC<ColProps> = ({
   className,
   span,
   columns,
-  offset= 0,
+  offset = 0,
   gutter,
   grow,
   children,
@@ -30,18 +30,16 @@ const Col: React.FC<ColProps> = ({
     [className]: !!className,
   });
 
-  return (
-    <ColStyle
-      className={classes}
-      span={span}
-      columns={columns}
-      offset={offset}
-      gutter={gutter}
-      grow={grow}
-      {...filteredProps}
-    >
-      {children}
-    </ColStyle>
+  return React.createElement(ColStyle, {
+      'className': classes,
+      span,
+      columns,
+      offset,
+      gutter,
+      grow,
+      ...filteredProps,
+    },
+    children
   );
 };
 

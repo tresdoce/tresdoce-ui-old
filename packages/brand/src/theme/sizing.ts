@@ -11,21 +11,21 @@ export enum EnumBreakPoints {
   xxl = 'xxl'
 }
 
-/*export type MQSizes {
+export type MQSizes = {
   [K in keyof typeof EnumBreakPoints]: string
 }
 
 export type Breakpoints = {
   [K in keyof typeof EnumBreakPoints]: string
-}*/
+}
 
-type MQSizes = {
+/*type MQSizes = {
   [key: string]: string;
 }
 
 type Breakpoints = {
   [key: string]: string;
-}
+}*/
 
 export interface Sizing  {
   MQSizes: MQSizes;

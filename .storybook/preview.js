@@ -54,7 +54,7 @@ const GlobalWrapper = story => {
     'container': false,
     'container-fluid': true,
   };
-  const containerFluid = select('Container fluid', containerFluidOpt, false);
+  const containerFluid = select('Container', containerFluidOpt, false);
 
   return (
     <>

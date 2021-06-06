@@ -3,7 +3,7 @@ import createTypography, { Typography, TypographyInput } from './create-typograp
 import themeImages, { Image } from './images';
 import createSizing, { Sizing, SizingInput } from './sizing';
 import createRadiuses, { Radiuses, RadiusesInput } from './radiuses';
-import spacing, { Spacing } from './spacing';
+import createSpacing, { Spacing, SpacingInput } from './spacing';
 import zIndex, { ZIndex } from './z-index';
 
 export interface Theme {
@@ -21,6 +21,7 @@ export interface ThemeInput {
   typography?: TypographyInput,
   radiuses?: RadiusesInput,
   sizing?: SizingInput,
+  spacing?: SpacingInput,
 }
 
 const createTheme = (options?: ThemeInput): Theme => {
@@ -29,6 +30,7 @@ const createTheme = (options?: ThemeInput): Theme => {
     typography: typographyInput = {},
     radiuses: radiusesInput = {},
     sizing: sizingInput = {},
+    spacing: spacingInput = {},
   } = options || {};
 
   const palette = createPalette(paletteInput);
@@ -36,6 +38,7 @@ const createTheme = (options?: ThemeInput): Theme => {
   const images = themeImages();
   const radiuses = createRadiuses(radiusesInput);
   const sizing = createSizing(sizingInput);
+  const spacing = createSpacing(spacingInput);
 
   return {
     palette,

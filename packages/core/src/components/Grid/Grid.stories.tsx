@@ -20,7 +20,7 @@ export default {
 
 export const Default = () => {
 
-  return <Grid>
+  return <Grid style={{ background: "#999", 'textAlign': 'center' }}>
     <Col span={3}>1</Col>
     <Col span={3}>2</Col>
     <Col span={3} >3</Col>

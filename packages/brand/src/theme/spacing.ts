@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export interface Space {
   [name: string]: string;
 }
@@ -13,8 +15,18 @@ export type Spacing = {
   [name: string]: Space;
 }
 
-const spacing = {
-  gutter: "15px",
+export type SpacingInput = { +readonly  [K in keyof Spacing]+?: Spacing[K]} & {
+  default?: Space;
+  top?: Space;
+  right?: Space;
+  bottom?: Space;
+  left?: Space;
+  horizontal?: Space;
+  vertical?: Space;
+  [name: string]: Space;
+}
+
+const defaultSpacing = {
   default: {
     space2: '2px',
     space4: '4px',
@@ -120,6 +132,18 @@ const spacing = {
     space96: '96px 0',
     space160: '160px 0',
   },
+  gutter:{
+    xs: 8,
+    sm: 10,
+    md: 15,
+    lg: 18,
+    xl: 20,
+    xxl: 24,
+  }
 };
 
-export default spacing;
+const createSpacing = (spacing: SpacingInput): Spacing => {
+  return _.merge(defaultSpacing, spacing)
+}
+
+export default createSpacing;
