@@ -15,10 +15,10 @@ export const GridStyle = styled.div<GridProps>`
 
 export const ColStyle = styled.div<ColProps>`
   border: 1px solid black;
-  ${({ theme, grow, columns, span, spacing = theme.spacing.gutter.md, offset }) => `
+  ${({ theme, grow, columns, span, gutter, offset }) => `
     box-sizing: border-box;
-    flex: ${grow ? '1' : '0'} 0 calc(${100 / (columns / span)}% - ${spacing}px);
-    margin: calc(${spacing}px / 2);
-    margin-left: calc(${100 / (columns / offset)}% + ${spacing / 2}px);
+    flex: ${grow ? '1' : '0'} 0 calc(${100 / (columns / span)}% - ${gutter}px);
+    margin: calc(${gutter}px / 2);
+    margin-left: calc(${100 / (columns / offset)}% + ${gutter / 2}px);
   `};
 `;

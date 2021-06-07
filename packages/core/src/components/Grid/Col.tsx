@@ -19,6 +19,7 @@ const Col: React.FC<ColProps> = ({
   children,
   ...rest
 }) => {
+  console.log(gutter)
   let styles;
   if (!isValidSpan(span) || span > columns) {
     return null;
