@@ -1,8 +1,8 @@
 import React from 'react';
 
-type GridJustify = 'flex-start' | 'flex-end' | 'center' | 'space-around' | 'space-between' | 'space-evenly' | 'initial';
+type GridJustify = 'flex-start' | 'flex-end' | 'center' | 'space-around' | 'space-between' | 'space-evenly' | 'initial' | string;
 
-type GridAlign = 'baseline' | 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'initial';
+type GridAlign = 'baseline' | 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'initial' | string;
 
 export interface GridProps {
   className?: string;

@@ -1,27 +1,24 @@
 import styled from 'styled-components';
-import { ColProps } from './Col.types';
 import { GridProps } from './Grid.types';
-
-export const ColStyle = styled.div<ColProps>`
-  border: 2px solid black;
-  ${({ theme, grow, columns, span, spacing = theme.spacing.gutter.md, offset }) => `
-    //padding: ${theme.spacing.default.space12};
-    box-sizing: border-box;
-    flex: ${grow ? '1' : '0'} 0 calc(${100 / (columns / span)}% - ${spacing}px);
-    margin: calc(${spacing}px / 2);
-    margin-left: calc(${100 / (columns / offset)}% + ${spacing / 2}px);
-  `};
-  
-`
+import { ColProps } from './Col.types';
 
 export const GridStyle = styled.div<GridProps>`
-  border: 2px solid black;
   ${({ theme, justify, align, gutter = theme.spacing.gutter.md }) => `
-    //padding: ${theme.spacing.default.space12};
     //margin: calc(-${gutter}px / 2);
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     justify-content: ${justify};
     align-items: ${align}';
   `};
 `
+
+export const ColStyle = styled.div<ColProps>`
+  border: 1px solid black;
+  ${({ theme, grow, columns, span, spacing = theme.spacing.gutter.md, offset }) => `
+    box-sizing: border-box;
+    flex: ${grow ? '1' : '0'} 0 calc(${100 / (columns / span)}% - ${spacing}px);
+    margin: calc(${spacing}px / 2);
+    margin-left: calc(${100 / (columns / offset)}% + ${spacing / 2}px);
+  `};
+`;

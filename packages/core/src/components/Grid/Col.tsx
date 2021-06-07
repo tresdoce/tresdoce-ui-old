@@ -19,7 +19,7 @@ const Col: React.FC<ColProps> = ({
   children,
   ...rest
 }) => {
-
+  let styles;
   if (!isValidSpan(span) || span > columns) {
     return null;
   }
@@ -30,6 +30,12 @@ const Col: React.FC<ColProps> = ({
     [className]: !!className,
   });
 
+  if (isValidSpan(offset)) {
+    styles = {
+      marginLeft : `calc(${100 / (columns / offset)}% + ${gutter / 2}px)`,
+    }
+  }
+
   return React.createElement(ColStyle, {
       'className': classes,
       span,
@@ -37,6 +43,7 @@ const Col: React.FC<ColProps> = ({
       offset,
       gutter,
       grow,
+      style:{styles},
       ...filteredProps,
     },
     children
