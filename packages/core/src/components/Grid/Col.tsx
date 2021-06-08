@@ -1,9 +1,10 @@
 import * as React from 'react';
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
-import { withTheme } from '../Theme';
+import { useTheme, withTheme } from '../Theme';
 import { ColProps } from './Col.types';
 import { ColStyle } from './styles';
+import { getSizeValue } from '../../../../brand/src';
 
 export function isValidSpan(span: number) {
   return typeof span === 'number' && span > 0 && span % 1 === 0;
@@ -19,8 +20,9 @@ const Col: React.FC<ColProps> = ({
   children,
   ...rest
 }) => {
-  console.log(gutter)
-  let styles;
+  const theme = useTheme().theme;
+  const spacing = getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
+  //let styles;
   if (!isValidSpan(span) || span > columns) {
     return null;
   }
@@ -31,11 +33,11 @@ const Col: React.FC<ColProps> = ({
     [className]: !!className,
   });
 
-  if (isValidSpan(offset)) {
+  /*if (isValidSpan(offset)) {
     styles = {
-      marginLeft : `calc(${100 / (columns / offset)}% + ${gutter / 2}px)`,
+      marginLeft : `calc(${100 / (columns / offset)}% + ${spacing / 2}px)`,
     }
-  }
+  }*/
 
   return React.createElement(ColStyle, {
       'className': classes,
@@ -44,7 +46,8 @@ const Col: React.FC<ColProps> = ({
       offset,
       gutter,
       grow,
-      style:{styles},
+      spacing,
+      //style:{styles},
       ...filteredProps,
     },
     children

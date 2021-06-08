@@ -19,14 +19,6 @@ export type Breakpoints = {
   [K in keyof typeof EnumBreakPoints]: string
 }
 
-/*type MQSizes = {
-  [key: string]: string;
-}
-
-type Breakpoints = {
-  [key: string]: string;
-}*/
-
 export interface Sizing  {
   MQSizes: MQSizes;
   breakpoints: Breakpoints
@@ -56,7 +48,7 @@ const defaultSizing = {
   },
 };
 
-const createSizing = (sizing: SizingInput): Sizing =>{
+const createSizing = (sizing?: SizingInput): Sizing =>{
   return _.merge(defaultSizing, sizing)
 }
 

@@ -20,12 +20,26 @@ export default {
 
 export const Default = () => {
 
-  return <Grid style={{ background: "#999", 'textAlign': 'center' }} >
-    <Col span={3}>1</Col>
-    <Col span={3}>2</Col>
-    <Col span={3} >3</Col>
-    <Col span={3} >4</Col>
-    <Col span={3} >5</Col>
-    <Col span={3} >6</Col>
+  return <Grid style={{ background: "#999", 'textAlign': 'center' }}>
+    <Col span={2}>2 </Col>
+    <Col span={2}>2</Col>
+    <Col span={2} >2</Col>
+    <Col span={2} >2</Col>
+    <Col span={2} >2</Col>
+    <Col span={2}>2</Col>
+    <Col span={3}>3</Col>
+    <Col span={3}>3</Col>
+    <Col span={3}>3</Col>
+    <Col span={3}>3</Col>
+    <Col span={4}>4</Col>
+    <Col span={4}>4</Col>
+    <Col span={4}>4</Col>
+    <Col span={6}>6</Col>
+    <Col span={6}>6</Col>
+    <Col span={12}>12</Col>
+    <Col span={3}>3</Col>
+    <Col span={3} offset={3}>3</Col>
+    <Col span={6} offset={3}>6</Col>
+    <Col span={8} offset={2}>8</Col>
   </Grid>;
 }

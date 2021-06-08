@@ -4,6 +4,7 @@ import themeImages, { Image } from './images';
 import createSizing, { Sizing, SizingInput } from './sizing';
 import createRadiuses, { Radiuses, RadiusesInput } from './radiuses';
 import createSpacing, { Spacing, SpacingInput } from './spacing';
+import createGrid, { Grid, GridInput } from './grid';
 import zIndex, { ZIndex } from './z-index';
 
 export interface Theme {
@@ -12,6 +13,7 @@ export interface Theme {
   images: Image,
   sizing: Sizing,
   spacing: Spacing,
+  grid: Grid,
   radiuses: Radiuses,
   zIndex: ZIndex
 }
@@ -22,6 +24,7 @@ export interface ThemeInput {
   radiuses?: RadiusesInput,
   sizing?: SizingInput,
   spacing?: SpacingInput,
+  grid?: GridInput,
 }
 
 const createTheme = (options?: ThemeInput): Theme => {
@@ -31,6 +34,7 @@ const createTheme = (options?: ThemeInput): Theme => {
     radiuses: radiusesInput = {},
     sizing: sizingInput = {},
     spacing: spacingInput = {},
+    grid: gridInput = {},
   } = options || {};
 
   const palette = createPalette(paletteInput);
@@ -39,6 +43,7 @@ const createTheme = (options?: ThemeInput): Theme => {
   const radiuses = createRadiuses(radiusesInput);
   const sizing = createSizing(sizingInput);
   const spacing = createSpacing(spacingInput);
+  const grid = createGrid(gridInput);
 
   return {
     palette,
@@ -46,6 +51,7 @@ const createTheme = (options?: ThemeInput): Theme => {
     images,
     sizing,
     spacing,
+    grid,
     radiuses,
     zIndex,
   };

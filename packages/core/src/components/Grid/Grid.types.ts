@@ -7,7 +7,8 @@ type GridAlign = 'baseline' | 'center' | 'flex-start' | 'flex-end' | 'stretch' |
 export interface GridProps {
   className?: string;
   children: React.ReactNode;
-  gutter?: number;
+  gutter?: string | number;
+  spacing?: string | number;
   grow?: boolean;
   columns?: number;
   justify?: GridJustify;

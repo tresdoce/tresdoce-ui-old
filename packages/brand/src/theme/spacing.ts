@@ -131,18 +131,10 @@ const defaultSpacing = {
     space80: '80px 0',
     space96: '96px 0',
     space160: '160px 0',
-  },
-  gutter:{
-    xs: 8,
-    sm: 10,
-    md: 15,
-    lg: 18,
-    xl: 20,
-    xxl: 24,
   }
 };
 
-const createSpacing = (spacing: SpacingInput): Spacing => {
+const createSpacing = (spacing?: SpacingInput): Spacing => {
   return _.merge(defaultSpacing, spacing)
 }
 

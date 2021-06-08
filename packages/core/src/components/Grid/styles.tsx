@@ -3,8 +3,8 @@ import { GridProps } from './Grid.types';
 import { ColProps } from './Col.types';
 
 export const GridStyle = styled.div<GridProps>`
-  ${({ theme, justify, align, gutter = theme.spacing.gutter.md }) => `
-    //margin: calc(-${gutter}px / 2);
+  ${({ justify, align, spacing }) => `
+    //margin: 0 calc(-${spacing}px / 2);
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
@@ -15,10 +15,10 @@ export const GridStyle = styled.div<GridProps>`
 
 export const ColStyle = styled.div<ColProps>`
   border: 1px solid black;
-  ${({ theme, grow, columns, span, gutter, offset }) => `
+  ${({ grow, columns, span, spacing, offset }) => `
     box-sizing: border-box;
-    flex: ${grow ? '1' : '0'} 0 calc(${100 / (columns / span)}% - ${gutter}px);
-    margin: calc(${gutter}px / 2);
-    margin-left: calc(${100 / (columns / offset)}% + ${gutter / 2}px);
+    flex: ${grow ? '1' : '0'} 0 calc(${100 / (columns / span)}% - ${spacing}px);
+    margin: calc(${spacing}px / 2);
+    margin-left: calc(${100 / (columns / offset)}% + ${spacing / 2}px);
   `};
 `;

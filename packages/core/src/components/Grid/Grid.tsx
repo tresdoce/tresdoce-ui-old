@@ -1,14 +1,15 @@
 import * as React from 'react';
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
-import { withTheme } from '../Theme';
+import { withTheme, useTheme } from '../Theme';
+import { getSizeValue } from '../../../../brand/src';
 import { GridProps } from './Grid.types';
 import { GridStyle } from './styles';
 
 const Grid: React.FC<GridProps> = ({
   className,
   children,
-  gutter = 15,
+  gutter = "md",
   grow = false,
   columns = 12,
   justify = 'flex-start',
@@ -20,6 +21,8 @@ const Grid: React.FC<GridProps> = ({
     'default-class': false,
     [className]: !!className,
   });
+  const theme = useTheme().theme;
+  const spacing = getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
 
   const cols = (React.Children.toArray(children) as React.ReactElement[]).map((col, index) =>
     React.cloneElement(col, { gutter, grow, columns, key: index }),
@@ -32,6 +35,7 @@ const Grid: React.FC<GridProps> = ({
       columns,
       justify,
       align,
+      spacing,
       ...filteredProps,
     },
     cols,
