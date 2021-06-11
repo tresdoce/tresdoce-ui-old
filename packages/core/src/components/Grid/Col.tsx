@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { useTheme, withTheme } from '../Theme';
 import { ColProps } from './Col.types';
 import { ColStyle } from './styles';
-import { getSizeValue } from '../../../../brand/src';
+import { getSizeValue } from '@tresdoce-ui/brand';
 
 export function isValidSpan(span: number) {
   return typeof span === 'number' && span > 0 && span % 1 === 0;

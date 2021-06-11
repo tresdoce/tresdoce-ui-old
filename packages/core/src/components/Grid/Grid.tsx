@@ -2,7 +2,7 @@ import * as React from 'react';
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { withTheme, useTheme } from '../Theme';
-import { getSizeValue } from '../../../../brand/src';
+import { getSizeValue } from '@tresdoce-ui/brand';
 import { GridProps } from './Grid.types';
 import { GridStyle } from './styles';
 

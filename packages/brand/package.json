@@ -16,7 +16,7 @@
     "test": "node -v",
     "test:jest": "jest --runInBand",
     "test:watch": "jest --watch",
-    "publish": "pack publish",
+    "pack:publish": "pack publish",
     "build": "npm-run-all -l -c -s clear build:style pika:build copy:npmrc",
     "clear": "shx rm -rf pkg build",
     "clear:css": "rimraf ./assets/css/*",
@@ -27,7 +27,8 @@
     "prepublishOnly": "npm run build",
     "compile:themes": "webpack",
     "watch": "webpack -w",
-    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.mdx src"
+    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.mdx src",
+    "version": "npm run build"
   },
   "keywords": [
     "react",
