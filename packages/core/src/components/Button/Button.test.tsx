@@ -19,6 +19,10 @@ describe('Component - Button', () => {
 
   const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Button {...props} /></Layout>);
 
+  it('Should has a correct displayName', () =>{
+    expect(Button.displayName).toEqual('@tresdoce-ui/core/Button');
+  });
+
   it('should render foo text correctly', () => {
     props.foo = 'harvey was here';
     props['data-testId'] = 'id-Button';

@@ -18,6 +18,10 @@ describe('Component - Layout', () => {
 
   const renderComponent = () => render(<Layout {...props} />);
 
+  it('Should has a correct displayName', () =>{
+    expect(Layout.displayName).toEqual('@tresdoce-ui/core/Layout');
+  });
+
   it('should render container', async () => {
     const { container } = renderComponent();
     expect(container).not.toBeNull();

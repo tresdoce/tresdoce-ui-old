@@ -27,6 +27,10 @@ describe("Component - Title", () => {
   const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Title {...props} /></Layout>);
   const updateComponent = (rerender, props) => rerender(<Layout theme={createTheme()} cdnBasepath={''}><Title {...props} /></Layout>);
 
+  it('Should has a correct displayName', () =>{
+    expect(Title.displayName).toEqual('@tresdoce-ui/core/Title');
+  });
+
   it('Should be dont render heading component', () => {
     props.level = 7;
     props['data-testId'] = 'id-test-heading-component';

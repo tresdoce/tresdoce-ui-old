@@ -18,3 +18,8 @@ export const ButtonStyle = styled.button`
     `};
   }  
 `
+
+export const myTag = styled(ButtonStyle)`
+  color: #34ce57;
+  
+`

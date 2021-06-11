@@ -25,6 +25,10 @@ describe('Component - Text', () => {
   const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Text {...props} /></Layout>);
   const updateComponent = (rerender, props) => rerender(<Layout theme={createTheme()} cdnBasepath={''}><Text {...props} /></Layout>);
 
+  it('Should has a correct displayName', () =>{
+    expect(Text.displayName).toEqual('@tresdoce-ui/core/Text');
+  });
+
   it('Should be render text component', () => {
     props['data-testId'] = 'id-test-text-component';
 

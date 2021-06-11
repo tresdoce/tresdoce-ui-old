@@ -7,6 +7,7 @@ import Layout from '../Layout';
 import TestComponent from './TestComponent';
 import { TestComponentProps } from './TestComponent.types';
 
+
 describe('Component - TestComponent', () => {
   let props: TestComponentProps;
 
@@ -17,6 +18,10 @@ describe('Component - TestComponent', () => {
   });
 
   const renderComponent = () => render(<Layout theme={createTheme({})} cdnBasepath={''}><TestComponent {...props} /></Layout>);
+
+  it('Should has a correct displayName', () =>{
+    expect(TestComponent.displayName).toEqual('@tresdoce-ui/core/TestComponent');
+  });
 
   it('should have primary className with default props', () => {
     const { getByTestId,  } = renderComponent();

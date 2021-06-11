@@ -21,6 +21,10 @@ describe("Component - ${componentName}", () => {
   const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><${componentName} {...props} /></Layout>);
   const updateComponent = (renderer, props) => renderer(<Layout theme={createTheme()} cdnBasepath={''}><${componentName} {...props} /></Layout>);
   
+  it('Should has a correct displayName', () =>{
+    expect(${componentName}.displayName).toEqual('@tresdoce-ui/core/${componentName}');
+  });
+  
   it("should render foo text correctly", () => {
     props.foo = "harvey was here";
     props['data-testId'] = "id-${componentName}";

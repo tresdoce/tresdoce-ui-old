@@ -18,6 +18,10 @@ describe('Component - Baseline', () => {
 
   const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Baseline {...props} /></Layout>);
 
+  it('Should has a correct displayName', () =>{
+    expect(Baseline.displayName).toEqual('@tresdoce-ui/core/Baseline');
+  });
+
   it('should render', async () => {
     const { container } = renderComponent();
     expect(container).not.toBeNull();
