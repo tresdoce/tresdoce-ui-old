@@ -9,11 +9,16 @@ import { GridProps } from "./Grid.types";
 describe("Component - Grid", () => {
   let props: GridProps;
 
-  /*beforeEach(() => {
+  beforeEach(() => {
     props = {
-
+      children: '',
+      gutter: 'md',
+      grow: false,
+      columns: 12,
+      justify: 'flex-start',
+      align:'stretch'
     };
-  });*/
+  });
 
   const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Grid {...props} /></Layout>);
   const updateComponent = (renderer, props) => renderer(<Layout theme={createTheme()} cdnBasepath={''}><Grid {...props} /></Layout>);

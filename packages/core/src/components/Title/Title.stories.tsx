@@ -17,7 +17,8 @@ export default {
     },
 } as Meta;
 
-export const Default = () => {
+export const Default = (props) => {
+
   const levelsOpt = {
     '1 (h1)': 1,
     '2 (h2)': 2,

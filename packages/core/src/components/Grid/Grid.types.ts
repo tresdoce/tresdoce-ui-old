@@ -10,7 +10,9 @@ export interface GridProps {
   gutter?: string | number;
   spacing?: string | number;
   grow?: boolean;
+  row?: boolean;
   columns?: number;
   justify?: GridJustify;
   align?: GridAlign;
+  style?: React.CSSProperties;
 }

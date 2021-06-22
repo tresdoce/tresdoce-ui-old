@@ -18,6 +18,7 @@ const Col: React.FC<ColProps> = ({
   gutter,
   grow,
   children,
+                                   style,
   ...rest
 }) => {
   const theme = useTheme().theme;
@@ -47,7 +48,7 @@ const Col: React.FC<ColProps> = ({
       gutter,
       grow,
       spacing,
-      //style:{styles},
+      style,
       ...filteredProps,
     },
     children

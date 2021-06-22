@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface ColProps {
     className?: string;
     span: number;
@@ -6,4 +8,5 @@ export interface ColProps {
     gutter?: number;
     grow?: boolean;
     spacing?: number;
+    style?: React.CSSProperties;
 }

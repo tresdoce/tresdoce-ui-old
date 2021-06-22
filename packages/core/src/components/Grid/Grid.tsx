@@ -11,9 +11,11 @@ const Grid: React.FC<GridProps> = ({
   children,
   gutter = "md",
   grow = false,
+  row = false,
   columns = 12,
   justify = 'flex-start',
   align = 'stretch',
+  style,
   ...rest
 }) => {
   const filteredProps = filterProps(rest);
@@ -25,16 +27,18 @@ const Grid: React.FC<GridProps> = ({
   const spacing = getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
 
   const cols = (React.Children.toArray(children) as React.ReactElement[]).map((col, index) =>
-    React.cloneElement(col, { gutter, grow, columns, key: index }),
+    React.cloneElement(col, { gutter, grow, columns, style, key: index }),
   );
 
   return React.createElement(GridStyle, {
       'className': classes,
       gutter,
       grow,
+      row,
       columns,
       justify,
       align,
+      style,
       spacing,
       ...filteredProps,
     },
