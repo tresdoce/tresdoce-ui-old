@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
-import { createTheme } from '../../../../brand/src';
+import { createTheme } from '@tresdoce-ui/brand';
 import Layout from '../Layout';
 
 import TestComponent from './TestComponent';

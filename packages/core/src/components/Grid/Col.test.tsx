@@ -3,30 +3,30 @@ import { render } from "@testing-library/react";
 import { createTheme } from '@tresdoce-ui/brand';
 import Layout from '../Layout';
 
-import Grid from "./Grid";
-import { GridProps } from "./Grid.types";
+import Col from "./Col";
+import { ColProps } from "./Col.types";
 
-describe("Component - Grid", () => {
-  let props: GridProps;
+describe("Component - Col", () => {
+  let props: ColProps;
 
   beforeEach(() => {
     props = {
       children: '',
-      gutter: 'md',
-      grow: false,
-      row: false,
+      span: 0,
       columns: 12,
-      justify: 'flex-start',
-      align:'stretch',
+      grow: false,
+      offset: 0,
+      gutter: 'md',
+      spacing: 'md',
       style: {}
     };
   });
 
-  const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Grid {...props} /></Layout>);
-  const updateComponent = (renderer, props) => renderer(<Layout theme={createTheme()} cdnBasepath={''}><Grid {...props} /></Layout>);
+  const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Col {...props} /></Layout>);
+  const updateComponent = (renderer, props) => renderer(<Layout theme={createTheme()} cdnBasepath={''}><Col {...props} /></Layout>);
 
   it('Should has a correct displayName', () =>{
-    expect(Grid.displayName).toEqual('@tresdoce-ui/core/Grid');
+    expect(Col.displayName).toEqual('@tresdoce-ui/core/Col');
   });
 
   /*it("should render foo text correctly", () => {
