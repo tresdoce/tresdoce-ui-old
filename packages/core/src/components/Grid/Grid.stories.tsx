@@ -44,10 +44,11 @@ export const Default = () => {
   const gutter = text('Gutter', 'md');
   const justify = select('Justify', justifyOpt, 'flex-start');
   const align = select('Align', alignOpt, 'stretch');
-  const style = object('Style', { border: "1px solid black", background: '#999', 'textAlign': 'center' } )
+  const styleGrid = object('Style Grid', { background: '#999' } )
+  const styleCol = object('Style Col', { border: "1px solid black", 'textAlign': 'center' } )
 
   return <Grid
-    style={style}
+    style={styleGrid}
     grow={grow}
     row={row}
     columns={columns}
@@ -55,25 +56,25 @@ export const Default = () => {
     justify={justify}
     align={align}
   >
-    <Col span={2}>2 </Col>
-    <Col span={2}>2</Col>
-    <Col span={2}>2</Col>
-    <Col span={2}>2</Col>
-    <Col span={2}>2</Col>
-    <Col span={2}>2</Col>
-    <Col span={3}>3</Col>
-    <Col span={3}>3</Col>
-    <Col span={3}>3</Col>
-    <Col span={3}>3</Col>
-    <Col span={4}>4</Col>
-    <Col span={4}>4</Col>
-    <Col span={4}>4</Col>
-    <Col span={6}>6</Col>
-    <Col span={6}>6</Col>
-    <Col span={12}>12</Col>
-    <Col span={3}>3</Col>
-    <Col span={3} offset={3}>3</Col>
-    <Col span={6} offset={3}>6</Col>
-    <Col span={8} offset={2}>8</Col>
+    <Col style={styleCol} span={2}>2 </Col>
+    <Col style={styleCol} span={2}>2</Col>
+    <Col style={styleCol} span={2}>2</Col>
+    <Col style={styleCol} span={2}>2</Col>
+    <Col style={styleCol} span={2}>2</Col>
+    <Col style={styleCol} span={2}>2</Col>
+    <Col style={styleCol} span={3}>3</Col>
+    <Col style={styleCol} span={3}>3</Col>
+    <Col style={styleCol} span={3}>3</Col>
+    <Col style={styleCol} span={3}>3</Col>
+    <Col style={styleCol} span={4}>4</Col>
+    <Col style={styleCol} span={4}>4</Col>
+    <Col style={styleCol} span={4}>4</Col>
+    <Col style={styleCol} span={6}>6</Col>
+    <Col style={styleCol} span={6}>6</Col>
+    <Col style={styleCol} span={12}>12</Col>
+    <Col style={styleCol} span={3}>3</Col>
+    <Col style={styleCol} span={3} offset={3}>3</Col>
+    <Col style={styleCol} span={6} offset={3}>6</Col>
+    <Col style={styleCol} span={8} offset={2}>8</Col>
   </Grid>;
 };

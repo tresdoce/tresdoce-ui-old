@@ -27,7 +27,7 @@ const Grid: React.FC<GridProps> = ({
   const spacing = getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
 
   const cols = (React.Children.toArray(children) as React.ReactElement[]).map((col, index) =>
-    React.cloneElement(col, { gutter, grow, columns, style, key: index }),
+    React.cloneElement(col, { gutter, grow, columns, key: index }),
   );
 
   return React.createElement(GridStyle, {
