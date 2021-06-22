@@ -1,4 +1,5 @@
 import React from 'react';
+import Col from './Col';
 
 export interface ColProps {
     className?: string;
@@ -8,6 +9,9 @@ export interface ColProps {
     offset?: number;
     gutter?: string | number;
     grow?: boolean;
-    spacing?: string | number;
     style?: React.CSSProperties;
+}
+
+export interface ColStyleProps extends ColProps{
+    spacing?: string | number;
 }

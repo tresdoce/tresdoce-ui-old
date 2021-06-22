@@ -5,6 +5,7 @@ import Layout from '../Layout';
 
 import Grid from "./Grid";
 import { GridProps } from "./Grid.types";
+import Col from './Col';
 
 describe("Component - Grid", () => {
   let props: GridProps;
@@ -29,15 +30,82 @@ describe("Component - Grid", () => {
     expect(Grid.displayName).toEqual('@tresdoce-ui/core/Grid');
   });
 
-  /*it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
-    props['data-testId'] = "id-Grid";
-    const { getByTestId, rerender } = renderComponent();
-    const component = getByTestId(props['data-testId']);
-    expect(component).toHaveTextContent(props.foo);
+  it('Should be justify content', () => {
+    props['justify'] = 'flex-start';
+    props['data-testId'] = 'id-test-grid';
+    props['children'] = <Col span={6}>Test content</Col>
 
-    props.foo = 'harvey was here 2';
+    const { getByTestId, rerender } = renderComponent();
+    expect(getByTestId).not.toBeNull();
+    let component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`justify-content: ${props['justify']}`);
+
+    props['justify'] = 'flex-end';
     updateComponent(rerender, props);
-    expect(component).toHaveTextContent(props.foo);
-  });*/
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`justify-content: ${props['justify']}`);
+
+    props['justify'] = 'center';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`justify-content: ${props['justify']}`);
+
+    props['justify'] = 'space-around';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`justify-content: ${props['justify']}`);
+
+    props['justify'] = 'space-between';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`justify-content: ${props['justify']}`);
+
+    props['justify'] = 'space-evenly';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`justify-content: ${props['justify']}`);
+
+    props['justify'] = 'initial';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`justify-content: ${props['justify']}`);
+  });
+
+  it('Should be align content', () => {
+    props['align'] = 'stretch';
+    props['data-testId'] = 'id-test-grid';
+    props['children'] = <Col span={6}>Test content</Col>
+
+    const { getByTestId, rerender } = renderComponent();
+    expect(getByTestId).not.toBeNull();
+    let component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`align-items: ${props['align']}`);
+
+    props['align'] = 'baseline';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`align-items: ${props['align']}`);
+
+    props['align'] = 'center';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`align-items: ${props['align']}`);
+
+    props['align'] = 'flex-start';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`align-items: ${props['align']}`);
+
+    props['align'] = 'flex-end';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`align-items: ${props['align']}`);
+
+    props['align'] = 'initial';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`align-items: ${props['align']}`);
+  });
+
+
 });

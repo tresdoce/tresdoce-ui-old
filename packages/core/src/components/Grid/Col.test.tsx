@@ -17,7 +17,6 @@ describe("Component - Col", () => {
       grow: false,
       offset: 0,
       gutter: 'md',
-      spacing: 'md',
       style: {}
     };
   });
@@ -29,15 +28,5 @@ describe("Component - Col", () => {
     expect(Col.displayName).toEqual('@tresdoce-ui/core/Col');
   });
 
-  /*it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
-    props['data-testId'] = "id-Grid";
-    const { getByTestId, rerender } = renderComponent();
-    const component = getByTestId(props['data-testId']);
-    expect(component).toHaveTextContent(props.foo);
 
-    props.foo = 'harvey was here 2';
-    updateComponent(rerender, props);
-    expect(component).toHaveTextContent(props.foo);
-  });*/
 });

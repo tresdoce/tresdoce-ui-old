@@ -18,12 +18,12 @@ const Col: React.FC<ColProps> = ({
   gutter,
   grow,
   children,
-                                   style,
+  style,
   ...rest
 }) => {
   const theme = useTheme().theme;
   const spacing = getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
-  //let styles;
+  let styles;
   if (!isValidSpan(span) || span > columns) {
     return null;
   }
@@ -34,11 +34,11 @@ const Col: React.FC<ColProps> = ({
     [className]: !!className,
   });
 
-  /*if (isValidSpan(offset)) {
+  if (isValidSpan(offset)) {
     styles = {
       marginLeft : `calc(${100 / (columns / offset)}% + ${spacing / 2}px)`,
     }
-  }*/
+  }
 
   return React.createElement(ColStyle, {
       'className': classes,
@@ -48,7 +48,7 @@ const Col: React.FC<ColProps> = ({
       gutter,
       grow,
       spacing,
-      style,
+      style: { ...style, ...styles },
       ...filteredProps,
     },
     children
