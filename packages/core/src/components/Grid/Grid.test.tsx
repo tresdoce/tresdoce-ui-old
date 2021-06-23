@@ -1,6 +1,6 @@
 import * as React from "react";
 import { render } from "@testing-library/react";
-import { createTheme } from '@tresdoce-ui/brand';
+import { createTheme, getSizeValue } from '@tresdoce-ui/brand';
 import Layout from '../Layout';
 
 import Grid from "./Grid";
@@ -9,6 +9,9 @@ import Col from './Col';
 
 describe("Component - Grid", () => {
   let props: GridProps;
+  const theme = createTheme();
+
+  const getSpacing = (theme,gutter = 'md') => getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
 
   beforeEach(() => {
     props = {
@@ -23,14 +26,14 @@ describe("Component - Grid", () => {
     };
   });
 
-  const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Grid {...props} /></Layout>);
-  const updateComponent = (renderer, props) => renderer(<Layout theme={createTheme()} cdnBasepath={''}><Grid {...props} /></Layout>);
+  const renderComponent = () => render(<Layout theme={theme} cdnBasepath={''}><Grid {...props} /></Layout>);
+  const updateComponent = (renderer, props) => renderer(<Layout theme={theme} cdnBasepath={''}><Grid {...props} /></Layout>);
 
   it('Should has a correct displayName', () =>{
     expect(Grid.displayName).toEqual('@tresdoce-ui/core/Grid');
   });
 
-  it('Should be justify content', () => {
+  it('Should be render justify content', () => {
     props['justify'] = 'flex-start';
     props['data-testId'] = 'id-test-grid';
     props['children'] = <Col span={6}>Test content</Col>
@@ -71,7 +74,7 @@ describe("Component - Grid", () => {
     expect(component).toHaveStyle(`justify-content: ${props['justify']}`);
   });
 
-  it('Should be align content', () => {
+  it('Should be render align content', () => {
     props['align'] = 'stretch';
     props['data-testId'] = 'id-test-grid';
     props['children'] = <Col span={6}>Test content</Col>
@@ -107,5 +110,63 @@ describe("Component - Grid", () => {
     expect(component).toHaveStyle(`align-items: ${props['align']}`);
   });
 
+  it("Should be render grid with different gutters prop", () => {
+    let spacing;
+    props['gutter'] = "md";
+    props['data-testId'] = 'id-test-grid';
+    props['children'] = <Col span={6}>Test content</Col>
+    spacing =  getSpacing(theme,props['gutter']);
 
+    const { getByTestId, rerender } = renderComponent();
+    expect(getByTestId).not.toBeNull();
+    let component = getByTestId(props['data-testId']);
+    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+
+    props['gutter'] = "xs";
+    spacing =  getSpacing(theme,props['gutter']);
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+
+    props['gutter'] = "sm";
+    spacing =  getSpacing(theme,props['gutter']);
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+
+    props['gutter'] = "lg";
+    spacing =  getSpacing(theme,props['gutter']);
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+
+    props['gutter'] = "xl";
+    spacing =  getSpacing(theme,props['gutter']);
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+
+    props['gutter'] = "xxl";
+    spacing =  getSpacing(theme,props['gutter']);
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+  });
+
+  it('Should be render grid with row prop true and false', () => {
+    props['row'] = true;
+    props['data-testId'] = 'id-test-grid';
+    props['children'] = <Col span={6}>Test content</Col>
+    let spacing =  getSpacing(theme,'md');
+
+    const { getByTestId, rerender } = renderComponent();
+    expect(getByTestId).not.toBeNull();
+    let component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`margin: 0 -${spacing}px`);
+
+    props['row'] = false;
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`margin: 0 0`);
+  });
 });

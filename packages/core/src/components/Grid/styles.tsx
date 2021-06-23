@@ -4,7 +4,7 @@ import { ColStyleProps } from './Col.types';
 
 export const GridStyle = styled.div<GridStyleProps>`
   ${({ justify, align, row, spacing }) => `
-    //margin: 0 calc(-${spacing}px / 2);
+    //margin: calc(-${spacing}px / 2);
     margin: 0 ${ row ? `-${spacing}px`:'0'};
     box-sizing: border-box;
     display: flex;
