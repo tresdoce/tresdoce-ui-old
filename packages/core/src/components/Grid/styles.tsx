@@ -17,7 +17,10 @@ export const GridStyle = styled.div<GridStyleProps>`
 export const ColStyle = styled.div<ColStyleProps>`
   ${({ grow, columns, span, spacing }) => `
     box-sizing: border-box;
-    flex: ${grow ? '1' : '0'} 0 calc(${100 / (columns / span)}% - ${spacing}px);
-    margin: calc(${spacing}px / 2);
+    //flex: ${grow ? '1' : '0'} 0 calc(${100 / (columns / span)}% - ${spacing}px);
+    //margin: calc(${spacing}px / 2);
+    padding: 0 ${spacing}px;
+    flex: ${grow ? '1' : '0'} 0 auto;
+    width: ${100 / (columns / span)}%;
   `};
 `;

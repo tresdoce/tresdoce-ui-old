@@ -36,7 +36,8 @@ const Col: React.FC<ColProps> = ({
 
   if (isValidSpan(offset)) {
     styles = {
-      marginLeft : `calc(${100 / (columns / offset)}% + ${spacing / 2}px)`,
+      //marginLeft : `calc(${100 / (columns / offset)}% + ${spacing / 2}px)`,
+      marginLeft : `${100 / (columns / offset)}%`,
     }
   }
 
