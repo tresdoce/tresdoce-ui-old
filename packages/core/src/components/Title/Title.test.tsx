@@ -13,7 +13,7 @@ describe("Component - Title", () => {
   beforeEach(() => {
     props = {
       'className':'',
-      'level': null,
+      'level': 1,
       'color':'',
       'size':'',
       'align': '',
@@ -47,7 +47,7 @@ describe("Component - Title", () => {
     const { getByTestId } = renderComponent();
     expect(getByTestId).not.toBeNull();
     const component = getByTestId(props['data-testId']);
-    expect(component.tagName).toEqual('H1');
+    expect(component.tagName).toEqual(`H${props.level}`);
     expect(component).toHaveTextContent(props.children);
     expect(component).toHaveStyle(`text-align: left`);
     expect(component).toHaveStyle(`font-style: normal`);
