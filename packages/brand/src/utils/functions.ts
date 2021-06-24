@@ -43,3 +43,4 @@ export const getSizeValue = ({ size, sizes, defaultSize = 'md'}: {
 
   return sizes[size] || size || sizes[defaultSize];
 };
+
