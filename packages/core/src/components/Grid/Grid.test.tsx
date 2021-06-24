@@ -120,37 +120,37 @@ describe("Component - Grid", () => {
     const { getByTestId, rerender } = renderComponent();
     expect(getByTestId).not.toBeNull();
     let component = getByTestId(props['data-testId']);
-    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+    expect(component.firstChild).toHaveStyle(`padding: 0 ${spacing}px`);
 
     props['gutter'] = "xs";
     spacing =  getSpacing(theme,props['gutter']);
     updateComponent(rerender, props);
     component = getByTestId(props['data-testId']);
-    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+    expect(component.firstChild).toHaveStyle(`padding: 0 ${spacing}px`);
 
     props['gutter'] = "sm";
     spacing =  getSpacing(theme,props['gutter']);
     updateComponent(rerender, props);
     component = getByTestId(props['data-testId']);
-    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+    expect(component.firstChild).toHaveStyle(`padding: 0 ${spacing}px`);
 
     props['gutter'] = "lg";
     spacing =  getSpacing(theme,props['gutter']);
     updateComponent(rerender, props);
     component = getByTestId(props['data-testId']);
-    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+    expect(component.firstChild).toHaveStyle(`padding: 0 ${spacing}px`);
 
     props['gutter'] = "xl";
     spacing =  getSpacing(theme,props['gutter']);
     updateComponent(rerender, props);
     component = getByTestId(props['data-testId']);
-    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+    expect(component.firstChild).toHaveStyle(`padding: 0 ${spacing}px`);
 
     props['gutter'] = "xxl";
     spacing =  getSpacing(theme,props['gutter']);
     updateComponent(rerender, props);
     component = getByTestId(props['data-testId']);
-    expect(component.firstChild).toHaveStyle(`margin: calc(${spacing}px / 2)`);
+    expect(component.firstChild).toHaveStyle(`padding: 0 ${spacing}px`);
   });
 
   it('Should be render grid with row prop true and false', () => {
