@@ -5,9 +5,9 @@ import { BaselineProps } from './Baseline.types';
 const Baseline: React.FC<BaselineProps> = ({ cdnBasepath }) => {
 
   return (<>
-    <style>{`
+    {/*<style>{`
       @import url('${cdnBasepath}/css/app.min.css');
-    `}</style>
+    `}</style>*/}
   </>);
 };
 
