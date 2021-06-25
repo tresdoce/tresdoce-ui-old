@@ -5,6 +5,7 @@ import { ThemeContext } from '../Theme';
 import { LayoutProps } from './Layout.types';
 
 import Baseline from '../Baseline';
+import Container from '../Container';
 
 const Layout: React.FC<LayoutProps> = ({
   cdnBasepath,
@@ -26,7 +27,7 @@ const Layout: React.FC<LayoutProps> = ({
       <ThemeProvider theme={theme}>
         <div className='wrapper'>
           <div className='main-content'>
-            <div className={containerFluid ? 'container-fluid' : 'container'} {...filteredProps}>{children}</div>
+            <Container fluid={containerFluid} {...filteredProps}>{children}</Container>
           </div>
         </div>
         <Baseline />
