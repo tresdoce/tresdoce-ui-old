@@ -111,5 +111,18 @@ describe("Component - Container", () => {
     props['row'] = true;
     updateComponent(rerender, props);
     expect(component).toHaveStyle(`padding: 0 0`);
+  });
+
+  it('Should be render Container component fluid with row', () => {
+    props['data-testId'] = 'id-test-container-component';
+    props['fluid'] = true;
+    props['row'] = true;
+
+    const { getByTestId } = renderComponent();
+    expect(getByTestId).not.toBeNull();
+    let component = getByTestId(props['data-testId']);
+    expect(component).toHaveStyle(`width: auto`);
+    expect(component).toHaveStyle(`max-width: 100%`);
+    expect(component).toHaveStyle(`padding: 0 0`);
   })
 });
