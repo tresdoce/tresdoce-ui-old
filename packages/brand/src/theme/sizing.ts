@@ -22,12 +22,14 @@ export type Breakpoints = {
 export interface Sizing  {
   minWidth: MQSizes;
   maxWidth: MQSizes;
+  width: MQSizes;
   breakpoints: Breakpoints
 }
 
 export type SizingInput = { +readonly [K in keyof Sizing]+?: Sizing[K]} & {
   minWidth?: MQSizes;
   maxWidth?: MQSizes;
+  width?: MQSizes;
   breakpoints?: Breakpoints;
 }
 
@@ -39,6 +41,14 @@ const defaultSizing = {
     lg: '992px', // >= 992px
     xl: '1200px', // >= 1200px
     xxl: '1400px', // >= 1400px
+  },
+  width:{
+    xs: '100%',
+    sm: '540px',
+    md: '720px',
+    lg: '960px',
+    xl: '1140px',
+    xxl: '1320px',
   },
   maxWidth: {
     xs: '575.98px', // X-Small devices (portrait phones, less than 576px)

@@ -30,5 +30,12 @@ export const Default = () => {
   const fluid = boolean('Fluid', false);
   const row = boolean('Row', false);
   const foo = text('foo', 'lorem ipsum');
-  return <Container size={size} fluid={fluid} row={row}>{foo}</Container>;
+
+  return <Container
+    size={size}
+    fluid={fluid}
+    row={row}
+  >
+    {foo}
+  </Container>;
 }

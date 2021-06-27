@@ -2,10 +2,10 @@ import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
-import { select } from '@storybook/addon-knobs';
-
 import { createTheme } from '../packages/brand/src/';
 import { Layout } from '../packages/core/src/index';
+
+import { select, boolean } from '@storybook/addon-knobs';
 
 export const parameters = {
   layout: 'fullscreen',
@@ -54,11 +54,19 @@ const GlobalWrapper = story => {
     'container': false,
     'container-fluid': true,
   };
-  const containerFluid = select('Container', containerFluidOpt, false);
+  const containerFluid = select('Preview Container', containerFluidOpt, false);
+  const row = boolean('Preview Container Row', false)
 
   return (
     <>
-      <Layout theme={theme} containerFluid={containerFluid} cdnBasepath={cdnBasepath}>{story()}</Layout>
+      <Layout
+        theme={theme}
+        cdnBasepath={cdnBasepath}
+        containerFluid={containerFluid}
+        row={row}
+      >
+        {story()}
+      </Layout>
     </>
   );
 };

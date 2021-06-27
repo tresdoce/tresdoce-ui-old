@@ -10,6 +10,7 @@ import Container from '../Container';
 const Layout: React.FC<LayoutProps> = ({
   cdnBasepath,
   containerFluid = false,
+  row= false,
   children,
   theme,
   ...rest
@@ -27,7 +28,7 @@ const Layout: React.FC<LayoutProps> = ({
       <ThemeProvider theme={theme}>
         <div className='wrapper'>
           <div className='main-content'>
-            <Container fluid={containerFluid} {...filteredProps}>{children}</Container>
+            <Container fluid={containerFluid} row={row} style={{border: '1px solid black'}} {...filteredProps}>{children}</Container>
           </div>
         </div>
         <Baseline />

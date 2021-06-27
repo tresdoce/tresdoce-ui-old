@@ -3,5 +3,6 @@ export interface LayoutProps {
   children?: any;
   cdnBasepath: any;
   containerFluid?: boolean;
+  row?: boolean;
   resetStyles?: boolean;
 }
