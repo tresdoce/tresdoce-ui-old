@@ -6,6 +6,6 @@ export const ContainerStyle = styled.div<ContainerProps>`
     padding: 0 ${ row ? '0' : `${ theme.grid.spacing.gutter[size]}px`};
     margin: 0 auto;
     width: ${ fluid ? 'auto' : '100%' };
-    max-width: ${ fluid ? '100%' : theme.sizing.width[size] };
+    max-width: ${ fluid ? '100%' : theme.sizing.mqSizes[size].maxWidth };
   `};
 `
