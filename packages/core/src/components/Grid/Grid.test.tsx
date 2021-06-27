@@ -11,7 +11,7 @@ describe("Component - Grid", () => {
   let props: GridProps;
   const theme = createTheme();
 
-  const getSpacing = (theme,gutter = 'md') => getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
+  const getSpacing = (theme,gutter = 'md') => getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter});
 
   beforeEach(() => {
     props = {

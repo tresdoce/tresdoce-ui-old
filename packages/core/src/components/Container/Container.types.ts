@@ -7,3 +7,9 @@ export interface ContainerProps {
     fluid?: boolean;
     size?: string;
 }
+
+export interface ContainerStyleProps {
+    row?: boolean;
+    fluid?: boolean;
+    size?: string;
+}

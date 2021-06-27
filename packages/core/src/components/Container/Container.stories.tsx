@@ -29,13 +29,13 @@ export const Default = () => {
   const size = select('Size', sizesOpd, 'md');
   const fluid = boolean('Fluid', false);
   const row = boolean('Row', false);
-  const foo = text('foo', 'lorem ipsum');
+  const children = text('Children', 'lorem ipsum');
 
   return <Container
     size={size}
     fluid={fluid}
     row={row}
   >
-    {foo}
+    {children}
   </Container>;
 }

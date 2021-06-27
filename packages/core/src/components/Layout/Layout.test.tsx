@@ -31,6 +31,7 @@ describe('Component - Layout', () => {
     props.containerFluid = true;
     const { container } = renderComponent();
     expect(container).not.toBeNull();
-    expect(container.firstChild.firstChild.firstChild).toHaveClass('container-fluid');
+    expect(container.firstChild.firstChild.firstChild).toHaveStyle(`width: auto`);
+    expect(container.firstChild.firstChild.firstChild).toHaveStyle(`max-width: 100%`);
   });
 });
