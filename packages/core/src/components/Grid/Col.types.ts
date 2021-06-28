@@ -1,5 +1,4 @@
 import React from 'react';
-import Col from './Col';
 
 export interface ColProps {
     className?: string;

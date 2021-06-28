@@ -27,7 +27,7 @@ describe("Component - ${componentName}", () => {
   
   it("should render foo text correctly", () => {
     props.foo = "harvey was here";
-    props['data-testId'] = "id-${componentName}";
+    props['data-testId'] = "id-test-${componentName}-component";
     const { getByTestId, rerender } = renderComponent();
     const component = getByTestId(props['data-testId']);
     expect(component).toHaveTextContent(props.foo);

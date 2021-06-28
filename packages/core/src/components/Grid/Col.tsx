@@ -43,6 +43,7 @@ const Col: React.FC<ColProps> = ({
 
   return React.createElement(ColStyle, {
       'className': classes,
+      ...filteredProps,
       span,
       columns,
       offset,
@@ -50,7 +51,6 @@ const Col: React.FC<ColProps> = ({
       grow,
       spacing,
       style: { ...style, ...styles },
-      ...filteredProps,
     },
     children
   );
