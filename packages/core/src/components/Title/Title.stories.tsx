@@ -5,7 +5,7 @@ import Title from './Title';
 // @ts-ignore
 import TitleMdx from './Title.mdx';
 
-import { color, select, text } from '@storybook/addon-knobs';
+//import { color, select, text } from '@storybook/addon-knobs';
 
 export default {
     title: "Components/Title",
@@ -60,13 +60,21 @@ export const Default = (props) => {
     unset: 'unset'
   };
 
-  const level = select('Level', levelsOpt, 1);
+  /*const level = select('Level', levelsOpt, 1);
   const children = text('Children', 'This is a heading');
   const align = select('Align', alignOpt, 'left');
   const textColor = color('Color', '#1B1C1D');
   const fontStyle = select('Font-style', styleOpt, 'normal');
   const weight = select('Weight', weightOpt, 'bold');
-  const capitalize = select('Capitalize', capitalizeOpt, 'initial');
+  const capitalize = select('Capitalize', capitalizeOpt, 'initial');*/
+
+  const level = 1;
+  const children = 'This is a heading';
+  const align = 'left';
+  const textColor = '#1B1C1D';
+  const fontStyle = 'normal';
+  const weight = 'bold';
+  const capitalize = 'initial';
 
   return <Title
     level={level}

@@ -4,7 +4,7 @@ import TestComponent from './TestComponent';
 // @ts-ignore
 import TestComponentMdx from './TestComponent.mdx';
 
-import { select } from '@storybook/addon-knobs';
+//import { select } from '@storybook/addon-knobs';
 
 export default {
   title: 'Components/TestComponent',
@@ -21,6 +21,7 @@ export const Default = () => {
     'primary': 'primary',
     'secondary': 'secondary',
   };
-  const mode = select('mode', typeOptions, 'primary', 'GROUP-THEME');
+  //const mode = select('mode', typeOptions, 'primary', 'GROUP-THEME');
+  const mode = 'primary';
   return <TestComponent mode={mode} />;
 };

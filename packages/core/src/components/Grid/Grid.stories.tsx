@@ -6,7 +6,7 @@ import Col from './Col';
 // @ts-ignore
 import GridMdx from './Grid.mdx';
 
-import { boolean, number, object, select, text } from '@storybook/addon-knobs';
+//import { boolean, number, object, select, text } from '@storybook/addon-knobs';
 
 export default {
   title: 'Components/Grid',
@@ -38,14 +38,23 @@ export const Default = () => {
     'Initial': 'initial',
   };
 
-  const grow = boolean('Grow', false);
+  /*const grow = boolean('Grow', false);
   const row = boolean('Row', false);
   const columns = number('Columns', 12);
   const gutter = text('Gutter', 'md');
   const justify = select('Justify', justifyOpt, 'flex-start');
   const align = select('Align', alignOpt, 'stretch');
   const styleGrid = object('Style Grid', { background: '#999' });
-  const styleCol = object('Style Col', { "margin":"8px 0",'textAlign': 'center' }); //border: '1px solid black',
+  const styleCol = object('Style Col', { "margin":"8px 0",'textAlign': 'center' }); //border: '1px solid black',*/
+
+  const grow = false;
+  const row = false;
+  const columns = 12;
+  const gutter = 'md';
+  const justify = 'flex-start';
+  const align = 'stretch';
+  const styleGrid = { background: '#999' };
+  const styleCol = { "margin":"8px 0",'textAlign': 'center' };
 
   return <Grid
     style={styleGrid}

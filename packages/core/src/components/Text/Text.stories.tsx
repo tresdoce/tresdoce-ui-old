@@ -5,7 +5,7 @@ import Text from './Text';
 // @ts-ignore
 import TextMdx from './Text.mdx';
 
-import { select, text, color } from '@storybook/addon-knobs';
+//import { select, text, color } from '@storybook/addon-knobs';
 
 export default {
   title: 'Components/Text',
@@ -51,13 +51,21 @@ export const Default = () => {
     unset: 'unset'
   };
 
-  const textColor = color('Color', '#1B1C1D');
+  /*const textColor = color('Color', '#1B1C1D');
   const size = text('Size', '0.875rem');
   const align = select('Align', alignOpt, 'left');
   const fontStyle = select('Font-style', styleOpt, 'normal');
   const weight = select('Weight', weightOpt, 'normal');
   const capitalize = select('Capitalize', capitalizeOpt, 'initial');
-  const children = text('Children', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.');
+  const children = text('Children', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.');*/
+
+  const textColor = '#1B1C1D';
+  const size = '0.875rem';
+  const align = 'left';
+  const fontStyle = 'normal';
+  const weight = 'normal';
+  const capitalize = 'initial';
+  const children = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.';
 
   return <Text
     color={textColor}

@@ -5,6 +5,7 @@ import { DocsPage, DocsContainer } from '@storybook/addon-docs';
 import { createTheme } from '../packages/brand/src/';
 import { Layout } from '../packages/core/src/index';
 
+//import { select, boolean } from '@storybook/addon-knobs';
 
 export const parameters = {
   layout: 'fullscreen',
@@ -19,16 +20,10 @@ export const parameters = {
   options: {
     showPanel: true,
     isFullscreen: false,
-    storySort: {
-      method: 'alphabetical',
-      order: ['Intro', 'Design System', ['Colors', 'Font'], 'Components'],
-    },
+    order: ['Intro', 'Design System', ['Colors', 'Font'], 'Components'],
+    //storySort: (a, b) => a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
-  controls: {
-    disable: false,
-    expanded: false,
-    hideNoControlsWarning: true
-  },
+  controls: { disable: false, expanded: false },
   exportedParameter: 'exportedParameter',
   a11y: {
     config: {},

@@ -4,7 +4,7 @@ import Button from './Button';
 // @ts-ignore
 import ButtonMdx from './Button.mdx';
 
-import { text } from '@storybook/addon-knobs';
+//import { text } from '@storybook/addon-knobs';
 
 export default {
   title: 'Components/Button',
@@ -17,8 +17,8 @@ export default {
 } as Meta;
 
 export const Primary = () => {
-  const foo = text('foo', 'text button');
-  const onClick = text('onClick', 'click');
+  const foo = 'text btn';//text('foo', 'text button');
+  const onClick = 'click';//text('onClick', 'click');
 
   return <Button foo={foo} onClick={() => alert(onClick)} />;
 };

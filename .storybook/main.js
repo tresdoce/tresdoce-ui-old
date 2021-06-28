@@ -26,7 +26,7 @@ module.exports = {
         toolbars:true
       }
     },
-    '@storybook/addon-knobs',
+    //'@storybook/addon-knobs',
     '@storybook/addon-controls',
     '@storybook/addon-a11y',
     //'@storybook/addon-links',

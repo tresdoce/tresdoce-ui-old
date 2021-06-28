@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Meta } from '@storybook/react';
 
 import Container from "./Container";
+import { ContainerProps } from './Container.types';
+
 // @ts-ignore
 import ContainerMdx from "./Container.mdx";
-
-import { text, select, boolean } from '@storybook/addon-knobs';
 
 export default {
     title: "Components/Container",
@@ -14,28 +14,69 @@ export default {
       docs: {
         page: ContainerMdx,
       },
+    },
+    argTypes:{
+      "fluid":{
+        control: { type: 'boolean'},
+        //defaultValue: false,
+        description: 'Container fluido',
+        table: {
+          type: {
+            summary: 'true | false'
+          },
+          defaultValue: { summary: false },
+        },
+      },
+      "row":{
+        control: { type: 'boolean'},
+        //defaultValue: false,
+        description: 'Remueve los paddings',
+        table: {
+          type: {
+            summary: 'true | false'
+          },
+          defaultValue: { summary: false },
+        },
+      },
+      "size":{
+        control: {
+          type: 'select',
+          labels: {
+            "xs":"xs < 576px",
+            "sm":"sm >= 576px",
+            "md":"md >= 768px",
+            "lg":"lg >= 992px",
+            "xl":"xl >= 1200px",
+            "xxl":"xxl >= 1400px"
+          },
+        },
+        options: ["xs", "sm", "md", "lg", "xl", "xxl"],
+        //defaultValue: 'md',
+        description: 'Ancho maximo emblocado',
+        table: {
+          type: {
+            //summary: 'Values',
+            //detail: 'xs | sm | md | lg | xl | xxl'
+            summary: 'xs | sm | md | lg | xl | xxl'
+          },
+          defaultValue: { summary: 'md' },
+        },
+      },
+      "children":{
+        control:{ type: 'text'},
+        //defaultValue: 'Lorem ipsum',
+        description: 'Contenido',
+      }
     }
 } as Meta;
 
-export const Default = () => {
-  const sizesOpd = {
-    "xs < 576px":"xs",
-    "sm >= 576px":"sm",
-    "md >= 768px":"md",
-    "lg >= 992px":"lg",
-    "xl >= 1200px":"xl",
-    "xxl >= 1400px":"xxl"
-  }
-  const size = select('Size', sizesOpd, 'md');
-  const fluid = boolean('Fluid', false);
-  const row = boolean('Row', false);
-  const children = text('Children', 'lorem ipsum');
+const Template = (args: ContainerProps) => <Container {...args}/>;
 
-  return <Container
-    size={size}
-    fluid={fluid}
-    row={row}
-  >
-    {children}
-  </Container>;
-}
+export const Default = Template.bind({});
+Default.args = {
+  "fluid": false,
+  "row": false,
+  "size": 'md',
+  "children":'Lorem ipsum'
+};
+
