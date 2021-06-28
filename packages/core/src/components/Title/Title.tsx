@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { createElement } from 'react';
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { withTheme } from '../Theme';
@@ -32,7 +32,7 @@ const Title: React.FC<TitleProps> = ({
 
   const element = headingStyles[`H${level}`];
 
-  return React.createElement(element, {
+  return createElement(element, {
       'className': classes,
       color,
       size,

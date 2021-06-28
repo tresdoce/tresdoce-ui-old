@@ -1,7 +1,7 @@
 module.exports = (componentName) => ({
   filename: componentName,
   extension: `.mdx`,
-  content: `import { Canvas, Meta, Source } from '@storybook/addon-docs/blocks';
+  content: `import { Canvas, Meta, Source } from '@storybook/addon-docs';
 import dedent from 'ts-dedent';
 //import { createTheme } from '@tresdoce-ui/brand';
 import { createTheme } from '../../../../brand/src';

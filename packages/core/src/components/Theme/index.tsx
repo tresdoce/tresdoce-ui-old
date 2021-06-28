@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {createContext, useContext} from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { createTheme } from '@tresdoce-ui/brand';
 
@@ -9,12 +9,12 @@ export interface ThemeProps {
   cdnBasepath?: string;
 }
 
-export const ThemeContext = React.createContext<ThemeProps>({
+export const ThemeContext = createContext<ThemeProps>({
   theme: createTheme(),
   cdnBasepath: '',
 });
 
-export const useTheme = () => React.useContext(ThemeContext);
+export const useTheme = () => useContext(ThemeContext);
 
 export const withTheme = (WrappedComponent: any) => {
   const ThemeableComponent = (props: any) => (

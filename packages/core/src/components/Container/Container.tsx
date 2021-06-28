@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {createElement} from 'react';
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { withTheme } from '../Theme';
@@ -19,7 +19,7 @@ const Container: React.FC<ContainerProps> = ({
     [className]: !!className,
   });
 
-  return React.createElement(ContainerStyle, {
+  return createElement(ContainerStyle, {
       'className': classes,
       row,
       fluid,

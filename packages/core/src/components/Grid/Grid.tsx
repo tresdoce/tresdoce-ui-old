@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Children, cloneElement, createElement, ReactElement } from 'react';
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { withTheme, useTheme } from '../Theme';
@@ -23,14 +23,14 @@ const Grid: React.FC<GridProps> = ({
     'default-class': false,
     [className]: !!className,
   });
-  const theme = useTheme().theme;
+  const { theme } = useTheme();
   const spacing = getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
 
-  const cols = (React.Children.toArray(children) as React.ReactElement[]).map((col, index) =>
-    React.cloneElement(col, { gutter, grow, columns, key: index }),
+  const cols = (Children.toArray(children) as ReactElement[]).map((col, index) =>
+    cloneElement(col, { gutter, grow, columns, key: index }),
   );
 
-  return React.createElement(GridStyle, {
+  return createElement(GridStyle, {
       'className': classes,
       gutter,
       grow,

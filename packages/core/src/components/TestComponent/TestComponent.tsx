@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { withTheme } from '../Theme';
 import filterProps from '../../utils/filter-props';
 

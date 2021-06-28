@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { createElement } from 'react';
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { useTheme, withTheme } from '../Theme';
@@ -21,7 +21,7 @@ const Col: React.FC<ColProps> = ({
   style,
   ...rest
 }) => {
-  const theme = useTheme().theme;
+  const { theme } = useTheme();
   const spacing = getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
   let styles;
   if (!isValidSpan(span) || span > columns) {
@@ -41,7 +41,7 @@ const Col: React.FC<ColProps> = ({
     }
   }
 
-  return React.createElement(ColStyle, {
+  return createElement(ColStyle, {
       'className': classes,
       ...filteredProps,
       span,

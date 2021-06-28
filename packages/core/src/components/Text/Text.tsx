@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { createElement } from 'react';
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { withTheme } from '../Theme';
@@ -23,7 +23,7 @@ const Text: React.FC<TextProps> = ({
   });
 
   const element = textStyles['P'];
-  return React.createElement(element, {
+  return createElement(element, {
       'className': classes,
       color,
       size,

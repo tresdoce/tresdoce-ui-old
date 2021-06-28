@@ -1,7 +1,7 @@
 import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs';
 import { createTheme } from '../packages/brand/src/';
 import { Layout } from '../packages/core/src/index';
 
