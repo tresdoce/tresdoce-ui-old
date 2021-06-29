@@ -5,7 +5,7 @@ import { createTheme} from '../packages/brand/src';
 //import logo from './public/forma-logo.png';
 
 const theme = createTheme();
-console.log("THEME: ", theme)
+
 export default create({
   base: 'light',
 
