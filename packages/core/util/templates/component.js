@@ -5,8 +5,8 @@ module.exports = (componentName) => ({
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { withTheme } from '../Theme';
-import { ${componentName}Props } from "./${componentName}.types";
-import { ${componentName}Style } from "./styles";
+import { ${componentName}Props } from './${componentName}.types';
+import { ${componentName}Style } from './styles';
 
 const ${componentName}: React.FC<${componentName}Props> = ({ 
   className,
@@ -15,7 +15,7 @@ const ${componentName}: React.FC<${componentName}Props> = ({
 }) => {
   const filteredProps = filterProps(rest);
   const classes = clsx({
-    'default-class':true,
+    'default-class':false,
     [className]: !!className
   });
   

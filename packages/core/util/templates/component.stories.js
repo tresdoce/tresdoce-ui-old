@@ -2,26 +2,34 @@ module.exports = (componentName) => ({
   filename: componentName,
   extension: `.stories.tsx`,
   content: `import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
-import ${componentName} from "./${componentName}";
+import ${componentName} from './${componentName}';
+import { ${componentName}Props } from './${componentName}.types';
+
 // @ts-ignore
-import ${componentName}Mdx from "./${componentName}.mdx";
-
-import { text } from '@storybook/addon-knobs';
+import ${componentName}Mdx from './${componentName}.mdx';
 
 export default {
-    title: "${componentName}",
+    title: '${componentName}',
     component: ${componentName},
     parameters: {
       docs: {
         page: ${componentName}Mdx,
       },
+    },
+    argTypes:{
+      'foo':{
+        control: { type: 'text' },
+        description: 'foo content'
+      }
     }
 } as Meta;
 
-export const Default = () => {
-  const foo = text('foo', 'lorem ipsum');
-  return <${componentName} foo={foo} />;
+const Template: Story<${componentName}Props> = args => <${componentName} {...args}/>;
+
+export const Default = Template.bind({});
+Default.args = {
+  'foo': 'lorem ipsum'
 }`,
 });
