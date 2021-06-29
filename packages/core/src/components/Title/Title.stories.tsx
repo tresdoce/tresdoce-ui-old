@@ -1,88 +1,162 @@
 import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import Title from './Title';
+import { TitleProps } from './Title.types';
+
 // @ts-ignore
 import TitleMdx from './Title.mdx';
 
-//import { color, select, text } from '@storybook/addon-knobs';
-
 export default {
-    title: "Components/Title",
-    component: Title,
-    parameters: {
-      docs: {
-        page: TitleMdx,
-      }
+  title: 'Components/Title',
+  component: Title,
+  parameters: {
+    docs: {
+      page: TitleMdx,
     },
+  },
+  argTypes: {
+    'level': {
+      control: {
+        type: 'select',
+        labels: {
+          1: '1 (h1)',
+          2: '2 (h2)',
+          3: '3 (h3)',
+          4: '4 (h4)',
+          5: '5 (h5)',
+          6: '6 (h6)',
+        },
+      },
+      options: [1, 2, 3, 4, 5, 6],
+      description: 'Level heading',
+      table: {
+        table: {
+          type: {
+            summary: '1 | 2 | 3 | 4 | 5 | 6',
+          },
+          defaultValue: 1,
+        },
+      },
+    },
+    'children': {
+      control: { type: 'text' },
+      description: 'Contenido',
+    },
+    'color': {
+      control: { type: 'color' },
+      description: 'Color del texto',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: { summary: '#1B1C1D' },
+      },
+    },
+    'align': {
+      control: {
+        type: 'select',
+        labels: {
+          'left': 'Left',
+          'center': 'Center',
+          'right': 'Right',
+          'justify': 'Justify',
+        },
+      },
+      options: ['left', 'center', 'right', 'justify'],
+      description: 'Alineación del texto',
+      table: {
+        table: {
+          type: {
+            summary: 'left | center | right | justify | string',
+          },
+          defaultValue: 'left',
+        },
+      },
+    },
+    'fontStyle': {
+      control: {
+        type: 'select',
+        labels: {
+          'normal': 'Normal',
+          'italic': 'Italic',
+          'oblique': 'Oblique',
+          'inherit': 'Inherit',
+          'initial': 'Initial',
+          'unset': 'Unset',
+        },
+      },
+      options: ['normal', 'italic', 'oblique', 'inherit', 'initial', 'unset'],
+      description: 'Estilo de la fuente',
+      table: {
+        table: {
+          type: {
+            summary: 'normal | italic | oblique | inherit | initial | unset | string',
+          },
+          defaultValue: 'normal',
+        },
+      },
+    },
+    'weight': {
+      control: {
+        type: 'select',
+        labels: {
+          'thin': 'Thin',
+          'light': 'Light',
+          'regular': 'Regular',
+          'normal': 'Normal',
+          'medium': 'Medium',
+          'bold': 'Bold',
+          'black': 'Black',
+        },
+      },
+      options: ['thin', 'light', 'regular', 'normal', 'medium', 'bold', 'black'],
+      description: 'Grosor de la fuente',
+      table: {
+        table: {
+          type: {
+            summary: 'thin | light | regular | normal | medium | bold | black | string',
+          },
+          defaultValue: 'normal',
+        },
+      },
+    },
+    'capitalize': {
+      control: {
+        type: 'select',
+        labels: {
+          'initial': 'Initial',
+          'inherit': 'Inherit',
+          'capitalize': 'Capitalize',
+          'lowercase': 'Lowercase',
+          'uppercase': 'Uppercase',
+          'first-letter': 'First letter',
+          'none': 'None',
+        },
+      },
+      options: ['initial', 'inherit', 'capitalize', 'lowercase', 'uppercase', 'first-letter', 'none'],
+      description: 'Capitalización de la fuente',
+      table: {
+        table: {
+          type: {
+            summary: 'initial | inherit | capitalize | lowercase | uppercase | first-letter | none | string',
+          },
+          defaultValue: 'initial',
+        },
+      },
+    },
+  },
 } as Meta;
 
-export const Default = (props) => {
+const Template: Story<TitleProps> = args => <Title {...args}>{args.children}</Title>;
 
-  const levelsOpt = {
-    '1 (h1)': 1,
-    '2 (h2)': 2,
-    '3 (h3)': 3,
-    '4 (h4)': 4,
-    '5 (h5)': 5,
-    '6 (h6)': 6,
-  };
-  const alignOpt = {
-    left: 'left',
-    center: 'center',
-    right: 'right',
-    justify: 'justify',
-  };
-  const capitalizeOpt = {
-    initial: 'initial',
-    inherit: 'inherit',
-    capitalize: 'capitalize',
-    lowercase: 'lowercase',
-    uppercase: 'uppercase',
-    'first-letter':'first-letter',
-    none: 'none',
-  };
-  const weightOpt = {
-    thin: 'thin',
-    light: 'light',
-    regular: 'regular',
-    normal: 'normal',
-    medium: 'medium',
-    bold: 'bold',
-    black: 'black',
-  };
-  const styleOpt = {
-    normal: 'normal',
-    italic: 'italic',
-    oblique: 'oblique',
-    inherit: 'inherit',
-    initial: 'initial',
-    unset: 'unset'
-  };
-
-  /*const level = select('Level', levelsOpt, 1);
-  const children = text('Children', 'This is a heading');
-  const align = select('Align', alignOpt, 'left');
-  const textColor = color('Color', '#1B1C1D');
-  const fontStyle = select('Font-style', styleOpt, 'normal');
-  const weight = select('Weight', weightOpt, 'bold');
-  const capitalize = select('Capitalize', capitalizeOpt, 'initial');*/
-
-  const level = 1;
-  const children = 'This is a heading';
-  const align = 'left';
-  const textColor = '#1B1C1D';
-  const fontStyle = 'normal';
-  const weight = 'bold';
-  const capitalize = 'initial';
-
-  return <Title
-    level={level}
-    color={textColor}
-    align={align}
-    fontStyle={fontStyle}
-    weight={weight}
-    capitalize={capitalize}
-    dangerouslySetInnerHTML={{__html: children}}
-  />;
-}
+export const Default = Template.bind({});
+Default.args = {
+  'level': 1,
+  'children': `This is a heading`,
+  'color': '#1B1C1D',
+  'align': 'left',
+  'fontStyle': 'normal',
+  'weight': 'bold',
+  'capitalize': 'initial',
+};
