@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { TestComponentProps } from './TestComponent.types';
 
 export const StyledDiv = styled.div<TestComponentProps>`
+  margin: auto;
   background-color: white;
   border: 1px solid black;
   padding: 16px;

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
+
 import TestComponent from './TestComponent';
+import { TestComponentProps } from './TestComponent.types';
 // @ts-ignore
 import TestComponentMdx from './TestComponent.mdx';
-
-//import { select } from '@storybook/addon-knobs';
 
 export default {
   title: 'Components/TestComponent',
@@ -14,14 +14,24 @@ export default {
       page: TestComponentMdx,
     },
   },
+  argTypes: {
+    'mode': {
+      options:['primary', 'secondary'],
+      control: { type: 'radio' },
+      description: 'Modo',
+      table:{
+        type:{
+          summary: 'primary | secondary'
+        },
+        defaultValue:'primary'
+      }
+    },
+  },
 } as Meta;
 
-export const Default = () => {
-  const typeOptions = {
-    'primary': 'primary',
-    'secondary': 'secondary',
-  };
-  //const mode = select('mode', typeOptions, 'primary', 'GROUP-THEME');
-  const mode = 'primary';
-  return <TestComponent mode={mode} />;
-};
+const Template: Story<TestComponentProps> = args => <TestComponent {...args} />;
+
+export const Default = Template.bind({});
+Default.args={
+  'mode':'primary'
+}
