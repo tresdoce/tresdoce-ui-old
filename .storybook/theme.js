@@ -1,8 +1,11 @@
 import { create } from '@storybook/theming';
 import { version } from '../packages/core/package.json';
+import { createTheme} from '../packages/brand/src';
 
 //import logo from './public/forma-logo.png';
 
+const theme = createTheme();
+console.log("THEME: ", theme)
 export default create({
   base: 'light',
 
@@ -12,26 +15,26 @@ export default create({
   //brandImage: logo,
 
   // Color palette
-  //colorPrimary: tokens.colorPrimary,
+  colorPrimary: theme.palette.primary.default,
 
   // UI
-  //appBg: tokens.colorElementLightest,
-  //appContentBg: tokens.colorWhite,
-  //appBorderColor: tokens.colorElementLight,
-  //appBorderRadius: 4,
+  appBg: theme.palette.color.white,
+  appContentBg: theme.palette.color.white,
+  appBorderColor: theme.palette.gray[3],
+  appBorderRadius: 4,
 
   // Fonts
-  fontBase: '"Lato", Helvetica, Arial, sans-serif',
+  fontBase: theme.typography.family.primary,
   fontCode: 'monospace',
 
   // Text colors
-  //textColor: tokens.colorTextDark,
-  //textInverseColor: tokens.colorWhite,
+  textColor: theme.palette.color.black,
+  textInverseColor: theme.palette.color.white,
 
   // Toolbar default and active colors
   //barTextColor: tokens.colorTextLightest,
-  //barSelectedColor: tokens.colorPrimary,
-  //barBg: tokens.colorWhite,
+  barSelectedColor: theme.palette.primary.default,
+  barBg: theme.palette.color.white,
 
   // Form colors
   //inputBg: tokens.colorWhite,
