@@ -52,12 +52,8 @@ const GlobalWrapper = story => {
   const theme = createTheme();
   const cdnBasepath = '';
 
-  const containerFluidOpt = {
-    'container': false,
-    'container-fluid': true,
-  };
-  const containerFluid = true;//select('Preview Container', containerFluidOpt, false);
-  const row = true;//boolean('Preview Container Row', false)
+  const containerFluid = true;
+  const row = true;
 
   return (
     <>

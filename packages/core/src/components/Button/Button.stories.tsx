@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Meta } from '@storybook/react/types-6-0';
+import { Meta, Story } from '@storybook/react';
+
 import Button from './Button';
+import { ButtonProps } from './Button.types';
+
 // @ts-ignore
 import ButtonMdx from './Button.mdx';
-
-//import { text } from '@storybook/addon-knobs';
 
 export default {
   title: 'Components/Button',
@@ -14,11 +15,19 @@ export default {
       page: ButtonMdx,
     },
   },
+  argTypes: {
+    'foo': {
+      control: { type: 'text' },
+      description: 'Texto del botón',
+    },
+    onClick: { action: 'clicked' }
+  },
 } as Meta;
 
-export const Primary = () => {
-  const foo = 'text btn';//text('foo', 'text button');
-  const onClick = 'click';//text('onClick', 'click');
+const Template: Story<ButtonProps> = args => <Button {...args} />;
 
-  return <Button foo={foo} onClick={() => alert(onClick)} />;
+export const Default = Template.bind({});
+Default.args = {
+  'foo': 'I am button',
+  'onClick': () => alert("click!"),
 };
