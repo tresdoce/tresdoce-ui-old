@@ -6,17 +6,19 @@
         display: block;
     }
 
-    .main-content{
-        text-align: center;
-        height: auto;
+    .wrapper {
+        height: 100%;
+        min-height: 100%;
+        width: 100%;
         position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) !important;
-        -ms-transform: translate(-50%, -50%) !important;
-        -webkit-transform: translate(-50%, -50%) !important;
-        -moz-transform: translate(-50%, -50%) !important;
-        -o-transform: translate(-50%, -50%) !important;
+        display: table;
+    }
+
+    .main-content{
+        position: relative;
+        width: 100%;
+        display: table-cell;
+        vertical-align: middle;
     }
     /*@import url('css/app.css');*/
 
