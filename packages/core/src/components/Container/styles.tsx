@@ -3,6 +3,7 @@ import { ContainerStyleProps } from './Container.types';
 
 export const ContainerStyle = styled.div<ContainerStyleProps>`
   ${({ theme, size, fluid, row }) => `
+    display: block;
     padding: 0 ${row ? '0' : `${theme.grid.spacing.gutter[size]}px`};
     margin: 0 auto;
     width: ${fluid ? 'auto' : '100%'};

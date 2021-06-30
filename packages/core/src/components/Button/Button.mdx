@@ -6,7 +6,17 @@ import Layout from '../Layout';
 
 import Button from './Button';
 
-<Meta title="Component/Button" component={Button} />
+<Meta
+  title="Component/Button"
+  component={Button}
+  argTypes={{
+    'foo': {
+      control: { type: 'text' },
+      description: 'Texto del botón',
+    },
+    onClick: { action: 'clicked' }
+  }}
+/>
 
 # Button
 
@@ -18,12 +28,10 @@ I can embed a story (but not define one, since this file should not contain a `M
   </Layout>
 </Canvas>
 
-
 And I can also embed arbitrary markdown & JSX in this file.
 
-
 <Source
-  language='jsx'
+  language='tsx'
   dark={false}
   code={dedent`import { Button } from '@tresdoce-ui/core';
         <Button foo={'Text button'} onClick={()=>alert('click in button')}/>`}
