@@ -13,6 +13,7 @@ module.exports = {
         configureJSX: true,
         babelOptions: {},
         sourceLoaderOptions: null,
+        transcludeMarkdown: true,
       },
     },
     {
@@ -26,14 +27,13 @@ module.exports = {
         toolbars:true
       }
     },
-    //'@storybook/addon-knobs',
     '@storybook/addon-controls',
     '@storybook/addon-a11y',
     //'@storybook/addon-links',
     '@storybook/addon-viewport',
     '@storybook/addon-actions',
     //'@storybook/addon-toolbars',
-    //'@storybook/addons',
+    '@storybook/addons',
     /*{
       name: '@storybook/addon-storysource',
       options: {

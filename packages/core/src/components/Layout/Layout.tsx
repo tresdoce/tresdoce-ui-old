@@ -17,7 +17,6 @@ const Layout: React.FC<LayoutProps> = ({
 }) => {
   const filteredProps = filterProps(rest);
   //const styles = {border: '1px solid black'}
-  const styles = {}
 
   return (
     <ThemeContext.Provider
@@ -30,7 +29,7 @@ const Layout: React.FC<LayoutProps> = ({
       <ThemeProvider theme={theme}>
         <div className='wrapper'>
           <div className='main-content'>
-            <Container fluid={containerFluid} row={row} style={styles} {...filteredProps}>{children}</Container>
+            <Container fluid={containerFluid} row={row} {...filteredProps}>{children}</Container>
           </div>
         </div>
         <Baseline />

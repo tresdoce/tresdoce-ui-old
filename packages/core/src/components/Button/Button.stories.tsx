@@ -9,12 +9,20 @@ import ButtonMdx from './Button.mdx';
 
 export default {
   title: 'Components/Button',
-  component: Button,
   parameters: {
+    componentSubtitle: 'Displays an image that represents a user or organization',
     docs: {
       page: ButtonMdx,
     },
   },
+  component: Button,
+  decorators: [
+    (Story) => (
+      <div style={{ textAlign: 'center' }}>
+        <Story/>
+      </div>
+    ),
+  ],
   argTypes: {
     'foo': {
       control: { type: 'text' },
