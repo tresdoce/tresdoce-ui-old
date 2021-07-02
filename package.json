@@ -28,12 +28,13 @@
     "hoist-deps": "lerna clean -y && lerna bootstrap --hoist",
     "create:storybook": "npm-run-all -l -c -s clear:storybook build:storybook",
     "clear:storybook": "rimraf ./dist",
-    "build:storybook": "build-storybook -o ./dist/storybook-tresdoce-ui"
+    "build:storybook": "build-storybook -o ./dist/storybook-tresdoce-ui",
+    "lint:staged:test": "npm-run-all -l -c -s lint-staged test"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run lint-staged && npm run test"
+      "pre-commit": "npm run lint:staged:test"
     }
   },
   "lint-staged": {
