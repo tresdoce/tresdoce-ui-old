@@ -20,6 +20,7 @@
     "storybook": "start-storybook -p 6006 -s ./packages/brand/assets",
     "test": "lerna exec --no-bail npm run test",
     "lint": "lerna exec --no-bail npm run lint",
+    "lint-staged": "lerna exec --no-bail npm run lint-staged",
     "clear": "lerna exec --no-bail npm run clear",
     "build": "lerna exec --no-bail npm run build",
     "publish": "lerna exec npm publish",
