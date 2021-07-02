@@ -8,12 +8,12 @@ import Baseline from '../Baseline';
 import Container from '../Container';
 
 const Layout: React.FC<LayoutProps> = ({
-  cdnBasepath,
-  containerFluid = false,
-  row= false,
-  children,
-  theme,
-  ...rest
+ cdnBasepath,
+ containerFluid = false,
+ row = false,
+ children,
+ theme,
+ ...rest
 }) => {
   const filteredProps = filterProps(rest);
   //const styles = {border: '1px solid black'}
@@ -25,7 +25,7 @@ const Layout: React.FC<LayoutProps> = ({
         cdnBasepath,
       }}
     >
-      {console.log('CORE Layout: ', theme)}
+      {/*{console.log('CORE Layout: ', theme)}*/}
       <ThemeProvider theme={theme}>
         <div className='wrapper'>
           <div className='main-content'>
