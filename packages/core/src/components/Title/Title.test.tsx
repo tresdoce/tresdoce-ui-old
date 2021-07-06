@@ -9,6 +9,7 @@ import { TitleProps } from "./Title.types";
 
 describe("Component - Title", () => {
   let props: TitleProps;
+  const theme = createTheme();
 
   beforeEach(() => {
     props = {
@@ -24,8 +25,8 @@ describe("Component - Title", () => {
     };
   });
 
-  const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Title {...props} /></Layout>);
-  const updateComponent = (rerender, props) => rerender(<Layout theme={createTheme()} cdnBasepath={''}><Title {...props} /></Layout>);
+  const renderComponent = () => render(<Layout theme={theme} cdnBasepath={''}><Title {...props} /></Layout>);
+  const updateComponent = (rerender, props) => rerender(<Layout theme={theme} cdnBasepath={''}><Title {...props} /></Layout>);
 
   it('Should has a correct displayName', () =>{
     expect(Title.displayName).toEqual('@tresdoce-ui/core/Title');
@@ -56,6 +57,7 @@ describe("Component - Title", () => {
   });
 
   it('Should be render H1, H2, H3, H4, H5 and H6 heading component', () => {
+
     props['data-testId'] = 'id-test-heading-component';
     props.level = 1;
 
@@ -93,23 +95,24 @@ describe("Component - Title", () => {
   it('Should be render heading component with different align', () => {
     props['data-testId'] = 'id-test-heading-component';
     props.level = 1;
+    props['align'] = 'left';
 
     const { getByTestId, rerender } = renderComponent();
     expect(getByTestId).not.toBeNull();
     let component = getByTestId(props['data-testId']);
     expect(component).toHaveStyle(`text-align: left`);
 
-    props.align = 'center';
+    props['align'] = 'center';
     updateComponent(rerender, props);
-    expect(component).toHaveStyle(`text-align: ${props.align}`);
+    expect(component).toHaveStyle(`text-align: ${props['align']}`);
 
-    props.align = 'right';
+    props['align'] = 'right';
     updateComponent(rerender, props);
-    expect(component).toHaveStyle(`text-align: ${props.align}`);
+    expect(component).toHaveStyle(`text-align: ${props['align']}`);
 
-    props.align = 'justify';
+    props['align'] = 'justify';
     updateComponent(rerender, props);
-    expect(component).toHaveStyle(`text-align: ${props.align}`);
+    expect(component).toHaveStyle(`text-align: ${props['align']}`);
   });
 
   it('Should be render heading component with different color', () => {
