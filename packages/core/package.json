@@ -129,19 +129,22 @@
     "@tresdoce-ui/brand": "^1.0.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "react-jss": ">=10.1.1"
   },
   "resolutions": {
     "@tresdoce-ui/brand": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "react-jss": ">=10.1.1"
   },
   "dependencies": {
     "@tresdoce-ui/brand": "^1.0.0",
     "eslint": "^7.25.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-jss": "^10.7.1",
     "shx": "^0.3.3",
     "styled-components": "^5.2.3",
     "styled-jsx": "^3.4.4"
@@ -191,6 +194,7 @@
     "less-loader": "^8.0.0",
     "lint-staged": "^11.0.0",
     "node-sass": "^5.0.0",
+    "normalize-jss": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "postcss-loader": "^5.2.0",
     "prettier": "^2.1.0",

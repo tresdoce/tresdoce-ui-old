@@ -1,4 +1,5 @@
 import React, {createContext, useContext} from 'react';
+import { createTheming } from 'react-jss';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { createTheme } from '@tresdoce-ui/brand';
 
@@ -13,6 +14,8 @@ export const ThemeContext = createContext<ThemeProps>({
   theme: createTheme(),
   cdnBasepath: '',
 });
+
+export const theming = createTheming(ThemeContext);
 
 export const useTheme = () => useContext(ThemeContext);
 
