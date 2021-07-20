@@ -5,7 +5,6 @@ import { DocsPage, DocsContainer } from '@storybook/addon-docs';
 import { createTheme } from '../packages/brand/src/';
 import { Layout } from '../packages/core/src/index';
 
-
 export const parameters = {
   layout: 'fullscreen',
   actions: { argTypesRegex: '^on[A-Z].*' },

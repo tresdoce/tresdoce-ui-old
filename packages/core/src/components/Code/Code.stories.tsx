@@ -19,13 +19,31 @@ export default {
       'children':{
         control: { type: 'text' },
         description: '<foo myprop={"prop"}/>'
-      }
+      },
+      'block': {
+        control: { type: 'boolean' },
+        //defaultValue: false,
+        description: 'Block',
+        table: {
+          type: {
+            summary: 'true | false',
+          },
+          defaultValue: { summary: false },
+        },
+      },
     }
 } as Meta;
+
+const codeForPreviousDemo = `import React from 'react';
+import { Code } from '@tresdoce-ui/core';
+function Demo() {
+  return <Code>React.createElement()</Code>;
+}`;
 
 const Template: Story<CodeProps> = args => <Code {...args}/>;
 
 export const Default = Template.bind({});
 Default.args = {
-  'children': '<foo myprop={"prop"}/>'
+  'children': codeForPreviousDemo,
+  'block': false
 }
