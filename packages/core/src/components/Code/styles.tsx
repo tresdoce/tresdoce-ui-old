@@ -3,9 +3,9 @@ import { CodeProps } from './Code.types';
 
 export const CodePreBaseStyle = css`
   ${({ theme }) => `
-    position: relative;
-    display: inline-block;
-    font-family: ${theme.typography.family.primary};
+    //position: relative;
+    //display: inline-block;
+    font-family: ${theme.typography.family.monospace};
     border: 1px solid ${theme.palette.gray[2]};
     color: ${theme.palette.gray[7]};
     background: ${theme.palette.gray.transparent[2]};
