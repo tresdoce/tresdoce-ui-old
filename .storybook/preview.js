@@ -4,6 +4,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs';
 import { createTheme } from '../packages/brand/src/';
 import { Layout } from '../packages/core/src/index';
+import { NormalizeCSS } from '../packages/core/src/components/Baseline/styles'
 
 export const parameters = {
   layout: 'fullscreen',
@@ -64,6 +65,7 @@ const GlobalWrapper = story => {
       >
         {story()}
       </Layout>
+      <NormalizeCSS/>
     </>
   );
 };

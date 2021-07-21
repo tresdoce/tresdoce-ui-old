@@ -5,5 +5,5 @@ export const NormalizeCSS = createGlobalStyle`
   ${normalize}
 `
 
-export const GlobalStyles = createGlobalStyle`
-`
+export const GlobalStyles = createGlobalStyle``
+
