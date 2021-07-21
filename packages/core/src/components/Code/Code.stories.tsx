@@ -34,16 +34,11 @@ export default {
     }
 } as Meta;
 
-const codeForPreviousDemo = `import React from 'react';
-import { Code } from '@tresdoce-ui/core';
-function Demo() {
-  return <Code>React.createElement()</Code>;
-}`;
 
 const Template: Story<CodeProps> = args => <Code {...args}/>;
 
 export const Default = Template.bind({});
 Default.args = {
-  'children': codeForPreviousDemo,
+  'children': `<Code>React.createElement()</Code>`,
   'block': false
 }

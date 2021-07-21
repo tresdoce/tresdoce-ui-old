@@ -52,7 +52,7 @@ const GlobalWrapper = story => {
   const cdnBasepath = '';
 
   const containerFluid = true;
-  const row = true;
+  const row = false;
 
   return (
     <>

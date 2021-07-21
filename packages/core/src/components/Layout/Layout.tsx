@@ -29,7 +29,9 @@ const Layout: React.FC<LayoutProps> = ({
       <ThemeProvider theme={theme}>
         <div className='wrapper'>
           <div className='main-content'>
-            <Container fluid={containerFluid} row={row} {...filteredProps}>{children}</Container>
+            <Container fluid={containerFluid} row={row} {...filteredProps}>
+              {children}
+            </Container>
           </div>
         </div>
         <Baseline />

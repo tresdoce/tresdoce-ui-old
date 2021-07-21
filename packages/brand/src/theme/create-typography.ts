@@ -48,6 +48,7 @@ type Variants = {
 const family = {
   fontAwesome: '"FontAwesome"',
   sans: '"Helvetica", Arial, Trebuchet MS, sans-serif',
+  monospace: '"monospace", Lucida Console, Menlo, Monaco',
   primary: '"Roboto", Helvetica, Arial, sans-serif',
 };
 
