@@ -25,7 +25,7 @@ const Layout: React.FC<LayoutProps> = ({
         cdnBasepath,
       }}
     >
-      {console.log('CORE Layout: ', theme)}
+      {/*{console.log('CORE Layout: ', theme)}*/}
       <ThemeProvider theme={theme}>
         <div className='wrapper'>
           <div className='main-content'>
