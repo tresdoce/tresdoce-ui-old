@@ -1,0 +1,26 @@
+import { Canvas, Meta, Source } from '@storybook/addon-docs';
+import dedent from 'ts-dedent';
+//import { createTheme } from '@tresdoce-ui/brand';
+import { createTheme } from '../../../../brand/src';
+import Layout from '../Layout';
+
+import Icon from './Icon';
+
+<Meta title="Icon" component={Icon} />
+
+# Title Icon
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+
+<Canvas >
+  <Layout theme={createTheme()} cdnBasepath={''} containerFluid={true}>
+    <Icon foo={'lorem ipsum'} />
+  </Layout>
+</Canvas>
+
+<Source
+  language='jsx'
+  dark={false}
+  code={dedent`import { Icon } from '@tresdoce-ui/core';
+        <Icon foo={'lorem ipsum'}/>`}
+/>

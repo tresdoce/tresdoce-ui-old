@@ -9,4 +9,4 @@ export { default as Title } from './components/Title';
 export { default as Text } from './components/Text';
 export { default as Container } from './components/Container';
 export * from './components/Grid';
-export { default as Code } from './components/Code';
+export { default as Code } from './components/Code';export { default as Icon } from './components/Icon';
