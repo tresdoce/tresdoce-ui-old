@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { withTheme } from '../Theme';
@@ -24,12 +24,11 @@ const Icon: React.FC<IconProps> = ({
     [className]: !!className,
   });
 
-  if( !Object.keys(icons).includes(name)){
-    return null
+  if (!Object.keys(icons).includes(name)) {
+    return null;
   }
 
   return (
-    <>
       <IconStyle
         className={classes}
         data-name={`icon-${name}`}
@@ -45,7 +44,6 @@ const Icon: React.FC<IconProps> = ({
         {...filteredProps}
         dangerouslySetInnerHTML={{ __html: icons[name] }}
       />
-    </>
   );
 };
 
