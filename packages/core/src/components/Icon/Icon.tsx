@@ -24,6 +24,10 @@ const Icon: React.FC<IconProps> = ({
     [className]: !!className,
   });
 
+  if( !Object.keys(icons).includes(name)){
+    return null
+  }
+
   return (
     <>
       <IconStyle
@@ -32,7 +36,7 @@ const Icon: React.FC<IconProps> = ({
         xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
-        viewBox={`0 0 ${width} ${height}`}
+        viewBox={`0 0 24 24`}
         fill={fill}
         stroke={strokeColor}
         strokeWidth={strokeWidth}
