@@ -21,6 +21,7 @@ describe('Component - Icon', () => {
       strokeLinecap: 'round',
       strokeLinejoin: 'round',
     };
+    props['data-testId'] = "id-test-Icon-component";
   });
 
   const renderComponent = () => render(<Layout theme={theme} cdnBasepath={''}><Icon {...props} /></Layout>);
@@ -31,7 +32,6 @@ describe('Component - Icon', () => {
   });
 
   it('Should be return when icon dont exist', () => {
-    props['data-testId'] = 'id-test-Icon-component';
     props.name = 'activti';
 
     const { queryByTestId } = renderComponent();
@@ -39,15 +39,14 @@ describe('Component - Icon', () => {
     expect(component).toBeNull();
   });
 
-  /*it('Should be return icon correctly', async () => {
-    props['data-testId'] = "id-test-Icon-component";
+  it('Should be return icon correctly', () => {
     props.name = 'activity';
 
     const { getByTestId } = renderComponent();
     expect(getByTestId).not.toBeNull();
     const component = getByTestId(props['data-testId']);
-    expect(component).toEqual('svg');
-  });*/
+    expect(component.tagName).toEqual('svg');
+  });
 
   /*it("should render foo text correctly", () => {
     props.foo = "harvey was here";
