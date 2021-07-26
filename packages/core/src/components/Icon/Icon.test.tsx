@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render } from "@testing-library/react";
 import { createTheme } from '@tresdoce-ui/brand';
 import Layout from '../Layout';
 
@@ -31,32 +31,28 @@ describe('Component - Icon', () => {
     expect(Icon.displayName).toEqual('@tresdoce-ui/core/Icon');
   });
 
-  it('Should be return when icon dont exist', () => {
-    props.name = 'activti';
-
-    const { queryByTestId } = renderComponent();
-    const component = queryByTestId(props['data-testId']);
-    expect(component).toBeNull();
-  });
-
-  it('Should be return icon correctly', () => {
-    props.name = 'activity';
-
+  it('Should be render a icon component', () => {
     const { getByTestId } = renderComponent();
     expect(getByTestId).not.toBeNull();
-    const component = getByTestId(props['data-testId']);
-    expect(component.tagName).toEqual('svg');
+    const component = getByTestId(props['data-testId']).firstElementChild;
+    expect(component.tagName).toEqual(`svg`);
+    expect(component).toHaveAttribute('data-name', `icon-${props.name}`);
+    expect(component.getAttribute('width')).toBe( `${props.width}`);
+    expect(component.getAttribute('height')).toBe( `${props.height}`);
+    expect(component.getAttribute('fill')).toBe( `${props.fill}`);
+    expect(component.getAttribute('stroke')).toBe( `${props.strokeColor}`);
+    expect(component.getAttribute('stroke-width')).toBe(`${props.strokeWidth}`);
+    expect(component.getAttribute('stroke-linecap')).toBe(`${props.strokeLinecap}`);
+    expect(component.getAttribute('stroke-linejoin')).toBe( `${props.strokeLinejoin}`);
   });
 
-  /*it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
-    props['data-testId'] = "id-test-Icon-component";
-    const { getByTestId, rerender } = renderComponent();
-    const component = getByTestId(props['data-testId']);
-    expect(component).toHaveTextContent(props.foo);
+  /*it('Should be return when icon dont exist', () => {
+    props.name = 'activti';
+    const wrapper = render(<Icon {...props} />);
 
-    props.foo = 'harvey was here 2';
-    updateComponent(rerender, props);
-    expect(component).toHaveTextContent(props.foo);
+    const component = wrapper.queryByTestId(props['data-testId']);
+    expect(component).toBeNull();
   });*/
+
 });
+

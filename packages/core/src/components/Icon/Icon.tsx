@@ -1,9 +1,9 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import filterProps from '../../utils/filter-props';
 import clsx from 'clsx';
 import { withTheme } from '../Theme';
 import { IconProps } from './Icon.types';
-import { IconStyle } from './styles';
+import { ContainerIcon } from './styles';
 import icons from './icons.json';
 
 const Icon: React.FC<IconProps> = ({
@@ -29,8 +29,11 @@ const Icon: React.FC<IconProps> = ({
   }
 
   return (
-      <IconStyle
-        className={classes}
+    <ContainerIcon
+      className={classes}
+      {...filteredProps}
+    >
+      <svg
         data-name={`icon-${name}`}
         xmlns="http://www.w3.org/2000/svg"
         width={width}
@@ -41,9 +44,9 @@ const Icon: React.FC<IconProps> = ({
         strokeWidth={strokeWidth}
         strokeLinecap={strokeLinecap}
         strokeLinejoin={strokeLinejoin}
-        {...filteredProps}
         dangerouslySetInnerHTML={{ __html: icons[name] }}
       />
+    </ContainerIcon>
   );
 };
 

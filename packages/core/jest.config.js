@@ -15,7 +15,7 @@ module.exports = {
   coveragePathIgnorePatterns: [
     'node_modules',
     'node_modules/*',
-  ]
+  ],
   //moduleDirectories: ["node_modules", "src"],
   //testEnvironment: "jsdom",
 };

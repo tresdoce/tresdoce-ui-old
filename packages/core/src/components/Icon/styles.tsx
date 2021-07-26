@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { IconProps } from './Icon.types';
 
-export const IconStyle = styled.svg<IconProps>`
+export const ContainerIcon = styled.div`
   ${({ theme }) => `
     position: relative;
+    display: inline-block;
   `};
 `
