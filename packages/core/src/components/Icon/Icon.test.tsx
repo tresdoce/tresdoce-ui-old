@@ -54,6 +54,20 @@ describe('Component - Icon', () => {
     expect(component).toBeNull();
   });
 
+  it('Should be render a icon component with different icon', () => {
+    props.name = 'activity';
+
+    const { getByTestId, rerender } = renderComponent();
+    expect(getByTestId).not.toBeNull();
+    let component = getByTestId(props['data-testId']).firstElementChild;
+    expect(component).toHaveAttribute('data-name', `icon-${props.name}`);
+
+    props.name = 'x';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']).firstElementChild;
+    expect(component).toHaveAttribute('data-name', `icon-${props.name}`);
+  });
+
   it('Should be render a icon component with different size', () => {
     props.width = 24;
     props.height = 24;
@@ -70,20 +84,6 @@ describe('Component - Icon', () => {
     component = getByTestId(props['data-testId']).firstElementChild;
     expect(component.getAttribute('width')).toBe( `${props.width}`);
     expect(component.getAttribute('height')).toBe( `${props.height}`);
-  });
-
-  it('Should be render a icon component with different icon', () => {
-    props.name = 'activity';
-
-    const { getByTestId, rerender } = renderComponent();
-    expect(getByTestId).not.toBeNull();
-    let component = getByTestId(props['data-testId']).firstElementChild;
-    expect(component).toHaveAttribute('data-name', `icon-${props.name}`);
-
-    props.name = 'x';
-    updateComponent(rerender, props);
-    component = getByTestId(props['data-testId']).firstElementChild;
-    expect(component).toHaveAttribute('data-name', `icon-${props.name}`);
   });
 
 });
