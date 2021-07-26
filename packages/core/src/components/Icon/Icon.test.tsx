@@ -46,13 +46,45 @@ describe('Component - Icon', () => {
     expect(component.getAttribute('stroke-linejoin')).toBe( `${props.strokeLinejoin}`);
   });
 
-  /*it('Should be return when icon dont exist', () => {
-    props.name = 'activti';
-    const wrapper = render(<Icon {...props} />);
+  it('Should be dont return component when icon dont exist', () => {
+    props.name = 'activityy';
+    const { queryByTestId } = renderComponent();
 
-    const component = wrapper.queryByTestId(props['data-testId']);
+    const component = queryByTestId(props['data-testId']);
     expect(component).toBeNull();
-  });*/
+  });
+
+  it('Should be render a icon component with different size', () => {
+    props.width = 24;
+    props.height = 24;
+
+    const { getByTestId, rerender } = renderComponent();
+    expect(getByTestId).not.toBeNull();
+    let component = getByTestId(props['data-testId']).firstElementChild;
+    expect(component.getAttribute('width')).toBe( `${props.width}`);
+    expect(component.getAttribute('height')).toBe( `${props.height}`);
+
+    props.width = 30;
+    props.height = 30;
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']).firstElementChild;
+    expect(component.getAttribute('width')).toBe( `${props.width}`);
+    expect(component.getAttribute('height')).toBe( `${props.height}`);
+  });
+
+  it('Should be render a icon component with different icon', () => {
+    props.name = 'activity';
+
+    const { getByTestId, rerender } = renderComponent();
+    expect(getByTestId).not.toBeNull();
+    let component = getByTestId(props['data-testId']).firstElementChild;
+    expect(component).toHaveAttribute('data-name', `icon-${props.name}`);
+
+    props.name = 'x';
+    updateComponent(rerender, props);
+    component = getByTestId(props['data-testId']).firstElementChild;
+    expect(component).toHaveAttribute('data-name', `icon-${props.name}`);
+  });
 
 });
 
