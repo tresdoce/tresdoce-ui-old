@@ -16,8 +16,7 @@ const Layout: React.FC<LayoutProps> = ({
  ...rest
 }) => {
   const filteredProps = filterProps(rest);
-  //const styles = {border: '1px solid black'}
-
+  
   return (
     <ThemeContext.Provider
       value={{
@@ -25,7 +24,7 @@ const Layout: React.FC<LayoutProps> = ({
         cdnBasepath,
       }}
     >
-      {console.log('CORE Layout: ', theme)}
+      {/*{console.log('CORE Layout: ', theme)}*/}
       <ThemeProvider theme={theme}>
         <div className='wrapper'>
           <div className='main-content'>
