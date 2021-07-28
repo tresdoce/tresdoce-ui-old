@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "json-format"
+  ],
+  "settings": {
+    "json/sort-package-json": false,
+  }
+}
