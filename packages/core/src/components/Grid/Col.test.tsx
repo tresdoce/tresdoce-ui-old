@@ -1,15 +1,16 @@
-import * as React from "react";
-import { render } from "@testing-library/react";
+import * as React from 'react';
+import { render } from '@testing-library/react';
 import { createTheme, getSizeValue } from '@tresdoce-ui/brand';
 import Layout from '../Layout';
 
-import Col, {isValidSpan} from "./Col";
-import { ColProps } from "./Col.types";
+import Col, { isValidSpan } from './Col';
+import { ColProps } from './Col.types';
 
-describe("Component - Col", () => {
+describe('Component - Col', () => {
   let props: ColProps;
   const theme = createTheme();
-  const getSpacing = (theme,gutter: string | number = 'md') => getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter});
+  const getSpacing = (theme, gutter: string | number = 'md') =>
+    getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
 
   beforeEach(() => {
     props = {
@@ -19,14 +20,25 @@ describe("Component - Col", () => {
       grow: false,
       offset: 0,
       gutter: 'md',
-      style: {}
+      style: {},
     };
+    props['data-testId'] = 'id-test-Col-component';
   });
 
-  const renderComponent = () => render(<Layout theme={theme} cdnBasepath={''}><Col {...props} /></Layout>);
-  const updateComponent = (renderer, props) => renderer(<Layout theme={theme} cdnBasepath={''}><Col {...props} /></Layout>);
+  const renderComponent = () =>
+    render(
+      <Layout theme={theme} cdnBasepath={''}>
+        <Col {...props} />
+      </Layout>
+    );
+  const updateComponent = (renderer, props) =>
+    renderer(
+      <Layout theme={theme} cdnBasepath={''}>
+        <Col {...props} />
+      </Layout>
+    );
 
-  it('Should has a correct displayName', () =>{
+  it('Should has a correct displayName', () => {
     expect(Col.displayName).toEqual('@tresdoce-ui/core/Col');
   });
 
@@ -38,8 +50,7 @@ describe("Component - Col", () => {
     expect(isValidSpan(0)).toBe(false);
   });
 
-  it('Should be does not render column component if span prop set incorrectly', () =>{
-    props['data-testId'] = 'id-test-col';
+  it('Should be does not render column component if span prop set incorrectly', () => {
     props['children'] = 'Test content';
     props['span'] = 1.2;
 
@@ -78,7 +89,6 @@ describe("Component - Col", () => {
     props['grow'] = false;
     props['columns'] = 12;
     props['span'] = 2;
-    props['data-testId'] = 'id-test-col';
     props['children'] = 'Test content';
     const width = `${100 / (props.columns / props.span)}%`;
 
@@ -87,7 +97,6 @@ describe("Component - Col", () => {
     let component = getByTestId(props['data-testId']);
     expect(component).toHaveStyle(`flex:0 0 auto`);
     expect(component).toHaveStyle(`width: ${width}`);
-
 
     props['grow'] = true;
     updateComponent(rerender, props);
@@ -101,7 +110,6 @@ describe("Component - Col", () => {
     props['gutter'] = 40;
     props['span'] = 2;
     props['grow'] = false;
-    props['data-testId'] = 'id-test-col';
     props['children'] = 'Test content';
     const width = `${100 / (props.columns / props.span)}%`;
 
@@ -115,7 +123,6 @@ describe("Component - Col", () => {
   it('Should be sets correct margin based on gutter', () => {
     props['gutter'] = 40;
     props['span'] = 2;
-    props['data-testId'] = 'id-test-col';
     props['children'] = 'Test content';
     const spacing = getSpacing(theme, props['gutter']);
 
@@ -130,7 +137,6 @@ describe("Component - Col", () => {
     props['columns'] = 10;
     props['span'] = 2;
     props['offset'] = 2;
-    props['data-testId'] = 'id-test-col';
     props['children'] = 'Test content';
     const marginLeft = `${100 / (props.columns / props.offset)}%`;
 

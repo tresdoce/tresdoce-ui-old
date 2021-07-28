@@ -15,17 +15,22 @@ describe('Component - Button', () => {
       foo: 'bar',
       onClick: () => alert('click'),
     };
+    props['data-testId'] = 'id-Button';
   });
 
-  const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Button {...props} /></Layout>);
+  const renderComponent = () =>
+    render(
+      <Layout theme={createTheme()} cdnBasepath={''}>
+        <Button {...props} />
+      </Layout>
+    );
 
-  it('Should has a correct displayName', () =>{
+  it('Should has a correct displayName', () => {
     expect(Button.displayName).toEqual('@tresdoce-ui/core/Button');
   });
 
   it('should render foo text correctly', () => {
     props.foo = 'harvey was here';
-    props['data-testId'] = 'id-Button';
 
     const { getByTestId } = renderComponent();
     const component = getByTestId(props['data-testId']);

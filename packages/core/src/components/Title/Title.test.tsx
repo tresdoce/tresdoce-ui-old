@@ -1,49 +1,57 @@
-import * as React from "react";
-import { render } from "@testing-library/react";
+import * as React from 'react';
+import { render } from '@testing-library/react';
 import { createTheme } from '@tresdoce-ui/brand';
 import Layout from '../Layout';
 
-import Title from "./Title";
-import { TitleProps } from "./Title.types";
+import Title from './Title';
+import { TitleProps } from './Title.types';
 
-
-describe("Component - Title", () => {
+describe('Component - Title', () => {
   let props: TitleProps;
   const theme = createTheme();
 
   beforeEach(() => {
     props = {
-      'className':'',
-      'level': 1,
-      'color':'',
-      'size':'',
-      'align': '',
-      'fontStyle':'',
-      'weight':'',
-      'capitalize':'',
-      'children': 'This is a heading'
+      className: '',
+      level: 1,
+      color: '',
+      size: '',
+      align: '',
+      fontStyle: '',
+      weight: '',
+      capitalize: '',
+      children: 'This is a heading',
     };
+    props['data-testId'] = 'id-test-Heading-component';
   });
 
-  const renderComponent = () => render(<Layout theme={theme} cdnBasepath={''}><Title {...props} /></Layout>);
-  const updateComponent = (rerender, props) => rerender(<Layout theme={theme} cdnBasepath={''}><Title {...props} /></Layout>);
+  const renderComponent = () =>
+    render(
+      <Layout theme={theme} cdnBasepath={''}>
+        <Title {...props} />
+      </Layout>
+    );
+  const updateComponent = (rerender, props) =>
+    rerender(
+      <Layout theme={theme} cdnBasepath={''}>
+        <Title {...props} />
+      </Layout>
+    );
 
-  it('Should has a correct displayName', () =>{
+  it('Should has a correct displayName', () => {
     expect(Title.displayName).toEqual('@tresdoce-ui/core/Title');
   });
 
   it('Should be dont render heading component', () => {
     props.level = 7;
-    props['data-testId'] = 'id-test-heading-component';
 
     const { queryByTestId } = renderComponent();
     const component = queryByTestId(props['data-testId']);
-    expect(component).toBeNull()
+    expect(component).toBeNull();
   });
 
   it('Should be render heading component', () => {
     props.level = 1;
-    props['data-testId'] = 'id-test-heading-component';
 
     const { getByTestId } = renderComponent();
     expect(getByTestId).not.toBeNull();
@@ -57,8 +65,6 @@ describe("Component - Title", () => {
   });
 
   it('Should be render H1, H2, H3, H4, H5 and H6 heading component', () => {
-
-    props['data-testId'] = 'id-test-heading-component';
     props.level = 1;
 
     const { getByTestId, rerender } = renderComponent();
@@ -90,10 +96,9 @@ describe("Component - Title", () => {
     updateComponent(rerender, props);
     component = getByTestId(props['data-testId']);
     expect(component.tagName).toEqual(`H${props.level}`);
-  })
+  });
 
   it('Should be render heading component with different align', () => {
-    props['data-testId'] = 'id-test-heading-component';
     props.level = 1;
     props['align'] = 'left';
 
@@ -116,7 +121,6 @@ describe("Component - Title", () => {
   });
 
   it('Should be render heading component with different color', () => {
-    props['data-testId'] = 'id-test-heading-component';
     props.level = 1;
 
     const { getByTestId, rerender } = renderComponent();
@@ -130,7 +134,6 @@ describe("Component - Title", () => {
   });
 
   it('Should be render heading component with different size', () => {
-    props['data-testId'] = 'id-test-heading-component';
     props.level = 1;
 
     const { getByTestId, rerender } = renderComponent();
@@ -144,7 +147,6 @@ describe("Component - Title", () => {
   });
 
   it('Should be render heading component with different font style', () => {
-    props['data-testId'] = 'id-test-heading-component';
     props.level = 1;
 
     const { getByTestId, rerender } = renderComponent();
@@ -158,7 +160,6 @@ describe("Component - Title", () => {
   });
 
   it('Should be render heading component with different font weight', () => {
-    props['data-testId'] = 'id-test-heading-component';
     props.level = 1;
 
     const { getByTestId, rerender } = renderComponent();
@@ -192,7 +193,6 @@ describe("Component - Title", () => {
   });
 
   it('Should be render heading component with different capitalize', () => {
-    props['data-testId'] = 'id-test-heading-component';
     props.level = 1;
 
     const { getByTestId, rerender } = renderComponent();

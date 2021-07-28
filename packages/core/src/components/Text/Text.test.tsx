@@ -11,27 +11,36 @@ describe('Component - Text', () => {
 
   beforeEach(() => {
     props = {
-      'className': '',
-      'color': '',
-      'size': '',
-      'align': '',
-      'fontStyle': '',
-      'weight': '',
-      'capitalize': '',
-      'children': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      className: '',
+      color: '',
+      size: '',
+      align: '',
+      fontStyle: '',
+      weight: '',
+      capitalize: '',
+      children: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     };
+    props['data-testId'] = 'id-test-Text-component';
   });
 
-  const renderComponent = () => render(<Layout theme={createTheme()} cdnBasepath={''}><Text {...props} /></Layout>);
-  const updateComponent = (rerender, props) => rerender(<Layout theme={createTheme()} cdnBasepath={''}><Text {...props} /></Layout>);
+  const renderComponent = () =>
+    render(
+      <Layout theme={createTheme()} cdnBasepath={''}>
+        <Text {...props} />
+      </Layout>
+    );
+  const updateComponent = (rerender, props) =>
+    rerender(
+      <Layout theme={createTheme()} cdnBasepath={''}>
+        <Text {...props} />
+      </Layout>
+    );
 
-  it('Should has a correct displayName', () =>{
+  it('Should has a correct displayName', () => {
     expect(Text.displayName).toEqual('@tresdoce-ui/core/Text');
   });
 
   it('Should be render text component', () => {
-    props['data-testId'] = 'id-test-text-component';
-
     const { getByTestId } = renderComponent();
     expect(getByTestId).not.toBeNull();
     const component = getByTestId(props['data-testId']);
@@ -44,7 +53,6 @@ describe('Component - Text', () => {
   });
 
   it('Should be render text component align left, center, right and justify', () => {
-    props['data-testId'] = 'id-test-text-component';
     props.align = 'left';
 
     const { getByTestId, rerender } = renderComponent();
@@ -66,7 +74,6 @@ describe('Component - Text', () => {
   });
 
   it('Should be render text component with different color', () => {
-    props['data-testId'] = 'id-test-text-component';
     props.color = '#1B1C1D';
 
     const { getByTestId, rerender } = renderComponent();
@@ -80,7 +87,6 @@ describe('Component - Text', () => {
   });
 
   it('Should be render text component with different size', () => {
-    props['data-testId'] = 'id-test-text-component';
     props.size = '0.875rem';
 
     const { getByTestId, rerender } = renderComponent();
@@ -94,7 +100,6 @@ describe('Component - Text', () => {
   });
 
   it('Should be render text component with different font style', () => {
-    props['data-testId'] = 'id-test-text-component';
     props.fontStyle = 'initial';
 
     const { getByTestId, rerender } = renderComponent();
@@ -112,7 +117,6 @@ describe('Component - Text', () => {
   });
 
   it('Should be render text component with different font weight', () => {
-    props['data-testId'] = 'id-test-text-component';
     props.weight = 'normal';
 
     const { getByTestId, rerender } = renderComponent();
@@ -146,7 +150,6 @@ describe('Component - Text', () => {
   });
 
   it('Should be render text component with different capitalize', () => {
-    props['data-testId'] = 'id-test-text-component';
     props.capitalize = 'initial';
 
     const { getByTestId, rerender } = renderComponent();
@@ -170,5 +173,4 @@ describe('Component - Text', () => {
     updateComponent(rerender, props);
     expect(component).toHaveStyle(`text-transform: ${props.capitalize}`);
   });
-
 });
