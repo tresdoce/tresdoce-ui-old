@@ -1,5 +1,7 @@
-type StrokeLinecap = 'round' | 'square' | 'butt'
-type StrokeLinejoin = 'round' | 'bevel' | 'miter'
+import React from 'react';
+
+type StrokeLinecap = 'round' | 'square' | 'butt';
+type StrokeLinejoin = 'round' | 'bevel' | 'miter';
 
 export interface IconProps {
   className?: string;

@@ -4,16 +4,18 @@ import clsx from 'clsx';
 import { withTheme } from '../Theme';
 import { IconProps } from './Icon.types';
 import { ContainerIcon } from './styles';
+
 import { icons } from './constants/icons';
+import { defaultAttrs } from './constants/default-attrs';
 
 const Icon: React.FC<IconProps> = ({
   className,
   name,
-  width = 24,
-  height = 24,
-  fill = 'none',
-  strokeColor = '#000',
-  strokeWidth = 2,
+  width = defaultAttrs.width,
+  height = defaultAttrs.height,
+  fill = defaultAttrs.fill,
+  strokeColor = defaultAttrs.stroke,
+  strokeWidth = defaultAttrs['stroke-width'],
   strokeLinecap = 'round',
   strokeLinejoin = 'round',
   ...rest
@@ -32,10 +34,10 @@ const Icon: React.FC<IconProps> = ({
     <ContainerIcon className={classes} {...filteredProps}>
       <svg
         data-name={`icon-${name}`}
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns={`${defaultAttrs.xmlns}`}
         width={width}
         height={height}
-        viewBox={`0 0 24 24`}
+        viewBox={`${defaultAttrs.viewBox}`}
         fill={fill}
         stroke={strokeColor}
         strokeWidth={strokeWidth}
