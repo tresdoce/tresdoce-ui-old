@@ -4,20 +4,20 @@ import clsx from 'clsx';
 import { withTheme } from '../Theme';
 import { IconProps } from './Icon.types';
 import { ContainerIcon } from './styles';
-import icons from './icons.json';
+import { icons } from './constants/icons';
 
 const Icon: React.FC<IconProps> = ({
-   className,
-   name,
-   width = 24,
-   height = 24,
-   fill = 'none',
-   strokeColor = '#000',
-   strokeWidth = 2,
-   strokeLinecap = 'round',
-   strokeLinejoin = 'round',
-   ...rest
- }) => {
+  className,
+  name,
+  width = 24,
+  height = 24,
+  fill = 'none',
+  strokeColor = '#000',
+  strokeWidth = 2,
+  strokeLinecap = 'round',
+  strokeLinejoin = 'round',
+  ...rest
+}) => {
   const filteredProps = filterProps(rest);
   const classes = clsx({
     'default-class': false,
@@ -29,10 +29,7 @@ const Icon: React.FC<IconProps> = ({
   }
 
   return (
-    <ContainerIcon
-      className={classes}
-      {...filteredProps}
-    >
+    <ContainerIcon className={classes} {...filteredProps}>
       <svg
         data-name={`icon-${name}`}
         xmlns="http://www.w3.org/2000/svg"
