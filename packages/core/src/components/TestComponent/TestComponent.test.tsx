@@ -1,12 +1,8 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
-
-import { createTheme } from '@tresdoce-ui/brand';
-import Layout from '../Layout';
+import { render } from '../../utils/test-utils';
 
 import TestComponent from './TestComponent';
 import { TestComponentProps } from './TestComponent.types';
-
 
 describe('Component - TestComponent', () => {
   let props: TestComponentProps;
@@ -15,24 +11,38 @@ describe('Component - TestComponent', () => {
     props = {
       mode: 'primary',
     };
+    props['data-testId'] = 'test-component';
   });
 
-  const renderComponent = () => render(<Layout theme={createTheme({})} cdnBasepath={''}><TestComponent {...props} /></Layout>);
-
-  it('Should has a correct displayName', () =>{
+  it('Should has a correct displayName', () => {
     expect(TestComponent.displayName).toEqual('@tresdoce-ui/core/TestComponent');
   });
 
   it('should have primary className with default props', () => {
-    const { getByTestId,  } = renderComponent();
-    const testComponent = getByTestId('test-component');
+    const wrapper = render(<TestComponent {...props} />);
+    const testComponent = wrapper.getByTestId(props['data-testId']);
     expect(testComponent).toHaveClass('test-component-primary');
   });
 
   it('should have secondary className with theme set as secondary', () => {
-    props.mode = 'secondary';
-    const { getByTestId } = renderComponent();
-    const testComponent = getByTestId('test-component');
+    /*props.mode = 'secondary';
+    const wrapper = render(<TestComponent {...props} />);
+    let testComponent = wrapper.getByTestId(props['data-testId']);
     expect(testComponent).toHaveClass('test-component-secondary');
+
+    props.mode = 'primary';
+    wrapper.rerender(<TestComponent {...props} />);
+    testComponent = wrapper.getByTestId(props['data-testId']);
+    expect(testComponent).toHaveClass('test-component-primarys');*/
+
+    props.mode = 'secondary';
+    const { getByTestId, rerender } = render(<TestComponent {...props} />);
+    let component = getByTestId(props['data-testId']);
+    expect(component).toHaveClass('test-component-secondary');
+
+    props.mode = 'primary';
+    rerender(<TestComponent {...props} />);
+    component = getByTestId(props['data-testId']);
+    expect(component).toHaveClass('test-component-primary');
   });
 });
