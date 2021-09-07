@@ -24,7 +24,7 @@ describe('Component - Baseline', () => {
     );
 
   it('Should has a correct displayName', () => {
-    expect(Baseline.displayName).toEqual('@tresdoce-ui/core/Baseline');
+    expect(Baseline.displayName).toEqual('Baseline');
   });
 
   it('should render', async () => {

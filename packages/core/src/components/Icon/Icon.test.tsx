@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from "@testing-library/react";
+import { render } from '@testing-library/react';
 import { createTheme } from '@tresdoce-ui/brand';
 import Layout from '../Layout';
 
@@ -21,14 +21,24 @@ describe('Component - Icon', () => {
       strokeLinecap: 'round',
       strokeLinejoin: 'round',
     };
-    props['data-testId'] = "id-test-Icon-component";
+    props['data-testId'] = 'id-test-Icon-component';
   });
 
-  const renderComponent = () => render(<Layout theme={theme} cdnBasepath={''}><Icon {...props} /></Layout>);
-  const updateComponent = (renderer, props) => renderer(<Layout theme={theme} cdnBasepath={''}><Icon {...props} /></Layout>);
+  const renderComponent = () =>
+    render(
+      <Layout theme={theme} cdnBasepath={''}>
+        <Icon {...props} />
+      </Layout>
+    );
+  const updateComponent = (renderer, props) =>
+    renderer(
+      <Layout theme={theme} cdnBasepath={''}>
+        <Icon {...props} />
+      </Layout>
+    );
 
   it('Should has a correct displayName', () => {
-    expect(Icon.displayName).toEqual('@tresdoce-ui/core/Icon');
+    expect(Icon.displayName).toEqual('Icon');
   });
 
   it('Should be render a icon component', () => {
@@ -37,13 +47,13 @@ describe('Component - Icon', () => {
     const component = getByTestId(props['data-testId']).firstElementChild;
     expect(component.tagName).toEqual(`svg`);
     expect(component).toHaveAttribute('data-name', `icon-${props.name}`);
-    expect(component.getAttribute('width')).toBe( `${props.width}`);
-    expect(component.getAttribute('height')).toBe( `${props.height}`);
-    expect(component.getAttribute('fill')).toBe( `${props.fill}`);
-    expect(component.getAttribute('stroke')).toBe( `${props.strokeColor}`);
+    expect(component.getAttribute('width')).toBe(`${props.width}`);
+    expect(component.getAttribute('height')).toBe(`${props.height}`);
+    expect(component.getAttribute('fill')).toBe(`${props.fill}`);
+    expect(component.getAttribute('stroke')).toBe(`${props.strokeColor}`);
     expect(component.getAttribute('stroke-width')).toBe(`${props.strokeWidth}`);
     expect(component.getAttribute('stroke-linecap')).toBe(`${props.strokeLinecap}`);
-    expect(component.getAttribute('stroke-linejoin')).toBe( `${props.strokeLinejoin}`);
+    expect(component.getAttribute('stroke-linejoin')).toBe(`${props.strokeLinejoin}`);
   });
 
   it('Should be dont return component when icon dont exist', () => {
@@ -75,16 +85,14 @@ describe('Component - Icon', () => {
     const { getByTestId, rerender } = renderComponent();
     expect(getByTestId).not.toBeNull();
     let component = getByTestId(props['data-testId']).firstElementChild;
-    expect(component.getAttribute('width')).toBe( `${props.width}`);
-    expect(component.getAttribute('height')).toBe( `${props.height}`);
+    expect(component.getAttribute('width')).toBe(`${props.width}`);
+    expect(component.getAttribute('height')).toBe(`${props.height}`);
 
     props.width = 30;
     props.height = 30;
     updateComponent(rerender, props);
     component = getByTestId(props['data-testId']).firstElementChild;
-    expect(component.getAttribute('width')).toBe( `${props.width}`);
-    expect(component.getAttribute('height')).toBe( `${props.height}`);
+    expect(component.getAttribute('width')).toBe(`${props.width}`);
+    expect(component.getAttribute('height')).toBe(`${props.height}`);
   });
-
 });
-

@@ -39,7 +39,7 @@ describe('Component - Col', () => {
     );
 
   it('Should has a correct displayName', () => {
-    expect(Col.displayName).toEqual('@tresdoce-ui/core/Col');
+    expect(Col.displayName).toEqual('Col');
   });
 
   it('Should be correctly detects invalid spans', () => {

@@ -15,7 +15,7 @@ describe('Component - TestComponent', () => {
   });
 
   it('Should has a correct displayName', () => {
-    expect(TestComponent.displayName).toEqual('@tresdoce-ui/core/TestComponent');
+    expect(TestComponent.displayName).toEqual('TestComponent');
   });
 
   it('should have primary className with default props', () => {

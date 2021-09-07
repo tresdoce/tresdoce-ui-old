@@ -39,7 +39,7 @@ describe('Component - Title', () => {
     );
 
   it('Should has a correct displayName', () => {
-    expect(Title.displayName).toEqual('@tresdoce-ui/core/Title');
+    expect(Title.displayName).toEqual('Title');
   });
 
   it('Should be dont render heading component', () => {

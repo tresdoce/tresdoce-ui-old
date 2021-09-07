@@ -8,18 +8,17 @@ import * as headingStyles from './styles';
 const headingLevels = [1, 2, 3, 4, 5, 6];
 
 const Title: React.FC<TitleProps> = ({
- className,
- level = 1 ,
- color,
- size,
- align ,
- fontStyle,
- weight ,
- capitalize,
- children,
- ...rest
+  className,
+  level = 1,
+  color,
+  size,
+  align,
+  fontStyle,
+  weight,
+  capitalize,
+  children,
+  ...rest
 }) => {
-
   if (!headingLevels.includes(level)) {
     return null;
   }
@@ -32,8 +31,10 @@ const Title: React.FC<TitleProps> = ({
 
   const element = headingStyles[`H${level}`];
 
-  return createElement(element, {
-      'className': classes,
+  return createElement(
+    element,
+    {
+      className: classes,
       color,
       size,
       align,
@@ -42,10 +43,10 @@ const Title: React.FC<TitleProps> = ({
       capitalize,
       ...filteredProps,
     },
-    children,
+    children
   );
 };
 
-Title.displayName = '@tresdoce-ui/core/Title';
+Title.displayName = 'Title';
 
 export default withTheme(Title);

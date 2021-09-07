@@ -4,15 +4,16 @@ import { BaselineProps } from './Baseline.types';
 import { GlobalStyles } from './styles';
 
 const Baseline: React.FC<BaselineProps> = ({ cdnBasepath }) => {
-
-  return (<>
-    <GlobalStyles/>
-    {/*<style>{`
+  return (
+    <>
+      <GlobalStyles />
+      {/*<style>{`
       @import url('${cdnBasepath}/css/app.min.css');
     `}</style>*/}
-  </>);
+    </>
+  );
 };
 
-Baseline.displayName = '@tresdoce-ui/core/Baseline';
+Baseline.displayName = 'Baseline';
 
 export default withTheme(Baseline);

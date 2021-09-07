@@ -6,16 +6,16 @@ import { TextProps } from './Text.types';
 import * as textStyles from './styles';
 
 const Text: React.FC<TextProps> = ({
-   className,
-   color,
-   size,
-   align ,
-   fontStyle,
-   weight ,
-   capitalize ,
-   children,
-   ...rest
- }) => {
+  className,
+  color,
+  size,
+  align,
+  fontStyle,
+  weight,
+  capitalize,
+  children,
+  ...rest
+}) => {
   const filteredProps = filterProps(rest);
   const classes = clsx({
     'default-class': false,
@@ -23,8 +23,10 @@ const Text: React.FC<TextProps> = ({
   });
 
   const element = textStyles['P'];
-  return createElement(element, {
-      'className': classes,
+  return createElement(
+    element,
+    {
+      className: classes,
       color,
       size,
       align,
@@ -33,11 +35,10 @@ const Text: React.FC<TextProps> = ({
       capitalize,
       ...filteredProps,
     },
-    children,
+    children
   );
-
 };
 
-Text.displayName = '@tresdoce-ui/core/Text';
+Text.displayName = 'Text';
 
 export default withTheme(Text);

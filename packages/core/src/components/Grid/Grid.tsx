@@ -9,7 +9,7 @@ import { GridStyle } from './styles';
 const Grid: React.FC<GridProps> = ({
   className,
   children,
-  gutter = "md",
+  gutter = 'md',
   grow = false,
   row = false,
   columns = 12,
@@ -27,11 +27,13 @@ const Grid: React.FC<GridProps> = ({
   const spacing = getSizeValue({ size: gutter, sizes: theme.grid.spacing.gutter });
 
   const cols = (Children.toArray(children) as ReactElement[]).map((col, index) =>
-    cloneElement(col, { gutter, grow, columns, key: index }),
+    cloneElement(col, { gutter, grow, columns, key: index })
   );
 
-  return createElement(GridStyle, {
-      'className': classes,
+  return createElement(
+    GridStyle,
+    {
+      className: classes,
       gutter,
       grow,
       row,
@@ -42,11 +44,10 @@ const Grid: React.FC<GridProps> = ({
       spacing,
       ...filteredProps,
     },
-    cols,
+    cols
   );
-
 };
 
-Grid.displayName = '@tresdoce-ui/core/Grid';
+Grid.displayName = 'Grid';
 
 export default withTheme(Grid);

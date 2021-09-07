@@ -26,7 +26,7 @@ describe('Component - Button', () => {
     );
 
   it('Should has a correct displayName', () => {
-    expect(Button.displayName).toEqual('@tresdoce-ui/core/Button');
+    expect(Button.displayName).toEqual('Button');
   });
 
   it('should render foo text correctly', () => {

@@ -42,7 +42,7 @@ describe('Component - Grid', () => {
     );
 
   it('Should has a correct displayName', () => {
-    expect(Grid.displayName).toEqual('@tresdoce-ui/core/Grid');
+    expect(Grid.displayName).toEqual('Grid');
   });
 
   it('Should be render justify content', () => {

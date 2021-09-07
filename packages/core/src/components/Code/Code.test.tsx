@@ -32,7 +32,7 @@ describe('Component - Code', () => {
     );
 
   it('Should has a correct displayName', () => {
-    expect(Code.displayName).toEqual('@tresdoce-ui/core/Code');
+    expect(Code.displayName).toEqual('Code');
   });
 
   it('should render text content correctly', () => {

@@ -16,6 +16,6 @@ const TestComponent: React.FC<TestComponentProps> = ({ mode, ...rest }) => {
   );
 };
 
-TestComponent.displayName = '@tresdoce-ui/core/TestComponent';
+TestComponent.displayName = 'TestComponent';
 
 export default withTheme(TestComponent);

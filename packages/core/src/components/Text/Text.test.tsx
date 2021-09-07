@@ -37,7 +37,7 @@ describe('Component - Text', () => {
     );
 
   it('Should has a correct displayName', () => {
-    expect(Text.displayName).toEqual('@tresdoce-ui/core/Text');
+    expect(Text.displayName).toEqual('Text');
   });
 
   it('Should be render text component', () => {

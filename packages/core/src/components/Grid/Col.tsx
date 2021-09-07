@@ -37,12 +37,14 @@ const Col: React.FC<ColProps> = ({
   if (isValidSpan(offset)) {
     styles = {
       //marginLeft : `calc(${100 / (columns / offset)}% + ${spacing / 2}px)`,
-      marginLeft : `${100 / (columns / offset)}%`,
-    }
+      marginLeft: `${100 / (columns / offset)}%`,
+    };
   }
 
-  return createElement(ColStyle, {
-      'className': classes,
+  return createElement(
+    ColStyle,
+    {
+      className: classes,
       ...filteredProps,
       span,
       columns,
@@ -56,6 +58,6 @@ const Col: React.FC<ColProps> = ({
   );
 };
 
-Col.displayName = '@tresdoce-ui/core/Col';
+Col.displayName = 'Col';
 
 export default withTheme(Col);

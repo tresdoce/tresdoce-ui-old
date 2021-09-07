@@ -49,6 +49,6 @@ const Icon: React.FC<IconProps> = ({
   );
 };
 
-Icon.displayName = '@tresdoce-ui/core/Icon';
+Icon.displayName = 'Icon';
 
 export default withTheme(Icon);

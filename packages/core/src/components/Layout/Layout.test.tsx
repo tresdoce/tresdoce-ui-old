@@ -12,14 +12,14 @@ describe('Component - Layout', () => {
     props = {
       cdnBasepath: '',
       theme: createTheme(),
-      containerFluid: false
+      containerFluid: false,
     };
   });
 
   const renderComponent = () => render(<Layout {...props} />);
 
-  it('Should has a correct displayName', () =>{
-    expect(Layout.displayName).toEqual('@tresdoce-ui/core/Layout');
+  it('Should has a correct displayName', () => {
+    expect(Layout.displayName).toEqual('Layout');
   });
 
   it('should render container', async () => {

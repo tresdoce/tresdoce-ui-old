@@ -39,6 +39,6 @@ const Layout: React.FC<LayoutProps> = ({
   );
 };
 
-Layout.displayName = '@tresdoce-ui/core/Layout';
+Layout.displayName = 'Layout';
 
 export default Layout;

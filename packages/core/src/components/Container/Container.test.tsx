@@ -38,7 +38,7 @@ describe('Component - Container', () => {
     );
 
   it('Should has a correct displayName', () => {
-    expect(Container.displayName).toEqual('@tresdoce-ui/core/Container');
+    expect(Container.displayName).toEqual('Container');
   });
 
   it('Should be render Container component', () => {

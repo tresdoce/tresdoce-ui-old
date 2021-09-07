@@ -6,12 +6,7 @@ import { CodeProps } from './Code.types';
 import * as CodePreStyles from './styles';
 
 //https://github.com/mantinedev/mantine/blob/master/src/mantine-core/src/components/Code/Code.tsx
-const Code: React.FC<CodeProps> = ({
-  className,
-  children,
-  block = false,
-  ...rest
-}) => {
+const Code: React.FC<CodeProps> = ({ className, children, block = false, ...rest }) => {
   const filteredProps = filterProps(rest);
   const classes = clsx({
     'default-class': false,
@@ -20,13 +15,16 @@ const Code: React.FC<CodeProps> = ({
 
   const element = block ? CodePreStyles.PreStyle : CodePreStyles.CodeStyle;
 
-  return React.createElement(element, {
-    'className': classes,
-    ...filteredProps,
-  }, children);
-
+  return React.createElement(
+    element,
+    {
+      className: classes,
+      ...filteredProps,
+    },
+    children
+  );
 };
 
-Code.displayName = '@tresdoce-ui/core/Code';
+Code.displayName = 'Code';
 
 export default withTheme(Code);
