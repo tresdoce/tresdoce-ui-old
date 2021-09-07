@@ -22,6 +22,7 @@ const Container: React.FC<ContainerProps> = ({
   return createElement(
     ContainerStyle,
     {
+      id: 'container',
       className: classes,
       row,
       fluid,

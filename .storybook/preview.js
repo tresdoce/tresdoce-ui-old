@@ -4,7 +4,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs';
 import { createTheme } from '../packages/brand/src/';
 import { Layout } from '../packages/core/src/index';
-import { NormalizeCSS } from '../packages/core/src/components/Baseline/'
+import { NormalizeCSS } from '../packages/core/src/components/Baseline/';
 
 export const parameters = {
   layout: 'fullscreen',
@@ -27,7 +27,7 @@ export const parameters = {
   controls: {
     disable: false,
     expanded: false,
-    hideNoControlsWarning: true
+    hideNoControlsWarning: true,
   },
   exportedParameter: 'exportedParameter',
   a11y: {
@@ -47,29 +47,18 @@ export const globalTypes = {
   },
 };
 
-
-const GlobalWrapper = story => {
+const GlobalWrapper = (story) => {
   const theme = createTheme();
   const cdnBasepath = '';
 
-  const containerFluid = true;
-  const row = false;
-
   return (
     <>
-      <Layout
-        theme={theme}
-        cdnBasepath={cdnBasepath}
-        containerFluid={containerFluid}
-        row={row}
-      >
+      <Layout theme={theme} cdnBasepath={cdnBasepath} containerFluid={true} row={true}>
         {story()}
       </Layout>
-      <NormalizeCSS/>
+      <NormalizeCSS />
     </>
   );
 };
 
 addDecorator(GlobalWrapper);
-
-

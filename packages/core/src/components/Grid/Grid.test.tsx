@@ -170,11 +170,12 @@ describe('Component - Grid', () => {
     const { getByTestId, rerender } = renderComponent();
     expect(getByTestId).not.toBeNull();
     let component = getByTestId(props['data-testId']);
-    expect(component).toHaveStyle(`margin: 0 -${spacing}px`);
+    //expect(component).toHaveStyle(`margin: 0 -${spacing}px`);
+    expect(component).toHaveStyle(`margin: 0 0`);
 
     props['row'] = false;
     updateComponent(rerender, props);
     component = getByTestId(props['data-testId']);
-    expect(component).toHaveStyle(`margin: 0 0`);
+    expect(component).toHaveStyle(`margin: 0 ${spacing}px`);
   });
 });
